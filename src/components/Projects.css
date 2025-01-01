@@ -1,0 +1,39 @@
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-card {
+  border: 1px solid #333333;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+}
+
+.project-info {
+  padding: 15px;
+}
+
+.project-info h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5em;
+  padding: 0 10%;
+}
+
+.project-info h3 a {
+  font-size: 32px;
+}
