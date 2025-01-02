@@ -6,6 +6,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #1a1a1a;
   color: #ffffff;
+  font-variant-ligatures: none;
 }
 
 code {
@@ -31,5 +32,3 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
-

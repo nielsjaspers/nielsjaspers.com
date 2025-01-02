@@ -5,7 +5,7 @@ import './Contact.css';
 function Contact() {
   return (
     <section id="contact">
-      <h2>Contact Me</h2>
+      <h2>Contact</h2>
       <div className="contact-icons">
         <a href="https://github.com/nielsjaspers" target="_blank" rel="noopener noreferrer">
           <FaGithub />
