@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Home from './components/Home';
 import BlogsHome from './components/BlogsHome';
 import './App.css';
-{/* import BlogPost from './components/BlogPost'; */}
 
 function App() {
   return (
