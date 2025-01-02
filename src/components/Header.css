@@ -18,6 +18,10 @@ nav ul li {
   margin: 2px 10px;
 }
 
+nav ul di {
+  justify-content: right;
+}
+
 nav ul li a {
   color: #ffffff;
   text-decoration: none;
