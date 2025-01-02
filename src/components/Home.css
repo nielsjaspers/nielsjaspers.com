@@ -1,0 +1,36 @@
+.language-toggle {
+    position: fixed;
+    top: 5rem;
+    right: 20px;
+    z-index: 1000;
+}
+
+.toggle-button {
+    background-color: #21252b;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    outline: none;
+    color: white;
+}
+
+.toggle-button.active:hover {
+    background-color: #dddd;
+}
+
+.toggle-button.active {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.toggle-button:hover {
+    background-color: #383d47;
+}
+
+.toggle-button:focus {
+    outline: none;
+}
