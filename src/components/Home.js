@@ -18,7 +18,7 @@ function Home() {
                     onClick={onLanguageChange}
                     className={`toggle-button ${language === 'nl' ? 'active' : ''}`}
                 >
-                    {language === 'en' ? 'EN' : 'NL'}
+                    {language === 'en' ? 'NL' : 'EN'}
                 </button>
             </div>
 
