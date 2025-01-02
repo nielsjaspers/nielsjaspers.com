@@ -8,11 +8,11 @@ const skillCategories = [
   },
   {
     category: 'Technologies',
-    skills: ['Docker', 'TLS/SSH', 'SQL', 'Linux']
+    skills: ['Docker', 'TLS/SSH', 'SQL', 'Linux/Unix']
   },
   {
     category: 'Tools',
-    skills: ['Git', 'GitHub', 'Neovim']
+    skills: ['Git', 'GitHub', '✨Neovim✨']
   }
 ];
 
@@ -26,7 +26,9 @@ function Skills() {
             <h3>{category.category}</h3>
             <ul>
               {category.skills.map((skill, skillIndex) => (
-                <li key={skillIndex}>{skill}</li>
+                <li key={skillIndex} className={skill.includes('✨Neovim✨') ? 'neovim' : ''}>
+                  {skill}
+                </li>
               ))}
             </ul>
           </div>
@@ -37,3 +39,4 @@ function Skills() {
 }
 
 export default Skills;
+

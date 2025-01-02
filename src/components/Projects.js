@@ -5,16 +5,16 @@ import './Projects.css';
 function Projects() {
   const projects = [
     {
-      name: 'Project 1',
+      name: 'CLS (Command-line Share)',
       image: 'https://via.placeholder.com/300x200.gif',
-      github: 'https://github.com/yourusername/project1',
-      description: 'This is a placeholder description for Project 1.'
+      github: 'https://github.com/nielsjaspers/cls',
+      description: 'CLS is a lightweight command-line tool designed for securely sharing files over a local network. Built with Go, it utilizes TLS to ensure safe transfers between devices. Ideal for quick, private file-sharing.'
     },
     {
-      name: 'Project 2',
+      name: 'Comic Book Reader',
       image: 'https://via.placeholder.com/300x200.gif',
-      github: 'https://github.com/yourusername/project2',
-      description: 'This is a placeholder description for Project 2.'
+      github: 'https://github.com/nielsjaspers/comicbook-reader',
+      description: 'For a school project, my project-partner and I developed a comic book reader in Java using Java Swing. This project helped me dive into file decompression, implementing support for RAR and ZIP formats, as well as optimizing startup times through JSON-based storage.'
     }
   ];
 
