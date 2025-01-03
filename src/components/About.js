@@ -6,7 +6,7 @@ function About({ language }) {
     const content = {
         en: {
             title: 'About Me',
-            intro: `Hi there! I’m Niels, a second-year Computer Science student from the Netherlands with a passion for programming and technology! 🚀<br />
+            intro: `Hi there! I’m Niels, a second-year Computer Science student from the Netherlands with a passion for programming and technology!<br />
 I’m always excited to experiment with new tools and technologies. Currently, I’m diving deep into Go, with a new upcoming project. 👀<br />
 <br />
 My journey in software development is driven by a love for problem-solving and a curiosity to learn new things. I also have a special place in my heart for Neovim, my go-to tool for writing code. (btw)<br />
@@ -17,7 +17,7 @@ Feel free to explore my skills and projects below (and stay tuned for my upcomin
         },
         nl: {
             title: 'Over Mij',
-            intro: `Hoi! Ik ben Niels, een tweedejaars Computer Science student uit Nederland met een grote passie voor programmeren en technologie! 🚀<br />
+            intro: `Hoi! Ik ben Niels, een tweedejaars Computer Science student uit Nederland met een grote passie voor programmeren en technologie!<br />
 Ik ben altijd op zoek naar nieuwe tools en technologieën om uit te proberen. Op dit moment ben ik druk bezig met Go, voor een nieuw aankomend project. 👀<br />
 <br />
 Mijn interesse in softwareontwikkeling komt voort uit mijn liefde voor het oplossen van problemen en mijn nieuwsgierigheid om steeds nieuwe dingen te leren. Ik ben ook dol op Neovim, mijn favoriete tool voor het schrijven van code.<br />

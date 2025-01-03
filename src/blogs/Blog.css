@@ -1,0 +1,35 @@
+.back-button {
+    font-family: Space Mono;
+    background-color: #21252b;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    outline: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 5rem;
+    left: 10px;
+    z-index: 1000;
+}
+
+.back-button svg {
+    margin-right: 8px;
+}
+
+.back-button:hover {
+    background-color: #383d47;
+}
+
+@media (max-width: 768px) {
+    .back-button {
+        bottom: 10px; /* Place it at the bottom of the screen */
+        left: 10px;   /* Keep it on the left side */
+        top: unset;   /* Remove the top positioning */
+    }
+}
