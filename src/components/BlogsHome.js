@@ -7,11 +7,11 @@ function BlogsHome() {
             <h2>Welcome to My Blog</h2>
             <p>
                 As a Computer Science student, I want to document my learning journey.
-                <br/>
+                <br />
                 Through this blog, I’ll share my discoveries, insights, and maybe some hot takes on the things I’m studying.
-                These blog posts are meant to help others who are learning alongside me, and for entertainment for those who just like reading blogposts.
+                <br />
+                These posts are for those learning alongside me, as well as for those interested in the field or who simply enjoy reading.
             </p>
-
             <h3>Recent Blogs</h3>
             <ul>
                 <li><Link to="/blogs/test-blog">Placeholder Example 1</Link></li>
