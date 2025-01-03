@@ -6,6 +6,7 @@
 }
 
 .toggle-button {
+    font-family: Space Mono;
     background-color: #21252b;
     border: none;
     border-radius: 20px;
@@ -18,17 +19,17 @@
     color: white;
 }
 
+.toggle-button:hover {
+    background-color: #383d47;
+}
+
 .toggle-button.active:hover {
-    background-color: #dddd;
+    background-color: #dddddd;
 }
 
 .toggle-button.active {
     background-color: #f0f0f0;
     color: black;
-}
-
-.toggle-button:hover {
-    background-color: #383d47;
 }
 
 .toggle-button:focus {
