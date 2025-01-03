@@ -1,4 +1,5 @@
 import React from 'react';
+import BrevoForm from './BrevoForm';
 import { Link } from 'react-router-dom';
 
 function BlogsHome() {
@@ -17,6 +18,7 @@ function BlogsHome() {
                 <li><Link to="/blogs/test-blog">Placeholder Example 1</Link></li>
                 {/* <li><Link to="/blog/2">Placeholder Example 2</Link></li> */}
             </ul>
+            <BrevoForm />
         </div>
     );
 }
