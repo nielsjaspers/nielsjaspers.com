@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
-function Header({ onLanguageChange, language }) {
+function Header() {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
 
