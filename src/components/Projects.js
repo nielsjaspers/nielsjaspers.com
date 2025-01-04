@@ -51,7 +51,7 @@ function Projects({ language }) {
               <h3>
                 {project.name}{' '}
                 <a href={project.github} target="_blank" rel="noopener noreferrer">
-                  <FaGithub color="#9ed7ff" />
+                  <FaGithub />
                 </a>
               </h3>
               <p>{project.description}</p>
