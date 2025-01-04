@@ -12,7 +12,7 @@ function BlogsHome() {
                 These posts are for those learning alongside me, as well as for those interested in the field or who simply enjoy reading.
             </p>
             <h4>
-                <a href="/signup.html">
+                <a href="blogs/signup.html">
                     Want to sign up for my blog?
                 </a>
             </h4>
