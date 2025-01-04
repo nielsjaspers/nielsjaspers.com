@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title></title>
-        <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
@@ -117,12 +117,105 @@
             -moz-osx-font-smoothing: grayscale;
             font-variant-ligatures: none;
         }
+
+        /* Header Styling */
+        header {
+            background-color: #282c34;
+            padding: 2px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 2px 10px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                justify-content: flex-start;
+                padding: 0 10px;
+            }
+        }
+
+        /* Back Button Styling */
+        .back-button {
+            font-family: Space Mono;
+            background-color: #21252b;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            outline: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 5rem;
+            left: 10px;
+            z-index: 1000;
+        }
+
+        .back-button svg {
+            margin-right: 8px;
+        }
+
+        .back-button:hover {
+            background-color: #383d47;
+        }
+
+        @media (max-width: 768px) {
+            .back-button {
+                bottom: 10px;
+                left: unset;
+                right: 10px;
+                top: unset;
+            }
+        }
     </style>
 </head>
+<header>
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blogs">Blogs</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
 
 <body>
+    <!-- Back Button -->
+    <button class="back-button" onclick="window.history.back()">
+        Back
+    </button>
+
+    <!-- Form -->
     <div class="sib-form" style="text-align: center;
-         background-color: transparent;                                 ">
+         background-color: transparent;">
         <div id="sib-form-container" class="sib-form-container">
             <div id="error-message" class="sib-form-message-panel"
                 style="font-size:16px; text-align:left;  color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;max-width:540px;">
@@ -145,7 +238,7 @@
                             d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
                     </svg>
                     <span class="sib-form-message-panel__inner-text goodfont">
-                        Your subscription has been successful.
+                        Please check your email inbox to confirm your subscription!
                     </span>
                 </div>
             </div>
@@ -222,7 +315,8 @@
                                             <span class="checkbox checkbox_tick_positive goodfont"
                                                 style="margin-left:"></span><span
                                                 style="font-size:14px; text-align:left;  color:#ffffff; background-color:transparent;">
-                                                <p class="goodfont">I agree to receive your newsletters and accept the data privacy
+                                                <p class="goodfont">I agree to receive your newsletters and accept the
+                                                    data privacy
                                                     statement.</p><span data-required="*" style="display: inline;"
                                                     class="entry__label entry__label_optin"></span>
                                             </span> </label>
@@ -251,9 +345,9 @@
                                     <use xlink:href="#svgIcon-sphere"></use>
                                 </svg>
                             </div>
-                            <div
-                                style="font-size:14px; text-align:left;  color:#d3d3d3; background-color:transparent;">
-                                <p class="goodfont">I use Brevo as my marketing platform. By submitting this form you agree that the
+                            <div style="font-size:14px; text-align:left;  color:#d3d3d3; background-color:transparent;">
+                                <p class="goodfont">I use Brevo as my marketing platform. By submitting this form you
+                                    agree that the
                                     personal data you provided will be transferred to Brevo for processing in accordance
                                     with <a href="https://www.brevo.com/en/legal/privacypolicy/" target="_blank">Brevo's
                                         Privacy Policy.</a></p>
