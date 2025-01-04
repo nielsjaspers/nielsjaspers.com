@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function BlogsHome() {
     return (
@@ -13,9 +12,11 @@ function BlogsHome() {
                 These posts are for those learning alongside me, as well as for those interested in the field or who simply enjoy reading.
             </p>
             <h4>
-                <Link to="/blogs/signup">Want to sign up for my blog?</Link>
+                <a href="/signup.html">
+                    Want to sign up for my blog?
+                </a>
             </h4>
-            <br/>
+            <br />
             <h3>Recent Blogs</h3>
             <p>Coming Soon...👀</p>
             <ul>
