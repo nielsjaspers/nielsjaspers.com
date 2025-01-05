@@ -28,8 +28,8 @@
 
 @media (max-width: 768px) {
     .back-button {
-        bottom: 10px; /* Place it at the bottom of the screen */
-        left: 10px;   /* Keep it on the left side */
-        top: unset;   /* Remove the top positioning */
+        bottom: 10px; 
+        left: 10px;   
+        top: unset;   
     }
 }

@@ -12,7 +12,7 @@
         body {
             color: #ffffff;
             margin: 0;
-            background-color: #1a1a1a;
+            background-color: #556f7a;
             font-family: 'Space Mono', monospace;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -82,9 +82,13 @@
             font-variant-ligatures: none;
         }
 
+        #sib-container {
+            box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.4);
+        }
+
         #sib-container input:-ms-input-placeholder {
             text-align: left;
-            color: #c0ccda;
+            color: #2E6171;
             font-family: 'Space Mono', monospace;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -93,7 +97,7 @@
 
         #sib-container input::placeholder {
             text-align: left;
-            color: #c0ccda;
+            color: #2E6171;
             font-family: 'Space Mono', monospace;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -102,7 +106,7 @@
 
         #sib-container textarea::placeholder {
             text-align: left;
-            color: #c0ccda;
+            color: #2E6171;
             font-family: 'Space Mono', monospace;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -120,9 +124,8 @@
 
         /* Header Styling */
         header {
-            background-color: #282c34;
+            background: linear-gradient(to bottom, #2e6171 30%, rgba(46, 97, 113, 0) 100%);
             padding: 2px 0;
-            position: sticky;
             top: 0;
             z-index: 1000;
         }
@@ -165,7 +168,6 @@
         }
 
         nav ul li a:hover {
-            color: lightsalmon;
             text-decoration: none;
         }
 
@@ -174,7 +176,7 @@
         }
 
         nav ul li a.inactive:hover {
-            color: lightsalmon;
+            color: #d4afcd;
         }
 
         nav ul li a.active {
@@ -182,7 +184,7 @@
         }
 
         nav ul li a.active:hover {
-            color: lightsalmon;
+            color: #d4afcd;
         }
 
         @media (max-width: 600px) {
@@ -199,7 +201,7 @@
         /* Back Button Styling */
         .back-button {
             font-family: Space Mono;
-            background-color: #21252b;
+            background-color: #798086;
             border: none;
             border-radius: 20px;
             padding: 10px 20px;
@@ -222,7 +224,7 @@
         }
 
         .back-button:hover {
-            background-color: #383d47;
+            background-color: #b79fad;
         }
 
         @media (max-width: 768px) {
@@ -283,7 +285,7 @@
             </div>
             <div></div>
             <div id="sib-container" class="sib-container--large sib-container--vertical"
-                style="text-align:center; background-color:rgba(71,71,71,1); max-width:540px; border-radius:20px; border-width:0px; border-color:#C0CCD9; border-style:solid; direction:ltr">
+                style="text-align:center; background-color: #2E6171; max-width:540px; border-radius:20px; border-width:0px; border-color:#C0CCD9; border-style:solid; direction:ltr">
                 <form id="sib-form" method="POST"
                     action="https://23e067c8.sibforms.com/serve/MUIFADO9F6CH5plqhreDqVOqAM15oxuld6dZ54XhV2QCystDGn6EbErVC9wbOPO2jVbUcpa1DjJZWBG23pA461lbPaA4s0p79kxnuIqF91Zd7MQndTM6kKZ7Zuw33NzVjEXUHeDyYLXRcBV3MTYqzhHkZIt7fviirWomiN8yDY4yBts5y54juHy1FgVWyZsgqrGZ6kjwJgV1v_Vo"
                     data-type="subscription">
