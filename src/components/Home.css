@@ -1,13 +1,13 @@
 .language-toggle {
     position: fixed;
-    top: 5rem;
+    top: 1.5rem;
     right: 20px;
     z-index: 1000;
 }
 
 .toggle-button {
     font-family: Space Mono;
-    background-color: #21252b;
+    background-color: #798086;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
@@ -20,7 +20,7 @@
 }
 
 .toggle-button:hover {
-    background-color: #383d47;
+    background-color: #b79fad;
 }
 
 .toggle-button.active:hover {
@@ -34,4 +34,10 @@
 
 .toggle-button:focus {
     outline: none;
+}
+
+@media (max-width: 768px) {
+    .language-toggle {
+        top: 4rem
+    }
 }

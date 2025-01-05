@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
+import Footer from './Footer';
 import './Home.css'
 
 function Home() {
@@ -25,6 +26,7 @@ function Home() {
             <About language={language} />
             <Projects language={language} />
             <Contact language={language} />
+            <Footer />
         </div>
     );
 }

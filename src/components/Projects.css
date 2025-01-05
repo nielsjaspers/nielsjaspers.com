@@ -5,12 +5,13 @@
 }
 
 .project-card {
-    border: 1px solid #333333;
+    background-color: #2e6171;
     border-radius: 5px;
     overflow: hidden;
     transition: transform 0.3s ease;
     max-width: 600px;
     margin: 0 auto;
+    box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.4);
 }
 
 .project-card:hover {
@@ -34,11 +35,11 @@
 }
 
 .project-info h3 a {
-    color: #9ed7ff;
+    color: #798086;
     font-size: 32px;
     transition: color 0.2s ease;
 }
 
 .project-info h3 a:hover {
-    color: lightsalmon;
+    color: #d4afcd;
 }

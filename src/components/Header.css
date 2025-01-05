@@ -1,7 +1,6 @@
 header {
-    background-color: #282c34;
+    background: linear-gradient(to bottom, #2e6171 30%, rgba(46, 97, 113, 0) 100%);
     padding: 2px 0;
-    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -28,7 +27,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: lightsalmon;
+    color: #d4afcd;
     text-decoration: none;
 }
 
@@ -37,7 +36,7 @@ nav ul li a.inactive {
 }
 
 nav ul li a.inactive:hover {
-    color: lightsalmon;
+    color: #d4afcd;
 }
 
 nav ul li a.active {
@@ -45,7 +44,7 @@ nav ul li a.active {
 }
 
 nav ul li a.active:hover {
-    color: lightsalmon;
+    color: #d4afcd;
 }
 
 .separator {
