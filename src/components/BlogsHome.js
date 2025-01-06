@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './Footer'
+import { Link } from 'react-router-dom';
 
 function BlogsHome() {
     return (
@@ -19,25 +20,22 @@ function BlogsHome() {
             </h4>
             <br />
             <h3>Recent Blogs</h3>
-            <p>Coming Soon...👀</p>
-            <ul>
-                {/* <li><Link to="/blogs/test-blog">Placeholder Example 1</Link></li> */}
-                {/* <li><Link to="/blog/2">Placeholder Example 2</Link></li> */}
-            </ul>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+            <li><Link to="/blogs/starting-computer-science">What I Wish I Knew When I Got Into Computer Science</Link></li>
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <Footer />
         </div>
     );

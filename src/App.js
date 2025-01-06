@@ -5,7 +5,7 @@ import Home from './components/Home';
 import BlogsHome from './components/BlogsHome';
 import './App.css';
 
-const BlogPostTest = React.lazy(() => import('./blogs/BlogTest'));
+const Blog0 = React.lazy(() => import('./blogs/starting-computer-science'));
 
 function App() {
     return (
@@ -19,7 +19,7 @@ function App() {
                             <Route path="/blogs" element={<BlogsHome />} />
 
                             {/* Blogpost routing */}
-                            <Route path="/blogs/test-blog" element={<BlogPostTest />} />
+                            <Route path="/blogs/starting-computer-science" element={<Blog0 />} />
                         </Routes>
                     </Suspense>
                 </div>
