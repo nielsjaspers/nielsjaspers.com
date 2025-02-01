@@ -6,7 +6,7 @@ import './Header.css';
 function Header() {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
-    const isBlogPage = location.pathname === '/blogs';
+    const isBlogPage = location.pathname.startsWith('/blogs'); 
 
     return (
         <header>

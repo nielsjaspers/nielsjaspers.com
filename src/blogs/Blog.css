@@ -1,6 +1,6 @@
 .back-button {
     font-family: Space Mono;
-    background-color: #21252b;
+    background-color: #798086;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     position: fixed;
-    top: 5rem;
+    top: 1rem;
     left: 10px;
     z-index: 1000;
 }
@@ -23,7 +23,11 @@
 }
 
 .back-button:hover {
-    background-color: #383d47;
+    background-color: #b79fad;
+}
+
+.small {
+    font-size: 13px;
 }
 
 @media (max-width: 768px) {
