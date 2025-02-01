@@ -1,0 +1,9 @@
+.blogBannerImg {
+    border-radius: 16px;
+    width: 80%;
+}
+
+.bannerLinkText {
+    font-style: italic;
+    font-size: 10px;
+}
