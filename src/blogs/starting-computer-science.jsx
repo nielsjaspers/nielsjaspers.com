@@ -4,6 +4,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import Footer from '../components/Footer';
 import './Blog.css';
 import BlogBanner from '../components/BlogBanner';
+import bannerImage from '../images/first.jpg';
 
 function BlogTest() {
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ function BlogTest() {
             <h2>
                 What I Wish I Knew When I Got Into Computer Science.
             </h2>
-            <BlogBanner imgPath={require("../images/first.jpg")} linkText='Photo by Anni Roenkae' linkUrl='https://www.pexels.com/photo/photo-of-multicolored-illustration-2832382/'/>
+            <BlogBanner imgPath={bannerImage} linkText='Photo by Anni Roenkae' linkUrl='https://www.pexels.com/photo/photo-of-multicolored-illustration-2832382/'/>
             <p className='small'>
                 Niels Jaspers • January 6, 2025
             </p>
