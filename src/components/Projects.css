@@ -5,7 +5,7 @@
 }
 
 .project-card {
-    background-color: #2e6171;
+    background-color: #5c6b73;
     border-radius: 5px;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -35,11 +35,11 @@
 }
 
 .project-info h3 a {
-    color: #798086;
+    color: #9db4c0;
     font-size: 32px;
     transition: color 0.2s ease;
 }
 
 .project-info h3 a:hover {
-    color: #d4afcd;
+    color: #e0fbfc;
 }

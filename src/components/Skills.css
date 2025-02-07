@@ -6,7 +6,7 @@
 }
 
 .skill-category {
-    background-color: #2e6171;
+    background-color: #5c6b73;
     border-radius: 5px;
     padding: 15px;
     transition: background-color 0.3s ease;
@@ -15,13 +15,13 @@
 }
 
 .skill-category:hover {
-    background-color: rgba(46, 97, 113, 0.6);
+    background-color: #9db4c0;
 }
 
 .skill-category h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: #999999;
+    color: #c2dfe3;
     font-size: 1.1em;
 }
 
