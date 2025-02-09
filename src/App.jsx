@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import BlogsHome from './components/BlogsHome';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 const Blog0 = React.lazy(() => import('./blogs/starting-computer-science'));
@@ -10,6 +11,7 @@ const Blog0 = React.lazy(() => import('./blogs/starting-computer-science'));
 function App() {
     return (
         <Router>
+            <ScrollToTop />
             <div className="App">
                 <Header />
                 <div className="container">

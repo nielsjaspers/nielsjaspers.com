@@ -22,7 +22,7 @@ function BlogTest() {
             <h2>
                 What I Wish I Knew When I Got Into Computer Science.
             </h2>
-            <BlogBanner imgPath={bannerImage} linkText='Photo by Anni Roenkae' linkUrl='https://www.pexels.com/photo/photo-of-multicolored-illustration-2832382/'/>
+            <BlogBanner imgPath={bannerImage} linkText='Photo by Anni Roenkae' linkUrl='https://www.pexels.com/photo/photo-of-multicolored-illustration-2832382/' />
             <p className='small'>
                 Niels Jaspers • January 6, 2025
             </p>
