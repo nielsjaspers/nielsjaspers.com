@@ -7,7 +7,7 @@ function Projects({ language }) {
         en: [
             {
                 name: 'cli-sky',
-                image: '/assets/blue-sky.jpg',
+                image: '/assets/cli-sky-ascii.png',
                 github: 'https://github.com/nielsjaspers/cli-sky',
                 description:
                 'cli-sky is a project I am currently working on. It is a command-line tool, built with Go, for interacting with the social media platform Bluesky',
@@ -23,7 +23,7 @@ function Projects({ language }) {
         nl: [
             {
                 name: 'cli-sky',
-                image: '/assets/blue-sky.jpg',
+                image: '/assets/cli-sky-ascii.png',
                 github: 'https://github.com/nielsjaspers/cli-sky',
                 description:
                 'cli-sky is een project waaraan ik momenteel werk. Het is een command-line tool, gebouwd met Go, voor interactie met het sociale mediaplatform Bluesky.',
