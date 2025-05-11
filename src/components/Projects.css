@@ -43,3 +43,12 @@
 .project-info h3 a:hover {
     color: #e0fbfc;
 }
+
+.project-info h3 a.project-live-link {
+  color: inherit; 
+  transition: color 0.3s ease;
+}
+
+.project-info h3 a.project-live-link:hover {
+    color: #e0fbfc;
+}
