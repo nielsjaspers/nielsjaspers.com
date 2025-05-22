@@ -221,6 +221,18 @@ h2 {
   text-decoration: underline;
 }
 
+.contact-link {
+  color: #a3b5e1;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+.contact-link:hover,
+.contact-link:focus {
+  color: #6582CD;
+}
+
 @media (max-width: 600px) {
   header {
     padding: 16px 0 8px 0;
