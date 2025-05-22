@@ -168,36 +168,93 @@ h2 {
     transition: fill 0.2s;
 }
 
+.blog-preview {
+  margin-bottom: 36px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #ececec;
+}
+
+.blog-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 2px;
+}
+
+.blog-preview-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #404464;
+  margin: 0;
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.blog-preview-date {
+  font-size: 16px;
+  color: #b0b3c7;
+  white-space: nowrap;
+  text-align: right;
+  font-weight: 400;
+  margin-left: 12px;
+}
+
+.blog-preview-summary {
+  font-size: 18px;
+  color: #585D89;
+  margin: 0 0 8px 0;
+  text-align: left;
+}
+
+.blog-preview-link {
+  color: #a3b5e1;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+
+.blog-preview-link:hover,
+.blog-preview-link:focus {
+  color: #6582CD;
+  text-decoration: underline;
+}
+
 @media (max-width: 600px) {
-    header {
-        padding: 16px 0 8px 0;
-        margin-bottom: 24px;
-    }
-    nav {
-        gap: 18px;
-        padding-left: 12px;
-    }
-    main {
-        padding: 0 8px;
-    }
-    h1 {
-        font-size: 24px;
-    }
-    p,
-    li,
-    span,
-    div,
-    section,
-    article {
-        font-size: 17px;
-    }
-    .project-card {
-        padding: 14px 8px 12px 8px;
-    }
-    .project-card h2 {
-        font-size: 18px;
-    }
-    .project-card p {
-        font-size: 15px;
-    }
+  header {
+    padding: 16px 0 8px 0;
+    margin-bottom: 24px;
+  }
+  nav {
+    gap: 18px;
+    padding-left: 12px;
+  }
+  main {
+    padding: 0 8px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  p, li, span, div, section, article {
+    font-size: 17px;
+  }
+  .project-card {
+    padding: 14px 8px 12px 8px;
+  }
+  .project-card h2 {
+    font-size: 18px;
+  }
+  .project-card p {
+    font-size: 15px;
+  }
+  .blog-preview-title {
+    font-size: 18px;
+  }
+  .blog-preview-summary {
+    font-size: 15px;
+  }
+  .blog-preview-date {
+    font-size: 14px;
+  }
 }
