@@ -1,0 +1,18 @@
+.blog-cover-crop {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+.blog-cover-crop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 0;
+}
