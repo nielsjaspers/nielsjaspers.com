@@ -275,4 +275,38 @@ h2 {
   .blog-preview-date {
     font-size: 14px;
   }
+  footer.site-footer {
+    left: 8px;
+    bottom: 8px;
+    font-size: 14px;
+    padding: 0;
+  }
+  footer.site-footer span {
+    font-size: 14px;
+    color: #b0b3c7;
+  }
+}
+
+footer.site-footer {
+  position: fixed;
+  left: 24px;
+  bottom: 18px;
+  font-size: 14px;
+  color: #b0b3c7;
+  font-family: "Ancizar Serif", serif;
+  z-index: 100;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: 0.01em;
+}
+footer.site-footer span {
+  font-size: 14px;
+  color: #b0b3c7;
+}
+footer.site-footer .copyright-date {
+  font-variant-numeric: tabular-nums;
+  margin-left: 2px;
 }
