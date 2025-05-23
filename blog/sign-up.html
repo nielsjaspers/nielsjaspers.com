@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>niels jaspers - sign up</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../assets/style.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../home.html">home</a>
+                <a href="../projects.html">projects</a>
+                <a href="../blog.html">blog</a>
+                <a href="../contact.html">contact</a>
+            </nav>
+            <button
+                class="theme-toggle-btn"
+                id="theme-toggle-btn"
+                aria-label="Toggle dark mode"
+            >
+                <svg
+                    id="theme-toggle-icon"
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+                        fill="currentColor"
+                    />
+                </svg>
+            </button>
+        </header>
+        <main>
+            <div class="project-card" style="max-width: 540px">
+                <h1>newsletter sign-up</h1>
+                <p
+                    style="
+                        font-size: 18px;
+                        color: var(--text-secondary);
+                        margin-bottom: 18px;
+                    "
+                >
+                    subscribe to my newsletter and stay updated for new releases
+                    and other fun things.
+                </p>
+                <form
+                    id="sib-form"
+                    method="POST"
+                    action="https://23e067c8.sibforms.com/serve/MUIFADO9F6CH5plqhreDqVOqAM15oxuld6dZ54XhV2QCystDGn6EbErVC9wbOPO2jVbUcpa1DjJZWBG23pA461lbPaA4s0p79kxnuIqF91Zd7MQndTM6kKZ7Zuw33NzVjEXUHeDyYLXRcBV3MTYqzhHkZIt7fviirWomiN8yDY4yBts5y54juHy1FgVWyZsgqrGZ6kjwJgV1v_Vo"
+                    data-type="subscription"
+                    style="display: flex; flex-direction: column; gap: 18px"
+                >
+                    <label
+                        for="EMAIL"
+                        style="
+                            font-weight: 700;
+                            color: var(--heading);
+                            margin-bottom: 4px;
+                        "
+                    >
+                        enter your email address to subscribe
+                    </label>
+                    <input
+                        class="input"
+                        type="email"
+                        id="EMAIL"
+                        name="EMAIL"
+                        autocomplete="off"
+                        placeholder="e-mail"
+                        data-required="true"
+                        required
+                        style="
+                            padding: 10px 12px;
+                            border: 1px solid var(--border);
+                            border-radius: 6px;
+                            font-size: 18px;
+                            font-family: &quot;Ancizar Serif&quot;, serif;
+                            background: var(--card-bg);
+                            color: var(--text-main);
+                        "
+                    />
+                    <div
+                        style="
+                            font-size: 14px;
+                            color: var(--text-secondary);
+                            font-style: italic;
+                        "
+                    >
+                        i care a lot about privacy. your email address is only
+                        used by me to send you my newsletter. you can
+                        unsubscribe anytime using the link included in every
+                        email.
+                    </div>
+                    <label
+                        style="
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            font-size: 16px;
+                            color: var(--text-main);
+                        "
+                    >
+                        <input
+                            type="checkbox"
+                            value="1"
+                            id="OPT_IN"
+                            name="OPT_IN"
+                            required
+                            style="width: 18px; height: 18px"
+                        />
+                        i agree to receive your newsletters and accept the data
+                        privacy statement.
+                    </label>
+                    <div
+                        style="
+                            font-size: 13px;
+                            color: var(--footer);
+                            margin-bottom: 8px;
+                        "
+                    >
+                        i use Brevo as my marketing platform. by submitting this
+                        form you agree that the personal data you provided will
+                        be transferred to Brevo for processing in accordance
+                        with
+                        <a
+                            href="https://www.brevo.com/en/legal/privacypolicy/"
+                            target="_blank"
+                            style="color: var(--link)"
+                            >brevo's privacy policy</a
+                        >.
+                    </div>
+                    <div class="sib-captcha sib-form-block">
+                        <div class="form__entry entry_block">
+                            <div class="form__label-row">
+                                <script>
+                                    function handleCaptchaResponse() {
+                                        var event = new Event("captchaChange");
+                                        document
+                                            .getElementById("sib-captcha")
+                                            .dispatchEvent(event);
+                                        window.grecaptcha = window.turnstile;
+                                    }
+                                </script>
+                                <div
+                                    class="cf-turnstile g-recaptcha"
+                                    data-sitekey="0x4AAAAAAA4f_-xqklQWJYEj"
+                                    id="sib-captcha"
+                                    data-callback="handleCaptchaResponse"
+                                    data-language="en"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        type="submit"
+                        style="
+                            font-size: 18px;
+                            font-weight: 700;
+                            color: #fff;
+                            background: var(--link);
+                            border: none;
+                            border-radius: 6px;
+                            padding: 12px 0;
+                            cursor: pointer;
+                            transition: background 0.2s;
+                        "
+                    >
+                        subscribe
+                    </button>
+                    <input
+                        type="text"
+                        name="email_address_check"
+                        value=""
+                        class="input--hidden"
+                        style="display: none"
+                    />
+                    <input type="hidden" name="locale" value="en" />
+                </form>
+                <div
+                    id="success-message"
+                    style="
+                        display: none;
+                        font-size: 16px;
+                        color: #085229;
+                        background: #e7faf0;
+                        border-radius: 3px;
+                        padding: 10px;
+                        margin-top: 12px;
+                    "
+                >
+                    Please check your email inbox to confirm your subscription!
+                </div>
+                <div
+                    id="error-message"
+                    style="
+                        display: none;
+                        font-size: 16px;
+                        color: #661d1d;
+                        background: #ffeded;
+                        border-radius: 3px;
+                        padding: 10px;
+                        margin-top: 12px;
+                    "
+                >
+                    Your subscription could not be saved. Please try again.
+                </div>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <span id="copyright"></span>
+        </footer>
+        <script src="../assets/footer-date.js"></script>
+        <script src="../assets/dark-mode-toggle.js"></script>
+        <script
+            defer
+            src="https://sibforms.com/forms/end-form/build/main.js"
+        ></script>
+        <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+        ></script>
+        <script>
+            window.REQUIRED_CODE_ERROR_MESSAGE = "Please choose a country code";
+            window.LOCALE = "en";
+            window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE =
+                "The information provided is invalid. Please review the field format and try again.";
+            window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank. ";
+            window.GENERIC_INVALID_MESSAGE =
+                "The information provided is invalid. Please review the field format and try again.";
+            window.translation = {
+                common: {
+                    selectedList: "{quantity} list selected",
+                    selectedLists: "{quantity} lists selected",
+                },
+            };
+            var AUTOHIDE = Boolean(0);
+        </script>
+    </body>
+</html>
