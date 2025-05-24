@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>niels jaspers - blog</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="assets/style.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="home.html">home</a>
+                <a href="projects.html">projects</a>
+                <a href="blog.html">blog</a>
+                <a href="contact.html">contact</a>
+            </nav>
+            <button
+                class="theme-toggle-btn"
+                id="theme-toggle-btn"
+                aria-label="Toggle dark mode"
+            >
+                <svg
+                    id="theme-toggle-icon"
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <!-- Moon icon by default (light mode) -->
+                    <path
+                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+                        fill="currentColor"
+                    />
+                </svg>
+            </button>
+        </header>
+        <main>
+            <h1>blog</h1>
+            <p>
+                welcome to my blog page! here i'll share my insights, thoughts,
+                articles, and hot takes about the things i'm studying.
+            </p>
+            <!-- Start blog preview : what i wish i knew... -->
+            <div class="blog-preview">
+                <div class="blog-preview-header">
+                    <h2 class="blog-preview-title">
+                        what i wish i knew before i became a computer science
+                        student.
+                    </h2>
+                    <span class="blog-preview-date">06-01-2025</span>
+                </div>
+                <p class="blog-preview-summary">
+                    reflecting on my ongoing computer science studies, i
+                    realized that while the curriculum covered fundamentals, it
+                    often lacked practical application, and many peers relied on
+                    ai tools instead of truly learning. i now prioritize
+                    building real projects and independent learning, finding it
+                    a more rewarding way to develop problem-solving skills and
+                    advising new students to do the same.
+                </p>
+                <a
+                    href="./blog/what-i-wish-i-knew.html"
+                    class="blog-preview-link"
+                    >read more →</a
+                >
+            </div>
+            <!-- End blog preview : what i wish i knew... -->
+
+            <!-- Start blog preview : weaponizing procrastination. -->
+            <div class="blog-preview">
+                <div class="blog-preview-header">
+                    <h2 class="blog-preview-title">
+                        weaponizing procrastination.
+                    </h2>
+                    <span class="blog-preview-date">coming soon</span>
+                </div>
+                <p class="blog-preview-summary">
+                    procrastination is a common struggle for many students,
+                    including myself. however, i have found that by embracing
+                    procrastination and using it to my advantage, i can turn it
+                    into a powerful tool for productivity and creativity. in
+                    this post, i will share my personal experiences and
+                    strategies for weaponizing procrastination to achieve my
+                    goals.
+                </p>
+                <p class="blog-preview-summary">coming soon. 👀</p>
+                <!-- <a href="" class="blog-preview-link">read more →</a> -->
+            </div>
+            <!-- End blog preview : weaponizing procrastination. -->
+
+            <div class="newsletter-cta-card">
+                <p>
+                    want to stay up to date with new posts and updates?
+                    subscribe to the newsletter!
+                </p>
+                <a href="./blog/sign-up.html" class="newsletter-cta-btn">
+                    subscribe →
+                </a>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <span id="copyright-text"></span>
+        </footer>
+        <script src="assets/footer-date.js"></script>
+        <script src="assets/dark-mode-toggle.js"></script>
+    </body>
+</html>
