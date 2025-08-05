@@ -1,168 +1,154 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <script>
-        (function() {
-          var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-          document.documentElement.setAttribute('data-theme', theme);
+
+<head>
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
         })();
-        </script>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>niels jaspers - blog</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="assets/style.css" />
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="index.html">home</a>
-                <a href="projects.html">projects</a>
-                <a href="blog.html">blog</a>
-                <a href="contact.html">contact</a>
-            </nav>
-            <button
-                class="theme-toggle-btn"
-                id="theme-toggle-btn"
-                aria-label="Toggle dark mode"
-            >
-                <svg
-                    id="theme-toggle-icon"
-                    viewBox="0 0 24 24"
-                    width="22"
-                    height="22"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <!-- Moon icon by default (light mode) -->
-                    <path
-                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
-                        fill="currentColor"
-                    />
-                </svg>
-            </button>
-        </header>
-        <main>
-            <h1>blog</h1>
-            <p>
-                welcome to my blog page! here i'll share my insights, thoughts,
-                articles, and hot takes about the things i find interesting.
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>niels jaspers - blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">home</a>
+            <a href="projects.html">projects</a>
+            <a href="blog.html">blog</a>
+            <a href="contact.html">contact</a>
+        </nav>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
+            <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="22" height="22" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <!-- Moon icon by default (light mode) -->
+                <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" fill="currentColor" />
+            </svg>
+        </button>
+    </header>
+    <main>
+        <h1>blog</h1>
+        <p>
+            welcome to my blog page! here i'll share my insights, thoughts,
+            articles, and hot takes about the things i find interesting.
+        </p>
+
+        <!-- Start blog preview : a rant about education, building and motivation -->
+        <div class="blog-preview">
+            <div class="blog-preview-header">
+                <h2 class="blog-preview-title">
+                    a rant about education, building and motivation
+                </h2>
+                <span class="blog-preview-date">11-06-2025</span>
+            </div>
+            <p class="blog-preview-summary">
+                my computer science program in the netherlands is a major
+                regret. it's superficial, often requiring ai for projects
+                instead of teaching me to code. though i'm financially
+                trapped, i'm pushing through by self-learning and building
+                things, because creating is the only genuine and motivating
+                part of my programming journey.
             </p>
+            <a href="./blog/ranting-about-education.html" class="blog-preview-link">read more →</a>
+        </div>
+        <!-- End blog preview : a rant about education, building and motivation -->
 
-            <!-- Start blog preview : a rant about education, building and motivation -->
-            <div class="blog-preview">
-                <div class="blog-preview-header">
-                    <h2 class="blog-preview-title">
-                        a rant about education, building and motivation
-                    </h2>
-                    <span class="blog-preview-date">11-06-2025</span>
-                </div>
-                <p class="blog-preview-summary">
-                    my computer science program in the netherlands is a major
-                    regret. it's superficial, often requiring ai for projects
-                    instead of teaching me to code. though i'm financially
-                    trapped, i'm pushing through by self-learning and building
-                    things, because creating is the only genuine and motivating
-                    part of my programming journey.
-                </p>
-                <a
-                    href="./blog/ranting-about-education.html"
-                    class="blog-preview-link"
-                    >read more →</a
-                >
+        <!-- Start blog preview : ai is ruining the art of programming -->
+        <div class="blog-preview">
+            <div class="blog-preview-header">
+                <h2 class="blog-preview-title">
+                    ai is ruining the art of programming
+                </h2>
+                <span class="blog-preview-date">28-05-2025</span>
             </div>
-            <!-- End blog preview : a rant about education, building and motivation -->
+            <p class="blog-preview-summary">
+                a thought on the current ai hype, especially in programming.
+                while tools are making coding more accessible, i'm looking
+                at the potential downsides of "vibe coding" and how relying
+                too much on ai might affect the critical thinking and unique
+                problem-solving i see as the art of programming.
+            </p>
+            <a href="./blog/ai-is-ruining-the-art-of-programming.html" class="blog-preview-link">read more →</a>
+        </div>
+        <!-- End blog preview : ai is ruining the art of programming -->
 
-            <!-- Start blog preview : ai is ruining the art of programming -->
-            <div class="blog-preview">
-                <div class="blog-preview-header">
-                    <h2 class="blog-preview-title">
-                        ai is ruining the art of programming
-                    </h2>
-                    <span class="blog-preview-date">28-05-2025</span>
-                </div>
-                <p class="blog-preview-summary">
-                    a thought on the current ai hype, especially in programming.
-                    while tools are making coding more accessible, i'm looking
-                    at the potential downsides of "vibe coding" and how relying
-                    too much on ai might affect the critical thinking and unique
-                    problem-solving i see as the art of programming.
-                </p>
-                <a
-                    href="./blog/ai-is-ruining-the-art-of-programming.html"
-                    class="blog-preview-link"
-                    >read more →</a
-                >
+        <!-- Start blog preview : what i wish i knew... -->
+        <div class="blog-preview">
+            <div class="blog-preview-header">
+                <h2 class="blog-preview-title">
+                    what i wish i knew before i became a computer science
+                    student.
+                </h2>
+                <span class="blog-preview-date">06-01-2025</span>
             </div>
-            <!-- End blog preview : ai is ruining the art of programming -->
+            <p class="blog-preview-summary">
+                reflecting on my ongoing computer science studies, i
+                realized that while the curriculum covered fundamentals, it
+                often lacked practical application, and many peers relied on
+                ai tools instead of truly learning. i now prioritize
+                building real projects and independent learning, finding it
+                a more rewarding way to develop problem-solving skills and
+                advising new students to do the same.
+            </p>
+            <a href="./blog/what-i-wish-i-knew.html" class="blog-preview-link">read more →</a>
+        </div>
+        <!-- End blog preview : what i wish i knew... -->
 
-            <!-- Start blog preview : what i wish i knew... -->
-            <div class="blog-preview">
-                <div class="blog-preview-header">
-                    <h2 class="blog-preview-title">
-                        what i wish i knew before i became a computer science
-                        student.
-                    </h2>
-                    <span class="blog-preview-date">06-01-2025</span>
-                </div>
-                <p class="blog-preview-summary">
-                    reflecting on my ongoing computer science studies, i
-                    realized that while the curriculum covered fundamentals, it
-                    often lacked practical application, and many peers relied on
-                    ai tools instead of truly learning. i now prioritize
-                    building real projects and independent learning, finding it
-                    a more rewarding way to develop problem-solving skills and
-                    advising new students to do the same.
-                </p>
-                <a
-                    href="./blog/what-i-wish-i-knew.html"
-                    class="blog-preview-link"
-                    >read more →</a
-                >
+        <!-- Start blog preview : weaponizing procrastination. -->
+        <div class="blog-preview">
+            <div class="blog-preview-header">
+                <h2 class="blog-preview-title">
+                    weaponizing procrastination.
+                </h2>
+                <span class="blog-preview-date">coming soon</span>
             </div>
-            <!-- End blog preview : what i wish i knew... -->
+            <p class="blog-preview-summary">
+                procrastination is a common struggle for many students,
+                including myself. however, i have found that by embracing
+                procrastination and using it to my advantage, i can turn it
+                into a powerful tool for productivity and creativity. in
+                this post, i will share my personal experiences and
+                strategies for weaponizing procrastination to achieve my
+                goals.
+            </p>
+            <p class="blog-preview-summary">coming soon. 👀</p>
+            <!-- <a href="" class="blog-preview-link">read more →</a> -->
+        </div>
+        <!-- End blog preview : weaponizing procrastination. -->
 
-            <!-- Start blog preview : weaponizing procrastination. -->
-            <div class="blog-preview">
-                <div class="blog-preview-header">
-                    <h2 class="blog-preview-title">
-                        weaponizing procrastination.
-                    </h2>
-                    <span class="blog-preview-date">coming soon</span>
-                </div>
-                <p class="blog-preview-summary">
-                    procrastination is a common struggle for many students,
-                    including myself. however, i have found that by embracing
-                    procrastination and using it to my advantage, i can turn it
-                    into a powerful tool for productivity and creativity. in
-                    this post, i will share my personal experiences and
-                    strategies for weaponizing procrastination to achieve my
-                    goals.
-                </p>
-                <p class="blog-preview-summary">coming soon. 👀</p>
-                <!-- <a href="" class="blog-preview-link">read more →</a> -->
-            </div>
-            <!-- End blog preview : weaponizing procrastination. -->
+        <div class="newsletter-cta-card">
+            <p>
+                want to stay up to date with new posts and updates?
+                subscribe to the newsletter!
+            </p>
+            <a href="./blog/sign-up.html" class="newsletter-cta-btn">
+                subscribe →
+            </a>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <span id="copyright-text"></span>
+    </footer>
+    <script src="assets/footer-date.js"></script>
+    <script src="assets/dark-mode-toggle.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            !function (t, e) {var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) {function g(t, e) {var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () {t.push([e].concat(Array.prototype.slice.call(arguments, 0)))}} (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) {var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e}, u.people.toString = function () {return u.toString(1) + ".people (stub)"}, o = "init Re Cs Fs Pe Rs Ms capture Ve calculateEventProperties Ds register register_once register_for_session unregister unregister_for_session zs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty js As createPersonProfile Ns Is Us opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Os debug I Ls getPageViewId captureTraceFeedback captureTraceMetric".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a])}, e.__SV = 1)}(document, window.posthog || []);
+            posthog.init('phc_iH4zkP4Cmb1xinIF0KxeD1L7sng4qU8pLYnqYBUzDWO', {
+                api_host: 'https://eu.i.posthog.com',
+                defaults: '2025-05-24',
+                person_profiles: 'identified_only',
+            })
+        });
+    </script>
+</body>
 
-            <div class="newsletter-cta-card">
-                <p>
-                    want to stay up to date with new posts and updates?
-                    subscribe to the newsletter!
-                </p>
-                <a href="./blog/sign-up.html" class="newsletter-cta-btn">
-                    subscribe →
-                </a>
-            </div>
-        </main>
-        <footer class="site-footer">
-            <span id="copyright-text"></span>
-        </footer>
-        <script src="assets/footer-date.js"></script>
-        <script src="assets/dark-mode-toggle.js"></script>
-    </body>
 </html>
