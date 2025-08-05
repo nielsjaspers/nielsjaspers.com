@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <script>
+        (function() {
+          var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>niels jaspers - contact</title>
