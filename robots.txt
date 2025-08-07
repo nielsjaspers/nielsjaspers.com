@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.nielsjaspers.com/sitemap.xml
+
+# Disallow newsletter signup page from indexing
+Disallow: /blog/sign-up.html
