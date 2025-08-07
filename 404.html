@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="page not found. the page you're looking for doesn't exist or has been moved." />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="320x320" href="favicon-320x320.png">
+    <link rel="icon" type="image/png" sizes="1024x1024" href="favicon-1024x1024.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <title>404 - page not found | niels jaspers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+    <header>
+        <!-- <nav> -->
+        <!--     <a href="index.html">home</a> -->
+        <!--     <a href="projects.html">projects</a> -->
+        <!--     <a href="blog.html">blog</a> -->
+        <!--     <a href="contact.html">contact</a> -->
+        <!-- </nav> -->
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
+            <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="22" height="22" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" fill="currentColor" />
+            </svg>
+        </button>
+    </header>
+    <main>
+        <div class="about-me" style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <h1>404 - page not found</h1>
+            <p style="font-size: 18px; margin: 24px 0;">
+                looks like the page you're looking for doesn't exist or has been moved.
+            </p>
+            <p>
+                maybe you'll find what you're looking for on one of these pages:
+            </p>
+            <div style="margin: 32px 0;">
+                <a href="index.html" style="display: inline-block; margin: 8px 16px; color: var(--link); text-decoration: none; font-weight: 500;">home</a>
+                <a href="blog.html" style="display: inline-block; margin: 8px 16px; color: var(--link); text-decoration: none; font-weight: 500;">blog</a>
+                <a href="projects.html" style="display: inline-block; margin: 8px 16px; color: var(--link); text-decoration: none; font-weight: 500;">projects</a>
+                <a href="contact.html" style="display: inline-block; margin: 8px 16px; color: var(--link); text-decoration: none; font-weight: 500;">contact</a>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <span id="copyright"></span>
+    </footer>
+    <script src="assets/footer-date.js"></script>
+    <script src="assets/dark-mode-toggle.js"></script>
+</body>
+</html>
