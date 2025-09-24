@@ -1,302 +1,303 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <script>
-        (function() {
-          var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-          document.documentElement.setAttribute('data-theme', theme);
+
+<head>
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
         })();
-        </script>
-        <meta charset="UTF-8" />
+    </script>
+    <meta charset="UTF-8" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="320x320" href="favicon-320x320.png">
     <link rel="icon" type="image/png" sizes="1024x1024" href="favicon-1024x1024.png">
-        <meta name="description" content="open-source projects by niels jaspers. explore file-sharing tools, cli applications, and web utilities built with go, typescript, and more. creating > consuming." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://www.nielsjaspers.com/projects.html" />
-        <meta name="robots" content="index, follow" />
-        <title>projects | niels jaspers – open-source tools, experiments, and more</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="assets/style.css" />
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="index.html">home</a>
-                <a href="projects.html">projects</a>
-                <a href="blog.html">blog</a>
-                <a href="contact.html">contact</a>
-            </nav>
-            <button
-                class="theme-toggle-btn"
-                id="theme-toggle-btn"
-                aria-label="Toggle dark mode"
-            >
-                <svg
-                    id="theme-toggle-icon"
-                    viewBox="0 0 24 24"
-                    width="22"
-                    height="22"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <!-- Moon icon by default (light mode) -->
-                    <path
-                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
-                        fill="currentColor"
-                    />
-                </svg>
-            </button>
-        </header>
-        <main>
-            <h1>projects</h1>
-            <p>here you'll find a selection of projects. more coming soon!</p>
+    <meta name="description"
+        content="open-source projects by niels jaspers. explore file-sharing tools, cli applications, and web utilities built with go, typescript, and more. creating > consuming." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://www.nielsjaspers.com/projects.html" />
+    <meta name="robots" content="index, follow" />
+    <title>projects | niels jaspers – open-source tools, experiments, and more</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
 
-            <!-- Start project card : at-transfer -->
-            <div class="project-card">
-                <h2>at-transfer</h2>
-                <p>
-                    a simple peer-to-peer file transfer tool built on top of the
-                    AT Protocol. you can log in with your bluesky app password
-                    and send files to other users.
-                    <br />
-                    because peer-to-peer is very restricted on certain networks
-                    (mostly mobile networks and protected business networks),
-                    this tool is not very useful in practice, only being
-                    reliable on local networks. but it was a fun experiment to
-                    see how the AT Protocol could be used combined with
-                    peer-to-peer technologies for file transfer.
-                    <br />
-                    check out the link below to try it out!
-                </p>
-                <div class="project-links">
-                    <a
-                        href="https://github.com/nielsjaspers/at-transfer"
-                        target="_blank"
-                        title="GitHub"
-                        class="project-link-gh"
-                        style="margin-right: 10px"
-                    >
-                        <svg
-                            height="20"
-                            width="20"
-                            viewBox="0 0 16 16"
-                            xmlns="http://www.w3.org/2000/svg"
-                            style="vertical-align: middle"
-                        >
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+<body>
+    <header>
+        <nav>
+            <a href="index.html">home</a>
+            <a href="projects.html">projects</a>
+            <a href="blog.html">blog</a>
+            <a href="contact.html">contact</a>
+        </nav>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
+            <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="22" height="22" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <!-- Moon icon by default (light mode) -->
+                <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" fill="currentColor" />
+            </svg>
+        </button>
+    </header>
+    <main>
+        <h1>projects</h1>
+        <p>here you'll find a selection of projects. more coming soon!</p>
+
+        <!-- Start project card : freeflow -->
+        <div class="project-card">
+            <h2>freeflow</h2>
+            <p>
+                freeflow is a simple space for unfiltered writing.
+                it supports timers for timed writing sessions. no styling, no fancy features - just undistracted
+                writing.
+                <br />
+                there is no signing in, so everything just stays on device.
+                <br />
+                check out the link below to try it out!
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/nielsjaspers/freeflow" target="_blank" title="GitHub"
+                    class="project-link-gh" style="margin-right: 10px">
+                    <svg height="20" width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                        style="vertical-align: middle">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
             0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
             -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
             -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64
             -.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
             2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
-            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                            />
-                        </svg>
-                    </a>
-                    <a
-                        href="https://at-transfer.nielsjaspers.com"
-                        target="_blank"
-                        title="Visit site"
-                        class="project-link-site"
-                        style="
+            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+                <a href="https://freeflow.nielsjaspers.com" target="_blank" title="Visit site" class="project-link-site"
+                    style="
                             font-size: 18px;
                             color: #a3b5e1;
                             text-decoration: none;
-                        "
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            class="bi bi-box-arrow-up-right"
-                            viewBox="0 0 16 16"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                            />
-                            <path
-                                fill-rule="evenodd"
-                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                            />
-                        </svg>
-                    </a>
-                </div>
+                        ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-box-arrow-up-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+                        <path fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
+                    </svg>
+                </a>
             </div>
-            <!-- End project card : at-transfer -->
+        </div>
+        <!-- End project card : freeflow -->
 
-            <!-- Start project card : cli-sky -->
-            <div class="project-card">
-                <h2>cli-sky</h2>
-                <p>
-                    cli-sky is a command-line tool made with go that allows you
-                    to interact with the social media platform bluesky. cli-sky
-                    has since been archived, but it was a fun project to test
-                    out the AT Protocol and see how it could be used in a
-                    command-line tool.
-                    <br />
-                    it currently supports logging in (creating a session),
-                    renewing your session, and posting, all with simple
-                    commands.
-                </p>
-                <div class="project-links">
-                    <a
-                        href="https://github.com/nielsjaspers/cli-sky"
-                        target="_blank"
-                        title="GitHub"
-                        class="project-link-gh"
-                    >
-                        <svg
-                            height="20"
-                            width="20"
-                            viewBox="0 0 16 16"
-                            xmlns="http://www.w3.org/2000/svg"
-                            style="vertical-align: middle"
-                        >
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+        <!-- Start project card : manipic -->
+        <div class="project-card">
+            <h2>manipic</h2>
+            <p>
+                manipic is a set of image manipulation utils, inspired by quickpic.
+                i built it because i needed a tool for specific image manipulation tasks.
+                nothing fancy, but just enough for my needs.
+                <br />
+                check out the link below to try it out!
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/nielsjaspers/manipic" target="_blank" title="GitHub" class="project-link-gh"
+                    style="margin-right: 10px">
+                    <svg height="20" width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                        style="vertical-align: middle">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
             0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
             -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
             -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64
             -.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
             2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
-            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                            />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <!-- End project card : cli-sky -->
-
-            <!-- Start project card : cls  -->
-            <div class="project-card">
-                <h2>cls (command line share)</h2>
-                <p>
-                    my first attempt at a command line tool.
-                    <br />
-                    cls is a fast and secure file sharing cli tool. it's built
-                    with go and utilizes TLS for quick and private file
-                    transfers on a local network.
-                </p>
-                <div class="project-links">
-                    <a
-                        href="https://github.com/nielsjaspers/cls"
-                        target="_blank"
-                        title="GitHub"
-                        class="project-link-gh"
-                    >
-                        <svg
-                            height="20"
-                            width="20"
-                            viewBox="0 0 16 16"
-                            xmlns="http://www.w3.org/2000/svg"
-                            style="vertical-align: middle"
-                        >
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
-            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
-            -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
-            -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64
-            -.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
-            2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
-            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                            />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <!-- End project card : cls -->
-
-            <!-- Start project card : gradient background generator -->
-            <div class="project-card">
-                <h2>gradient background generator</h2>
-                <p>
-                    i needed some gradient backgrounds, so i made a tool for it.
-                    it's made with html, css and typescript, and runs fully
-                    on-device.
-                    <br />
-                    not much to say about it. it just generates custom
-                    gradients.
-                </p>
-                <div class="project-links">
-                    <a
-                        href="https://github.com/nielsjaspers/gradient-bg-generator"
-                        target="_blank"
-                        title="GitHub"
-                        class="project-link-gh"
-                    >
-                        <svg
-                            height="20"
-                            width="20"
-                            viewBox="0 0 16 16"
-                            xmlns="http://www.w3.org/2000/svg"
-                            style="vertical-align: middle"
-                        >
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
-            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
-            -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
-            -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64
-            -.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
-            2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
-            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                            />
-                        </svg>
-                    </a>
-                    <a
-                        href="https://gradient.nielsjaspers.com"
-                        target="_blank"
-                        title="Visit site"
-                        class="project-link-site"
-                        style="
+            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+                <a href="https://manipic.nielsjaspers.com" target="_blank" title="Visit site" class="project-link-site"
+                    style="
                             font-size: 18px;
                             color: #a3b5e1;
                             text-decoration: none;
-                        "
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            class="bi bi-box-arrow-up-right"
-                            viewBox="0 0 16 16"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"
-                            />
-                            <path
-                                fill-rule="evenodd"
-                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"
-                            />
-                        </svg>
-                    </a>
-                </div>
+                        ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-box-arrow-up-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+                        <path fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
+                    </svg>
+                </a>
             </div>
-            <!-- End project card : gradient background generator -->
-        </main>
-        <footer class="site-footer">
-            <span id="copyright"></span>
-        </footer>
-        <script src="assets/footer-date.js"></script>
-        <script src="assets/dark-mode-toggle.js"></script>
-        <script>
-window.addEventListener('DOMContentLoaded', function() {
-    !function (t, e) {var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) {function g(t, e) {var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () {t.push([e].concat(Array.prototype.slice.call(arguments, 0)))} } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) {var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e}, u.people.toString = function () {return u.toString(1) + ".people (stub)"}, o = "init Re Cs Fs Pe Rs Ms capture Ve calculateEventProperties Ds register register_once register_for_session unregister unregister_for_session zs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty js As createPersonProfile Ns Is Us opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Os debug I Ls getPageViewId captureTraceFeedback captureTraceMetric".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a])}, e.__SV = 1)}(document, window.posthog || []);
-    posthog.init('phc_iH4zkP4Cmb1xinIF0KxeD1L7sng4qU8pLYnqYBUzDWO', {
-        api_host: 'https://eu.i.posthog.com',
-        defaults: '2025-05-24',
-        person_profiles: 'identified_only',
-    })
-});
-</script>
-    </body>
+        </div>
+        <!-- End project card : manipic -->
+
+        <!-- Start project card : at-transfer -->
+        <div class="project-card">
+            <h2>at-transfer</h2>
+            <p>
+                a simple peer-to-peer file transfer tool built on top of the
+                AT Protocol. you can log in with your bluesky app password
+                and send files to other users.
+                <br />
+                because peer-to-peer is very restricted on certain networks
+                (mostly mobile networks and protected business networks),
+                this tool is not very useful in practice, only being
+                reliable on local networks. but it was a fun experiment to
+                see how the AT Protocol could be used combined with
+                peer-to-peer technologies for file transfer.
+                <br />
+                check out the link below to try it out!
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/nielsjaspers/at-transfer" target="_blank" title="GitHub"
+                    class="project-link-gh" style="margin-right: 10px">
+                    <svg height="20" width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                        style="vertical-align: middle">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+            -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
+            -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64
+            -.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
+            2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
+            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+                <a href="https://at-transfer.nielsjaspers.com" target="_blank" title="Visit site"
+                    class="project-link-site" style="
+                            font-size: 18px;
+                            color: #a3b5e1;
+                            text-decoration: none;
+                        ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-box-arrow-up-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+                        <path fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- End project card : at-transfer -->
+
+        <!-- Start project card : cli-sky -->
+        <div class="project-card">
+            <h2>cli-sky</h2>
+            <p>
+                cli-sky is a command-line tool made with go that allows you
+                to interact with the social media platform bluesky. cli-sky
+                has since been archived, but it was a fun project to test
+                out the AT Protocol and see how it could be used in a
+                command-line tool.
+                <br />
+                it currently supports logging in (creating a session),
+                renewing your session, and posting, all with simple
+                commands.
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/nielsjaspers/cli-sky" target="_blank" title="GitHub"
+                    class="project-link-gh">
+                    <svg height="20" width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                        style="vertical-align: middle">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+            -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
+            -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64
+            -.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
+            2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
+            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- End project card : cli-sky -->
+
+        <!-- Start project card : cls  -->
+        <div class="project-card">
+            <h2>cls (command line share)</h2>
+            <p>
+                my first attempt at a command line tool.
+                <br />
+                cls is a fast and secure file sharing cli tool. it's built
+                with go and utilizes TLS for quick and private file
+                transfers on a local network.
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/nielsjaspers/cls" target="_blank" title="GitHub" class="project-link-gh">
+                    <svg height="20" width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                        style="vertical-align: middle">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+            -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
+            -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64
+            -.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
+            2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
+            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- End project card : cls -->
+
+        <!-- Start project card : gradient background generator -->
+        <div class="project-card">
+            <h2>gradient background generator</h2>
+            <p>
+                i needed some gradient backgrounds, so i made a tool for it.
+                it's made with html, css and typescript, and runs fully
+                on-device.
+                <br />
+                not much to say about it. it just generates custom
+                gradients.
+            </p>
+            <div class="project-links">
+                <a href="https://github.com/nielsjaspers/gradient-bg-generator" target="_blank" title="GitHub"
+                    class="project-link-gh">
+                    <svg height="20" width="20" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                        style="vertical-align: middle">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+            -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2
+            -3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64
+            -.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08
+            2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01
+            1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                </a>
+                <a href="https://gradient.nielsjaspers.com" target="_blank" title="Visit site" class="project-link-site"
+                    style="
+                            font-size: 18px;
+                            color: #a3b5e1;
+                            text-decoration: none;
+                        ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-box-arrow-up-right"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5" />
+                        <path fill-rule="evenodd"
+                            d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <!-- End project card : gradient background generator -->
+    </main>
+    <footer class="site-footer">
+        <span id="copyright"></span>
+    </footer>
+    <script src="assets/footer-date.js"></script>
+    <script src="assets/dark-mode-toggle.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            !function (t, e) {var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) {function g(t, e) {var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () {t.push([e].concat(Array.prototype.slice.call(arguments, 0)))}} (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) {var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e}, u.people.toString = function () {return u.toString(1) + ".people (stub)"}, o = "init Re Cs Fs Pe Rs Ms capture Ve calculateEventProperties Ds register register_once register_for_session unregister unregister_for_session zs getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty js As createPersonProfile Ns Is Us opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Os debug I Ls getPageViewId captureTraceFeedback captureTraceMetric".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a])}, e.__SV = 1)}(document, window.posthog || []);
+            posthog.init('phc_iH4zkP4Cmb1xinIF0KxeD1L7sng4qU8pLYnqYBUzDWO', {
+                api_host: 'https://eu.i.posthog.com',
+                defaults: '2025-05-24',
+                person_profiles: 'identified_only',
+            })
+        });
+    </script>
+</body>
+
 </html>
