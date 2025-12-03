@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+        (function() {
+          var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
+        <link rel="icon" type="image/png" sizes="320x320" href="../favicon-320x320.png">
+        <link rel="icon" type="image/png" sizes="1024x1024" href="../favicon-1024x1024.png">
+        <meta name="description" content="advent of code 2025 day 1: secret entrance. a lesson about testing, debugging, and how bugs can cancel each other out." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://www.nielsjaspers.com/blog/advent-of-code-2025-day-1.html" />
+        <meta name="robots" content="index, follow" />
+        
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Advent of Code 2025 - Day 1: Secret Entrance",
+            "description": "Day 1 kicked off this year's Advent of Code with a deceptively simple puzzle that taught me a painful lesson about testing.",
+            "author": {
+                "@type": "Person",
+                "name": "Niels Jaspers",
+                "url": "https://www.nielsjaspers.com"
+            },
+            "publisher": {
+                "@type": "Person",
+                "name": "Niels Jaspers",
+                "url": "https://www.nielsjaspers.com"
+            },
+            "datePublished": "2025-01-01",
+            "dateModified": "2025-01-01",
+            "url": "https://www.nielsjaspers.com/blog/advent-of-code-2025-day-1.html",
+            "mainEntityOfPage": "https://www.nielsjaspers.com/blog/advent-of-code-2025-day-1.html",
+            "keywords": ["Advent of Code", "Programming", "Debugging", "Testing", "PHP"],
+            "articleSection": "Programming",
+            "inLanguage": "en"
+        }
+        </script>
+        
+        <!-- Open Graph and Twitter Card tags -->
+        <meta property="og:title" content="Advent of Code 2025 - Day 1: Secret Entrance | Niels Jaspers Blog" />
+        <meta property="og:description" content="Day 1 kicked off this year's Advent of Code with a deceptively simple puzzle that taught me a painful lesson about testing." />
+        <meta property="og:image" content="https://www.nielsjaspers.com/favicon-1024x1024.png" />
+        <meta property="og:url" content="https://www.nielsjaspers.com/blog/advent-of-code-2025-day-1.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Niels Jaspers" />
+        <meta property="article:published_time" content="2025-01-01" />
+        <meta property="article:author" content="Niels Jaspers" />
+        
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Advent of Code 2025 - Day 1: Secret Entrance" />
+        <meta name="twitter:description" content="Day 1 kicked off this year's Advent of Code with a deceptively simple puzzle that taught me a painful lesson about testing." />
+        <meta name="twitter:image" content="https://www.nielsjaspers.com/favicon-1024x1024.png" />
+        <meta name="twitter:site" content="@_nielsjaspers" />
+        <title>advent of code 2025 - day 1: secret entrance | niels jaspers blog</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../assets/style.css" />
+        <link rel="stylesheet" href="../assets/blog.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../index.html">home</a>
+                <a href="../projects.html">projects</a>
+                <a href="../blog.html">blog</a>
+                <a href="../contact.html">contact</a>
+            </nav>
+            <button
+                class="theme-toggle-btn"
+                id="theme-toggle-btn"
+                aria-label="Toggle dark mode"
+            >
+                <svg
+                    id="theme-toggle-icon"
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+                        fill="currentColor"
+                    />
+                </svg>
+            </button>
+        </header>
+        <main>
+            <div class="blog-content">
+                <h1>Advent of Code 2025 - Day 1: Secret Entrance</h1>
+                <div style="margin-bottom: 18px" class="blog-cover-crop">
+                    <img src="assets/gradient-background-1920x1080-cdpV98O1.webp" alt="multicolored illustration"
+                        loading="lazy" style="
+                                 max-width: 100%;
+                                 border-radius: 12px;
+                                 box-shadow: 0 2px 8px 0 rgba(60, 64, 91, 0.07);
+                                 margin-bottom: 8px;
+                             " />
+                </div>
+                <p
+                    style="
+                        color: #b0b3c7;
+                        font-size: 16px;
+                        margin-top: -12px;
+                        margin-bottom: 24px;
+                    "
+                >
+                    niels jaspers • january 1, 2025
+                </p>
+                <p>
+                    This is an ongoing series of posts about my experiences solving the <a href="https://adventofcode.com/2025">Advent of Code 2025</a> puzzles.
+                    This year, I'm doing a showdown with my good friend <a href="https://www.github.com/levi-ivel">Levi</a>. Since AoC is twelve days long this year, we'll be solving the puzzles in twelve different languages.
+                </p>
+                <p>
+                    Day 1 kicked off this year's Advent of Code in PHP with a deceptively simple puzzle that taught me a painful lesson about testing.
+                </p>
+                
+                <h2>The Problem</h2>
+                
+                <p>
+                    You're trying to crack a safe with a circular dial numbered 0-99. You get a list of rotation instructions like <code>L68</code> (rotate left 68 clicks) or <code>R48</code> (rotate right 48 clicks). The dial starts at 50.
+                </p>
+                
+                <p>
+                    <strong>Part 1</strong> asks: how many times does the dial land on 0 after a rotation?
+                </p>
+                
+                <p>
+                    <strong>Part 2</strong> ups the ante: how many times does the dial <em>point at</em> 0, whether during a rotation or at the end of one? Oh, and some rotations are massive, like <code>R1000</code>, which would cross 0 ten times.
+                </p>
+                
+                <h2>Part 1: Straightforward Modular Arithmetic</h2>
+                
+                <p>
+                    Part 1 was pretty clean. The dial is circular, so it's just modular arithmetic. Move right, add ticks. Move left, subtract ticks. Wrap around using mod 100. Check if we landed on 0.
+                </p>
+                
+                <p>
+                    My first pass used separate <code>upperBound</code> and <code>lowerBound</code> functions to handle the wrapping:
+                </p>
+                
+                <pre><code class="language-php">function upperBound($tot, $ticks) {
+    if ($tot + $ticks > 99) {
+        return $tot + $ticks - 100;
+    }
+    return $tot + $ticks;
+}
+
+function lowerBound($tot, $ticks) {
+    if ($tot - $ticks < 0) {
+        return $tot - $ticks + 100;
+    }
+    return $tot - $ticks;
+}</code></pre>
+                
+                <p>
+                    Then I just checked <code>if ($total === 0)</code> after each move. Worked fine.
+                </p>
+                
+                <p>
+                    The optimized version collapsed everything into a tight loop:
+                </p>
+                
+                <pre><code class="language-php">foreach ($lines as $line) {
+    $ticks = (int)substr($line, 1);
+    $ticks = $ticks % 100;
+
+    $total = ($line[0] === 'R')
+        ? ($total + $ticks) % 100
+        : ($total - $ticks + 100) % 100;
+
+    if ($total === 0) {
+        $count++;
+    }
+}</code></pre>
+                
+                <p>
+                    Nothing fancy. On to Part 2.
+                </p>
+                
+                <h2>Part 2: Where Everything Went Wrong</h2>
+                
+                <p>
+                    Part 2 seemed like a natural extension. Instead of just counting when we <em>land</em> on 0, count every time we <em>cross</em> 0 during rotation. Plus handle large inputs like <code>R1000</code> that cross multiple times.
+                </p>
+                
+                <p>
+                    My approach:
+                </p>
+                <ul>
+                    <li>Use <code>intdiv($ticks, 100)</code> to count how many full rotations (each crosses 0 once)</li>
+                    <li>Check if we crossed the boundary during the remaining partial rotation</li>
+                </ul>
+                
+                <p>
+                    For the right direction, this was easy: if <code>$tot + $ticks > 99</code>, we crossed from 99 back to 0.
+                </p>
+                
+                <p>
+                    For the left direction, I wrote: if <code>$tot - $ticks < 0</code>, we crossed from 0 to 99.
+                </p>
+                
+                <p>
+                    I ran it on the test input. Expected answer: 6. My answer: 6.
+                </p>
+                
+                <p>
+                    I ran it on the real input. Wrong. Too low.
+                </p>
+                
+                <p>
+                    Okay, maybe I'm missing the case where we land exactly on 0? I added checks for <code>$tot - $ticks === 0</code> and <code>$tot + $ticks === 100</code>.
+                </p>
+                
+                <p>
+                    Test input: 8. That's too high now.
+                </p>
+                
+                <p>
+                    Real input: Also too high.
+                </p>
+                
+                <p>
+                    So the answer is somewhere between my two implementations, and I have no idea why the test case passes with the "wrong" code.
+                </p>
+                
+                <h2>The Debugging Rabbit Hole</h2>
+                
+                <p>
+                    I added debug output to trace every move:
+                </p>
+                
+                <pre><code class="language-text">Direction: L, Ticks: 5, Total: 0
+Passed 0!!
+Lower bound: 95</code></pre>
+                
+                <p>
+                    Wait. I'm <em>starting</em> at 0 and going left. Why is that triggering "Passed 0!!"?
+                </p>
+                
+                <p>
+                    Because <code>0 - 5 = -5</code>, and <code>-5 < 0</code> is true. But I didn't <em>cross</em> 0, I <em>left</em> from 0. That shouldn't count.
+                </p>
+                
+                <p>
+                    Then I looked at another case:
+                </p>
+                
+                <pre><code class="language-text">Direction: L, Ticks: 55, Total: 55
+Lower bound: 0</code></pre>
+                
+                <p>
+                    Here I go from 55 to exactly 0. No "Passed 0!!" message. But according to the problem, landing on 0 <em>should</em> count.
+                </p>
+                
+                <p>
+                    And that's when it hit me.
+                </p>
+                
+                <h2>Two Bugs That Cancel Out</h2>
+                
+                <p>
+                    My test input gave the correct answer of 6, but not because my code was correct. I had two bugs:
+                </p>
+                
+                <p>
+                    <strong>Bug 1 (false positives):</strong> When starting at 0 and going left, my <code>&lt; 0</code> check fires incorrectly. The test data had two of these cases.
+                </p>
+                
+                <p>
+                    <strong>Bug 2 (false negatives):</strong> When landing exactly on 0 from above (like 55 - 55 = 0), my <code>&lt; 0</code> check doesn't fire. The test data also had two of these cases.
+                </p>
+                
+                <p>
+                    Two false positives. Two false negatives. They canceled out perfectly on the test data, giving me 6.
+                </p>
+                
+                <p>
+                    On the real dataset with thousands of operations, they didn't cancel out. The bugs compounded differently, giving me wrong answers in both directions depending on which "fix" I applied.
+                </p>
+                
+                <h2>The Actual Fix</h2>
+                
+                <p>
+                    The solution was to separate the <em>counting</em> logic from the <em>wrapping</em> logic. They're not the same condition:
+                </p>
+                
+                <ul>
+                    <li><strong>Count</strong> when: we started above 0 AND ended at or below 0</li>
+                    <li><strong>Wrap</strong> when: the result is negative</li>
+                </ul>
+                
+                <pre><code class="language-php">function lowerBound($tot, $ticks) {
+    global $count;
+    $result = $tot - $ticks;
+    
+    if ($tot > 0 && $result <= 0) {
+        $count++;
+    }
+    
+    if ($result < 0) {
+        return $result + 100;
+    }
+    return $result;
+}</code></pre>
+                
+                <p>
+                    The key insight is that <code>$tot > 0</code> excludes the "starting at 0" case, and <code>$result <= 0</code> catches both crossing through 0 and landing exactly on 0.
+                </p>
+                
+                <p>
+                    Interestingly, the <code>upperBound</code> function didn't need this fix. When you're at 0 and go right, <code>0 + ticks</code> is never going to trigger <code>&gt; 99</code> for small ticks, so the false positive case doesn't exist. The asymmetry in the problem naturally made one direction easier than the other.
+                </p>
+                
+                <h2>Final Optimized Solution</h2>
+                
+                <pre><code class="language-php">foreach ($lines as $line) {
+    $ticks = (int)substr($line,1);
+    $f = intdiv($ticks,100);
+    $count += $f;
+
+    $ticks = $ticks % 100;
+
+    if ($line[0] === 'R') {
+        $new = $total + $ticks;
+        $count += intdiv($new, 100);  // 1 if crossed, 0 if not
+        $total = $new % 100;
+    } else {
+        $new = $total - $ticks;
+        if ($total > 0 && $new <= 0) $count++;
+        $total = ($new % 100 + 100) % 100;
+    }
+}</code></pre>
+                
+                <p>
+                    The right-direction case got even cleaner: <code>intdiv($new, 100)</code> returns 1 if we crossed (value >= 100) and 0 if we didn't. No conditional needed.
+                </p>
+                
+                <h2>Lessons Learned</h2>
+                
+                <p>
+                    <strong>Test cases can lie to you.</strong> A passing test doesn't mean correct code. It means your code produces the expected output for that specific input. If you have bugs that happen to cancel out, you'll never know until you hit data where they don't.
+                </p>
+                
+                <p>
+                    <strong>Trace your edge cases manually.</strong> I should have walked through "what happens when I start at 0?" before ever running the code. The bug was obvious once I looked at it that way.
+                </p>
+                
+                <p>
+                    <strong>Counting and transformation are separate concerns.</strong> My original code tried to do both in one conditional, which muddied the logic. Splitting them made the fix obvious.
+                </p>
+                
+                <p>
+                    Not a bad start to AoC 2025. Onward to Day 2.
+                </p>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <span id="copyright"></span>
+        <script src="../assets/footer-date.js"></script>
+        <script src="../assets/dark-mode-toggle.js"></script>
+        <!-- Prism.js for syntax highlighting -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    </footer>
+
+    </body></html>

@@ -1,24 +1,26 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <script>
-        (function() {
-          var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-          document.documentElement.setAttribute('data-theme', theme);
+
+<head>
+    <script>
+        (function () {
+            var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
         })();
-        </script>
-        <meta charset="UTF-8" />
-        <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
-        <link rel="icon" type="image/png" sizes="320x320" href="../favicon-320x320.png">
-        <link rel="icon" type="image/png" sizes="1024x1024" href="../favicon-1024x1024.png">
-        <meta name="description" content="exploring how ai and 'vibe coding' might be eroding the art of programming. why relying on ai tools could harm critical thinking and problem-solving skills in software development." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://www.nielsjaspers.com/blog/ai-is-ruining-the-art-of-programming.html" />
-        <meta name="robots" content="index, follow" />
-        
-        <!-- JSON-LD Structured Data -->
-        <script type="application/ld+json">
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="320x320" href="../favicon-320x320.png">
+    <link rel="icon" type="image/png" sizes="1024x1024" href="../favicon-1024x1024.png">
+    <meta name="description"
+        content="exploring how ai and 'vibe coding' might be eroding the art of programming. why relying on ai tools could harm critical thinking and problem-solving skills in software development." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href="https://www.nielsjaspers.com/blog/ai-is-ruining-the-art-of-programming.html" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
@@ -43,275 +45,257 @@
             "inLanguage": "en"
         }
         </script>
-        
-        <!-- Open Graph and Twitter Card tags -->
-        <meta property="og:title" content="AI is Ruining the Art of Programming | Niels Jaspers Blog" />
-        <meta property="og:description" content="Exploring how AI and 'vibe coding' might be eroding the art of programming. Why relying on AI tools could harm critical thinking and problem-solving skills in software development." />
-        <meta property="og:image" content="https://www.nielsjaspers.com/blog/assets/gradient-background-1920x1080-IpDCqjfN.webp" />
-        <meta property="og:url" content="https://www.nielsjaspers.com/blog/ai-is-ruining-the-art-of-programming.html" />
-        <meta property="og:type" content="article" />
-        <meta property="og:site_name" content="Niels Jaspers" />
-        <meta property="article:published_time" content="2025-05-28" />
-        <meta property="article:author" content="Niels Jaspers" />
-        
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI is Ruining the Art of Programming" />
-        <meta name="twitter:description" content="Exploring how AI and 'vibe coding' might be eroding the art of programming. Why relying on AI tools could harm critical thinking and problem-solving skills." />
-        <meta name="twitter:image" content="https://www.nielsjaspers.com/blog/assets/gradient-background-1920x1080-IpDCqjfN.webp" />
-        <meta name="twitter:site" content="@_nielsjaspers" />
-        <title>ai is ruining the art of programming | niels jaspers blog</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="../assets/style.css" />
-        <link rel="stylesheet" href="../assets/blog.css" />
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="../index.html">home</a>
-                <a href="../projects.html">projects</a>
-                <a href="../blog.html">blog</a>
-                <a href="../contact.html">contact</a>
-            </nav>
-            <button
-                class="theme-toggle-btn"
-                id="theme-toggle-btn"
-                aria-label="Toggle dark mode"
-            >
-                <svg
-                    id="theme-toggle-icon"
-                    viewBox="0 0 24 24"
-                    width="22"
-                    height="22"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <path
-                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
-                        fill="currentColor"
-                    />
-                </svg>
-            </button>
-        </header>
-        <main>
-            <div class="blog-content">
-                <h1>ai is ruining the art of programming</h1>
-                <div style="margin-bottom: 18px" class="blog-cover-crop">
-<img
-                         src="assets/gradient-background-1920x1080-IpDCqjfN.webp"
-                         alt="multicolored illustration"
-                         loading="lazy"
-                         style="
+
+    <!-- Open Graph and Twitter Card tags -->
+    <meta property="og:title" content="AI is Ruining the Art of Programming | Niels Jaspers Blog" />
+    <meta property="og:description"
+        content="Exploring how AI and 'vibe coding' might be eroding the art of programming. Why relying on AI tools could harm critical thinking and problem-solving skills in software development." />
+    <meta property="og:image"
+        content="https://www.nielsjaspers.com/blog/assets/gradient-background-1920x1080-IpDCqjfN.webp" />
+    <meta property="og:url" content="https://www.nielsjaspers.com/blog/ai-is-ruining-the-art-of-programming.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Niels Jaspers" />
+    <meta property="article:published_time" content="2025-05-28" />
+    <meta property="article:author" content="Niels Jaspers" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="AI is Ruining the Art of Programming" />
+    <meta name="twitter:description"
+        content="Exploring how AI and 'vibe coding' might be eroding the art of programming. Why relying on AI tools could harm critical thinking and problem-solving skills." />
+    <meta name="twitter:image"
+        content="https://www.nielsjaspers.com/blog/assets/gradient-background-1920x1080-IpDCqjfN.webp" />
+    <meta name="twitter:site" content="@_nielsjaspers" />
+    <title>ai is ruining the art of programming | niels jaspers blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="stylesheet" href="../assets/blog.css" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">home</a>
+            <a href="../projects.html">projects</a>
+            <a href="../blog.html">blog</a>
+            <a href="../contact.html">contact</a>
+        </nav>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
+            <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="22" height="22" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" fill="currentColor" />
+            </svg>
+        </button>
+    </header>
+    <main>
+        <div class="blog-content">
+            <h1>ai is ruining the art of programming</h1>
+            <div style="margin-bottom: 18px" class="blog-cover-crop">
+                <img src="assets/gradient-background-1920x1080-IpDCqjfN.webp" alt="multicolored illustration"
+                    loading="lazy" style="
                              max-width: 100%;
                              border-radius: 12px;
                              box-shadow: 0 2px 8px 0 rgba(60, 64, 91, 0.07);
                              margin-bottom: 8px;
-                         "
-                     />                </div>
-                <p
-                    style="
+                         " />
+            </div>
+            <p style="
                         color: #b0b3c7;
                         font-size: 16px;
                         margin-top: -12px;
                         margin-bottom: 24px;
-                    "
-                >
-                    niels jaspers • may 28, 2025
-                </p>
-                <p>
-                    it's almost impossible to miss the buzz these days around
-                    "artificial intelligence," or ai for short. ai can do all
-                    sorts of things: summarize text, explain topics while
-                    impersonating napoleon bonaparte, and create images of cats
-                    on toilets reading a newspaper. but one of its most common
-                    applications, especially in my field, is programming.
-                </p>
-                <p>
-                    this often involves using tools like chatgpt, github
-                    copilot, claude, and others. you ask the chatbot to create
-                    something, it generates code, and you repeat this process
-                    until you have a functioning app.
-                </p>
-                <p>
-                    you might think, "yeah, that's awesome! now everyone can be
-                    a programmer!" and you'd be right. however, there's a small
-                    problem...
-                </p>
-                <h2>the canvas and the code</h2>
-                <p>
-                    one of the reasons i got into computer science was because i
-                    found it fascinating how, by typing some words on a screen,
-                    i could make the computer do things. that moment was
-                    special. i could command a computer to do exactly as i said
-                    with just words. of course, computers are much more
-                    complicated than that, but that first infinite 'hello world'
-                    loop in python remains special.
-                </p>
-                <p>
-                    this feeling of creation is like how an artist approaches a
-                    blank canvas. programming can be a form of expressing
-                    yourself, just like how an artist would with a painting.
-                    this can be as high-level as what programming language you
-                    choose, down to the way you structure your variables. but
-                    the 'programming' part isn't the only art. in my opinion,
-                    the unique way you solve problems when coding is also a
-                    significant art form. it's like an artist choosing a
-                    specific brushstroke or color palette to convey a particular
-                    emotion.
-                </p>
-                <p>
-                    but this is changing with the recent developments around ai,
-                    with the new concept of "vibe coding."
-                </p>
+                    ">
+                niels jaspers • may 28, 2025
+            </p>
+            <p>
+                it's almost impossible to miss the buzz these days around
+                "artificial intelligence," or ai for short. ai can do all
+                sorts of things: summarize text, explain topics while
+                impersonating napoleon bonaparte, and create images of cats
+                on toilets reading a newspaper. but one of its most common
+                applications, especially in my field, is programming.
+            </p>
+            <p>
+                this often involves using tools like chatgpt, github
+                copilot, claude, and others. you ask the chatbot to create
+                something, it generates code, and you repeat this process
+                until you have a functioning app.
+            </p>
+            <p>
+                you might think, "yeah, that's awesome! now everyone can be
+                a programmer!" and you'd be right. however, there's a small
+                problem...
+            </p>
+            <h2>the canvas and the code</h2>
+            <p>
+                one of the reasons i got into computer science was because i
+                found it fascinating how, by typing some words on a screen,
+                i could make the computer do things. that moment was
+                special. i could command a computer to do exactly as i said
+                with just words. of course, computers are much more
+                complicated than that, but that first infinite 'hello world'
+                loop in python remains special.
+            </p>
+            <p>
+                this feeling of creation is like how an artist approaches a
+                blank canvas. programming can be a form of expressing
+                yourself, just like how an artist would with a painting.
+                this can be as high-level as what programming language you
+                choose, down to the way you structure your variables. but
+                the 'programming' part isn't the only art. in my opinion,
+                the unique way you solve problems when coding is also a
+                significant art form. it's like an artist choosing a
+                specific brushstroke or color palette to convey a particular
+                emotion.
+            </p>
+            <p>
+                but this is changing with the recent developments around ai,
+                with the new concept of "vibe coding."
+            </p>
 
-                <h2>embracing the "vibes", and the bugs</h2>
-                <p>
-                    the concept of "vibe coding" was introduced by andrej
-                    karpathy (<a
-                        href="https://x.com/karpathy/status/1886192184808149383"
-                        >@karpathy</a
-                    >), an ai researcher. it's described as a new way to develop
-                    software, where programmers explain what they want to create
-                    in natural language, and ai tools generate the code. using
-                    this method, anyone can program without needing prior
-                    knowledge of traditional coding, where understanding the
-                    code is crucial for maintenance and debugging.
-                </p>
-                <p>
-                    supporters of "vibe coding" often highlight that this new
-                    ai-driven method leads to faster development cycles and
-                    greater accessibility for people outside the tech field.
-                    however, opponents caution about the risks associated with
-                    "vibe coding" and responsible software development. relying
-                    entirely on ai presents several challenges. if a project
-                    exceeds the ai's context window, the ai may struggle to
-                    maintain the entire project in its memory, leading to
-                    errors.
-                </p>
-                <p>
-                    these errors can range from minor bugs to significant
-                    vulnerabilities. a notable example occurred in march 2025
-                    when a twitter user, leojr94_,
-                    <a href="https://x.com/leojr94_/status/1900767509621674109"
-                        >tweeted</a
-                    >
-                    about creating their saas entirely with cursor, despite
-                    having no prior programming knowledge.
-                    <a href="https://x.com/leojr94_/status/1901560276488511759"
-                        >just two days later</a
-                    >, they reported being "under attack," with people bypassing
-                    subscriptions and gaining unauthorized access to their
-                    database. however, these bugs and vulnerabilities are just
-                    one aspect of the problem. while security breaches and
-                    technical failures grab headlines, they represent symptoms
-                    of a deeper issue.
-                </p>
-                <p>
-                    the more fundamental concern lies in what "vibe coding" does
-                    to our capacity for critical thinking. not just as
-                    programmers, but as problem-solvers in an increasingly
-                    ai-dependent world.
-                </p>
-                <h2>the concerning impact on critical thinking</h2>
-                <p>
-                    traditional programming is tightly connected with creative
-                    problem solving. developers get confronted with challenges
-                    that require innovative approaches and critical thinking to
-                    come up with efficient solutions. this process includes
-                    understanding the problem, coming up with possible
-                    solutions, prototyping, and testing the implementation.
-                    these steps demand deep analysis, logical reasoning, and
-                    creative "out-of-the-box thinking." all of these steps,
-                    however, are bypassed with "vibe coding". this shift raises
-                    a concerning question: what happens to our ability to think
-                    critically when we no longer need to exercise these mental
-                    muscles? the implications extend far beyond tech, touching
-                    every sector where ai can be deployed.
-                </p>
-                <p>
-                    when programmers rely heavily on ai to generate solutions,
-                    they risk becoming passive consumers rather than active
-                    problem-solvers. the muscle of breaking down complex
-                    problems into smaller, manageable pieces begins to atrophy.
-                    without regularly exercising the mental processes of
-                    debugging, optimizing, and understanding trade-offs between
-                    different approaches, developers may find themselves
-                    helpless when ai-generated code fails or when they encounter
-                    problems that fall outside the ai's training data.
-                </p>
-                <p>
-                    this phenomenon extends beyond programming. in mathematics,
-                    students who rely too heavily on (ai) calculators may
-                    struggle with number sense and mental arithmetic. similarly,
-                    writers who depend entirely on ai for content creation may
-                    lose their ability to craft compelling narratives or develop
-                    their unique voice. the pattern is clear: when we outsource
-                    our thinking to machines, we risk losing the very skills
-                    that make us valuable as humans.
-                </p>
-                <p>
-                    the irony is that while ai makes programming more accessible
-                    to beginners, it may paradoxically make experienced
-                    programmers less capable over time. the next generation of
-                    developers might know how to prompt an ai effectively but
-                    struggle to understand why their code works, or more
-                    importantly, why it doesn't. this creates a dangerous
-                    dependency where the tools meant to enhance our capabilities
-                    instead replace them entirely.
-                </p>
-                <h2>reclaiming the art: a call for balance</h2>
-                <p>
-                    the rise of ai in programming presents us with a crossroads.
-                    we can choose the path of least resistance, letting ai
-                    handle the complexities while we become mere coordinators of
-                    generated code. or we can choose to preserve what makes
-                    programming truly rewarding: the intellectual challenge, the
-                    problem-solving journey, and the satisfaction of building
-                    something with our own understanding.
-                </p>
-                <p>
-                    this isn't a call to abandon ai entirely. these tools can be
-                    extremely powerful allies when used thoughtfully: helping
-                    with boilerplate code, suggesting optimizations, or serving
-                    as a rubber duck for debugging. the key is maintaining
-                    agency over the creative process rather than surrendering it
-                    completely.
-                </p>
-                <p>
-                    what makes us uniquely human in the age of ai isn't just our
-                    ability to write code, but our curiosity to
-                    understand why things works. our drive to explore
-                    unconventional solutions. our capacity to learn from
-                    failures and build intuition over time. these qualities
-                    can't be replicated by pattern-matching algorithms, no
-                    matter how sophisticated.
-                </p>
-                <p>
-                    the blank canvas of a new project should still inspire
-                    wonder, not prompt us to immediately reach for an ai crutch.
-                    the debugging session that keeps us up at night should be
-                    seen as a puzzle to solve, not a task to delegate. the
-                    moment when a complex algorithm finally clicks in our minds
-                    remains irreplaceable, and it's worth fighting to preserve.
-                </p>
-                <p>
-                    programming has always been about more than just making
-                    computers do things. it's about expanding our own capacity
-                    to think, to solve problems, and to create. let's not trade
-                    that birthright for the convenience of having our thinking
-                    done for us. the art of programming is worth preserving, one
-                    carefully crafted line of code at a time.
-                </p>
-            </div>
-        </main>
-        <footer class="site-footer">
-            <span id="copyright"></span>
+            <h2>embracing the "vibes", and the bugs</h2>
+            <p>
+                the concept of "vibe coding" was introduced by andrej
+                karpathy (<a href="https://x.com/karpathy/status/1886192184808149383">@karpathy</a>), an ai researcher.
+                it's described as a new way to develop
+                software, where programmers explain what they want to create
+                in natural language, and ai tools generate the code. using
+                this method, anyone can program without needing prior
+                knowledge of traditional coding, where understanding the
+                code is crucial for maintenance and debugging.
+            </p>
+            <p>
+                supporters of "vibe coding" often highlight that this new
+                ai-driven method leads to faster development cycles and
+                greater accessibility for people outside the tech field.
+                however, opponents caution about the risks associated with
+                "vibe coding" and responsible software development. relying
+                entirely on ai presents several challenges. if a project
+                exceeds the ai's context window, the ai may struggle to
+                maintain the entire project in its memory, leading to
+                errors.
+            </p>
+            <p>
+                these errors can range from minor bugs to significant
+                vulnerabilities. a notable example occurred in march 2025
+                when a twitter user, leojr94_,
+                <a href="https://x.com/leojr94_/status/1900767509621674109">tweeted</a>
+                about creating their saas entirely with cursor, despite
+                having no prior programming knowledge.
+                <a href="https://x.com/leojr94_/status/1901560276488511759">just two days later</a>, they reported being
+                "under attack," with people bypassing
+                subscriptions and gaining unauthorized access to their
+                database. however, these bugs and vulnerabilities are just
+                one aspect of the problem. while security breaches and
+                technical failures grab headlines, they represent symptoms
+                of a deeper issue.
+            </p>
+            <p>
+                the more fundamental concern lies in what "vibe coding" does
+                to our capacity for critical thinking. not just as
+                programmers, but as problem-solvers in an increasingly
+                ai-dependent world.
+            </p>
+            <h2>the concerning impact on critical thinking</h2>
+            <p>
+                traditional programming is tightly connected with creative
+                problem solving. developers get confronted with challenges
+                that require innovative approaches and critical thinking to
+                come up with efficient solutions. this process includes
+                understanding the problem, coming up with possible
+                solutions, prototyping, and testing the implementation.
+                these steps demand deep analysis, logical reasoning, and
+                creative "out-of-the-box thinking." all of these steps,
+                however, are bypassed with "vibe coding". this shift raises
+                a concerning question: what happens to our ability to think
+                critically when we no longer need to exercise these mental
+                muscles? the implications extend far beyond tech, touching
+                every sector where ai can be deployed.
+            </p>
+            <p>
+                when programmers rely heavily on ai to generate solutions,
+                they risk becoming passive consumers rather than active
+                problem-solvers. the muscle of breaking down complex
+                problems into smaller, manageable pieces begins to atrophy.
+                without regularly exercising the mental processes of
+                debugging, optimizing, and understanding trade-offs between
+                different approaches, developers may find themselves
+                helpless when ai-generated code fails or when they encounter
+                problems that fall outside the ai's training data.
+            </p>
+            <p>
+                this phenomenon extends beyond programming. in mathematics,
+                students who rely too heavily on (ai) calculators may
+                struggle with number sense and mental arithmetic. similarly,
+                writers who depend entirely on ai for content creation may
+                lose their ability to craft compelling narratives or develop
+                their unique voice. the pattern is clear: when we outsource
+                our thinking to machines, we risk losing the very skills
+                that make us valuable as humans.
+            </p>
+            <p>
+                the irony is that while ai makes programming more accessible
+                to beginners, it may paradoxically make experienced
+                programmers less capable over time. the next generation of
+                developers might know how to prompt an ai effectively but
+                struggle to understand why their code works, or more
+                importantly, why it doesn't. this creates a dangerous
+                dependency where the tools meant to enhance our capabilities
+                instead replace them entirely.
+            </p>
+            <h2>reclaiming the art: a call for balance</h2>
+            <p>
+                the rise of ai in programming presents us with a crossroads.
+                we can choose the path of least resistance, letting ai
+                handle the complexities while we become mere coordinators of
+                generated code. or we can choose to preserve what makes
+                programming truly rewarding: the intellectual challenge, the
+                problem-solving journey, and the satisfaction of building
+                something with our own understanding.
+            </p>
+            <p>
+                this isn't a call to abandon ai entirely. these tools can be
+                extremely powerful allies when used thoughtfully: helping
+                with boilerplate code, suggesting optimizations, or serving
+                as a rubber duck for debugging. the key is maintaining
+                agency over the creative process rather than surrendering it
+                completely.
+            </p>
+            <p>
+                what makes us uniquely human in the age of ai isn't just our
+                ability to write code, but our curiosity to
+                understand why things works. our drive to explore
+                unconventional solutions. our capacity to learn from
+                failures and build intuition over time. these qualities
+                can't be replicated by pattern-matching algorithms, no
+                matter how sophisticated.
+            </p>
+            <p>
+                the blank canvas of a new project should still inspire
+                wonder, not prompt us to immediately reach for an ai crutch.
+                the debugging session that keeps us up at night should be
+                seen as a puzzle to solve, not a task to delegate. the
+                moment when a complex algorithm finally clicks in our minds
+                remains irreplaceable, and it's worth fighting to preserve.
+            </p>
+            <p>
+                programming has always been about more than just making
+                computers do things. it's about expanding our own capacity
+                to think, to solve problems, and to create. let's not trade
+                that birthright for the convenience of having our thinking
+                done for us. the art of programming is worth preserving, one
+                carefully crafted line of code at a time.
+            </p>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <span id="copyright"></span>
         <script src="../assets/footer-date.js"></script>
         <script src="../assets/dark-mode-toggle.js"></script>
     </footer>
 
-    </body></html>
+</body>
+
+</html>

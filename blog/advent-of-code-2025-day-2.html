@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+        (function() {
+          var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
+        <link rel="icon" type="image/png" sizes="320x320" href="../favicon-320x320.png">
+        <link rel="icon" type="image/png" sizes="1024x1024" href="../favicon-1024x1024.png">
+        <meta name="description" content="advent of code 2025 day 2: gift shop. learning lua from scratch while discovering that sometimes the best optimization isn't faster code—it's realizing you're solving the wrong problem." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://www.nielsjaspers.com/blog/advent-of-code-2025-day-2.html" />
+        <meta name="robots" content="index, follow" />
+        
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Advent of Code 2025 - Day 2: Gift Shop",
+            "description": "Day 2 of Advent of Code 2025 had me learning Lua from scratch while discovering that sometimes the best optimization isn't faster code.",
+            "author": {
+                "@type": "Person",
+                "name": "Niels Jaspers",
+                "url": "https://www.nielsjaspers.com"
+            },
+            "publisher": {
+                "@type": "Person",
+                "name": "Niels Jaspers",
+                "url": "https://www.nielsjaspers.com"
+            },
+            "datePublished": "2025-01-02",
+            "dateModified": "2025-01-02",
+            "url": "https://www.nielsjaspers.com/blog/advent-of-code-2025-day-2.html",
+            "mainEntityOfPage": "https://www.nielsjaspers.com/blog/advent-of-code-2025-day-2.html",
+            "keywords": ["Advent of Code", "Programming", "Lua", "Optimization", "Algorithms"],
+            "articleSection": "Programming",
+            "inLanguage": "en"
+        }
+        </script>
+        
+        <!-- Open Graph and Twitter Card tags -->
+        <meta property="og:title" content="Advent of Code 2025 - Day 2: Gift Shop | Niels Jaspers Blog" />
+        <meta property="og:description" content="Day 2 of Advent of Code 2025 had me learning Lua from scratch while discovering that sometimes the best optimization isn't faster code." />
+        <meta property="og:image" content="https://www.nielsjaspers.com/favicon-1024x1024.png" />
+        <meta property="og:url" content="https://www.nielsjaspers.com/blog/advent-of-code-2025-day-2.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Niels Jaspers" />
+        <meta property="article:published_time" content="2025-01-02" />
+        <meta property="article:author" content="Niels Jaspers" />
+        
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Advent of Code 2025 - Day 2: Gift Shop" />
+        <meta name="twitter:description" content="Day 2 of Advent of Code 2025 had me learning Lua from scratch while discovering that sometimes the best optimization isn't faster code." />
+        <meta name="twitter:image" content="https://www.nielsjaspers.com/favicon-1024x1024.png" />
+        <meta name="twitter:site" content="@_nielsjaspers" />
+        <title>advent of code 2025 - day 2: gift shop | niels jaspers blog</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../assets/style.css" />
+        <link rel="stylesheet" href="../assets/blog.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../index.html">home</a>
+                <a href="../projects.html">projects</a>
+                <a href="../blog.html">blog</a>
+                <a href="../contact.html">contact</a>
+            </nav>
+            <button
+                class="theme-toggle-btn"
+                id="theme-toggle-btn"
+                aria-label="Toggle dark mode"
+            >
+                <svg
+                    id="theme-toggle-icon"
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+                        fill="currentColor"
+                    />
+                </svg>
+            </button>
+        </header>
+        <main>
+            <div class="blog-content">
+                <h1>Advent of Code 2025 - Day 2: Gift Shop</h1>
+                <div style="margin-bottom: 18px" class="blog-cover-crop">
+                    <img src="assets/gradient-background-1920x1080-21WGu8jL.webp" alt="multicolored illustration"
+                        loading="lazy" style="
+                                 max-width: 100%;
+                                 border-radius: 12px;
+                                 box-shadow: 0 2px 8px 0 rgba(60, 64, 91, 0.07);
+                                 margin-bottom: 8px;
+                             " />
+                </div>
+                <p
+                    style="
+                        color: #b0b3c7;
+                        font-size: 16px;
+                        margin-top: -12px;
+                        margin-bottom: 24px;
+                    "
+                >
+                    niels jaspers • january 2, 2025
+                </p>
+                <p>
+                    This is part two of an ongoing series of posts about my experiences solving the <a href="https://adventofcode.com/2025">Advent of Code 2025</a> puzzles.
+                    This year, I'm doing a showdown with my good friend <a href="https://www.github.com/levi-ivel">Levi</a>. Since AoC is twelve days long this year, we'll be solving the puzzles in twelve different languages.
+                </p>
+                <p>
+                    Day 2 of Advent of Code 2025 had me learning Lua from scratch while discovering that sometimes the best optimization isn't faster code. Sometimes it's just realizing you're solving the wrong problem entirely.
+                </p>
+                
+                <h2>The Problem</h2>
+                
+                <p>
+                    We're given ranges of "ID numbers" and need to find all "invalid IDs" within them. An invalid ID is one that consists of a repeating pattern.
+                </p>
+                
+                <p>
+                    <strong>Part 1:</strong> Numbers where the left half equals the right half. Think <code>1212</code>, <code>100100</code>, <code>77777777</code>.
+                </p>
+                
+                <p>
+                    <strong>Part 2:</strong> Numbers where <em>any</em> pattern repeats two or more times. Now <code>111</code>, <code>565656</code>, and <code>824824824</code> all count too.
+                </p>
+                
+                <p>
+                    The catch? Some ranges span millions of numbers. Checking each one individually would take forever, especially in Lua.
+                </p>
+                
+                <h2>Starting Simple</h2>
+                
+                <p>
+                    My first approach was the obvious one: iterate through every number, convert to string, split in half, compare.
+                </p>
+                
+                <pre><code class="language-lua">for i = s, e do
+    local str = tostring(i)
+    if #str % 2 == 0 then
+        local mid = #str / 2
+        local left = string.sub(str, 1, mid)
+        local right = string.sub(str, mid + 1)
+        if left == right then
+            table.insert(numbers, i)
+        end
+    end
+end</code></pre>
+                
+                <p>
+                    This worked fine for small ranges. Then I hit a range like <code>7777742220-7777814718</code> and watched my terminal hang.
+                </p>
+                
+                <p>
+                    <strong>Runtime: ~850ms</strong> for the test data. Not great.
+                </p>
+                
+                <h2>Learning Lua's Quirks Along the Way</h2>
+                
+                <p>
+                    Before I could optimize anything, I had to wrestle with Lua itself. Some highlights:
+                </p>
+                
+                <ul>
+                    <li><strong>No built-in split function.</strong> You're on your own.</li>
+                    <li><strong>Tables are everything.</strong> Arrays? Tables with numeric indices. Maps? Also tables. Printing a table? You get a memory address like <code>table: 0x10122f8c0</code>. Thanks, Lua.</li>
+                    <li><strong>Not-equal is <code>~=</code>, not <code>!=</code>.</strong> As I eloquently put it in my notes: "fuck you lua".</li>
+                    <li><strong>Functions must be defined before they're called.</strong> Coming from any other modern language, this felt like stepping back in time.</li>
+                </ul>
+                
+                <h2>The Insight: Generate, Don't Check</h2>
+                
+                <p>
+                    The turning point came when I stopped trying to speed up the checking and started asking: <em>can I generate only the numbers that match the pattern?</em>
+                </p>
+                
+                <p>
+                    Numbers like <code>11</code>, <code>1212</code>, <code>100100</code> follow a pattern. For a number with an even number of digits (say, <code>2k</code> digits where <code>k</code> is half), if the left half equals the right half, it can be expressed as:
+                </p>
+                
+                <pre><code class="language-text">n × (10^k + 1)</code></pre>
+                
+                <p>
+                    Where <code>n</code> is any k-digit number.
+                </p>
+                
+                <h3>Why does this formula work?</h3>
+                
+                <p>
+                    The expression <code>10^k + 1</code> creates a "repeater" multiplier. When you multiply <code>n</code> by this:
+                </p>
+                
+                <ul>
+                    <li><code>n × 10^k</code> shifts <code>n</code> left by k digits</li>
+                    <li>Adding <code>n</code> places the original number in the rightmost positions</li>
+                </ul>
+                
+                <p>
+                    So <code>n × (10^k + 1) = n × 10^k + n</code>, which concatenates <code>n</code> with itself.
+                </p>
+                
+                <p>
+                    <strong>Concrete example:</strong> For <code>n = 12</code> and <code>k = 2</code>:
+                </p>
+                
+                <pre><code class="language-text">12 × (10² + 1) = 12 × 101 = 12 × 100 + 12 × 1 = 1200 + 12 = 1212</code></pre>
+                
+                <h3>The pattern for different digit counts</h3>
+                
+                <ul>
+                    <li><strong>2 digits (k=1):</strong> <code>n × 11</code> where n = 1 to 9 → produces 11, 22, 33, ..., 99</li>
+                    <li><strong>4 digits (k=2):</strong> <code>n × 101</code> where n = 10 to 99 → produces 1010, 1111, 1212, ..., 9999</li>
+                    <li><strong>6 digits (k=3):</strong> <code>n × 1001</code> where n = 100 to 999 → produces 100100, 101101, ..., 999999</li>
+                </ul>
+                
+                <p>
+                    Instead of checking millions of numbers, I only need to generate all k-digit patterns and multiply. For 4-digit results, that's just 90 multiplications (10-99). For 10-digit results, still only 90,000 multiplications. That's way better than checking millions.
+                </p>
+                
+                <h3>Tight bounds: only generate what's in range</h3>
+                
+                <p>
+                    There's another optimization hiding here. Instead of generating all possible patterns and filtering to our range, we can compute exactly which patterns will produce results in range <code>[s, e]</code> (where <code>s</code> and <code>e</code> are the start and end of the range).
+                </p>
+                
+                <p>
+                    Since <code>candidate = n × multiplier</code>, we need <code>s ≤ n × multiplier ≤ e</code>.
+                </p>
+                
+                <p>
+                    Rearranging: <code>s/multiplier ≤ n ≤ e/multiplier</code>
+                </p>
+                
+                <p>
+                    We clamp this to the valid n range to avoid generating out-of-range numbers:
+                </p>
+                
+                <pre><code class="language-lua">local start_n = math.max(min_n, math.ceil(s / multiplier))
+local end_n = math.min(max_n, math.floor(e / multiplier))
+
+for n = start_n, end_n do
+    total = total + (n * multiplier)
+end</code></pre>
+                
+                <p>
+                    No conditional checks needed inside the loop - every generated number is guaranteed to be in range.
+                </p>
+                
+                <h2>Part 2: Any Repeating Pattern</h2>
+                
+                <p>
+                    Part 2 expanded the definition: any repeating pattern counts, not just "left half equals right half". Now <code>111</code> (1 repeated 3 times), <code>565656</code> (56 repeated 3 times), and <code>824824824</code> (824 repeated 3 times) are all invalid.
+                </p>
+                
+                <p>
+                    The approach is similar, but we need to consider all valid chunk sizes, not just half.
+                </p>
+                
+                <h3>The algorithm</h3>
+                
+                <p>
+                    <strong>Step 1:</strong> Figure out which digit counts could appear in the range <code>[s, e]</code>.
+                </p>
+                
+                <p>
+                    Example: range 95-115 contains 2-digit numbers (95-99) and 3-digit numbers (100-115), so we check d = 2 and d = 3.
+                </p>
+                
+                <p>
+                    <strong>Step 2:</strong> For each digit count <code>d</code>, find all ways to split it into repeating chunks.
+                </p>
+                
+                <p>
+                    A chunk size <code>k</code> is valid if:
+                </p>
+                <ul>
+                    <li><code>k</code> divides <code>d</code> evenly (no remainder)</li>
+                    <li><code>d/k >= 2</code> (need at least 2 repetitions)</li>
+                </ul>
+                
+                <p>
+                    Example for d=6:
+                </p>
+                <ul>
+                    <li>k=1: 6/1 = 6 repetitions (pattern "1" → 111111) ✓</li>
+                    <li>k=2: 6/2 = 3 repetitions (pattern "10" → 101010) ✓</li>
+                    <li>k=3: 6/3 = 2 repetitions (pattern "100" → 100100) ✓</li>
+                    <li>k=4: 6/4 = 1.5 repetitions - doesn't divide evenly ✗</li>
+                </ul>
+                
+                <p>
+                    <strong>Step 3:</strong> For each valid chunk size <code>k</code>, generate all possible k-digit patterns.
+                </p>
+                
+                <p>
+                    Example for k=2: generate all 2-digit numbers from 10 to 99. These are the "chunks" we'll repeat.
+                </p>
+                
+                <p>
+                    <strong>Step 4:</strong> For each pattern <code>p</code>, use the formula to create the full repeating number.
+                </p>
+                
+                <p>
+                    The generalized formula:
+                </p>
+                
+                <pre><code class="language-text">p × (10^d - 1) / (10^k - 1)</code></pre>
+                
+                <h3>Why does this formula work?</h3>
+                
+                <p>
+                    Let's break down <code>(10^d - 1) / (10^k - 1)</code> for d=6, k=2:
+                </p>
+                
+                <pre><code class="language-text">(10⁶ - 1) / (10² - 1) = 999999 / 99 = 10101</code></pre>
+                
+                <p>
+                    What is 10101? It's <code>10000 + 100 + 1</code>, or equivalently <code>10^4 + 10^2 + 10^0</code>.
+                </p>
+                
+                <p>
+                    When you multiply a 2-digit pattern by 10101:
+                </p>
+                
+                <pre><code class="language-text">56 × 10101 = 56 × (10000 + 100 + 1)
+           = 560000 + 5600 + 56
+           = 565656</code></pre>
+                
+                <p>
+                    The multiplier places the pattern at each "slot" position. For 3 repetitions of a 2-digit chunk, those slots are at positions 0, 2, and 4.
+                </p>
+                
+                <p>
+                    <strong>Step 5:</strong> Check if the generated number is in range and hasn't been added yet.
+                </p>
+                
+                <h2>The Duplicate Bug</h2>
+                
+                <p>
+                    My Part 2 solution initially gave the wrong answer: <code>4174823709</code> instead of <code>4174379265</code>.
+                </p>
+                
+                <p>
+                    The problem? Numbers like <code>222222</code> match <em>multiple</em> patterns:
+                </p>
+                <ul>
+                    <li>Chunk size 1: "2" repeated 6 times</li>
+                    <li>Chunk size 2: "22" repeated 3 times</li>
+                    <li>Chunk size 3: "222" repeated 2 times</li>
+                </ul>
+                
+                <p>
+                    I was counting it three times. The fix was simple though, just track what we've already added:
+                </p>
+                
+                <pre><code class="language-lua">local seen = {}
+
+for p = start_p, end_p do
+    local candidate = p * multiplier
+    if not seen[candidate] then
+        seen[candidate] = true
+        total = total + candidate
+    end
+end</code></pre>
+                
+                <h2>The Final Optimized Solution</h2>
+                
+                <p>
+                    After all the iterations, the final code is clean and fast:
+                </p>
+                
+                <pre><code class="language-lua">local pow10_cache = {}
+local function pow10(n)
+    if not pow10_cache[n] then
+        pow10_cache[n] = math.pow(10, n)
+    end
+    return pow10_cache[n]
+end
+
+local total = 0
+local seen = {}
+
+for s_str, e_str in line:gmatch("(%d+)-(%d+)") do
+    local s = tonumber(s_str)
+    local e = tonumber(e_str)
+    
+    local min_digits = #s_str
+    local max_digits = #e_str
+    
+    for d = min_digits, max_digits do
+        for k = 1, math.floor(d / 2) do
+            if d % k == 0 then
+                local multiplier = (pow10(d) - 1) / (pow10(k) - 1)
+                
+                local start_p = math.max(pow10(k-1), math.ceil(s / multiplier))
+                local end_p = math.min(pow10(k)-1, math.floor(e / multiplier))
+                
+                for p = start_p, end_p do
+                    local candidate = p * multiplier
+                    if not seen[candidate] then
+                        seen[candidate] = true
+                        total = total + candidate
+                    end
+                end
+            end
+        end
+    end
+end</code></pre>
+                
+                <p>
+                    <strong>Runtime: sub-millisecond.</strong> From 850ms to essentially instant.
+                </p>
+                
+                <h2>Optimizations That Mattered</h2>
+                
+                <p>
+                    In order of impact:
+                </p>
+                
+                <ol>
+                    <li><strong>Generate instead of check.</strong> The algorithmic change from O(M) to O(D × 10^(D/2)) where M is the range size and D is digit count.</li>
+                    <li><strong>Tight bounds calculation.</strong> Instead of generating all patterns and filtering, compute exactly which patterns produce in-range results.</li>
+                    <li><strong>Sum as you go.</strong> No intermediate storage, no second loop. Just accumulate directly.</li>
+                    <li><strong>Inline parsing.</strong> Replaced a custom split function with a single <code>gmatch</code> pattern: <code>"(%d+)-(%d+)"</code> captures both numbers directly.</li>
+                    <li><strong>Cache pow10.</strong> Minor but measurable. Avoids redundant <code>math.pow</code> calls.</li>
+                </ol>
+                
+                <h2>Lessons Learned</h2>
+                
+                <p>
+                    <strong>The best optimization is often algorithmic.</strong> All the micro-optimizations in the world (caching, inlining, avoiding string operations) wouldn't have saved my 850ms solution. The biggest speedup came from recognizing that the numbers I wanted had a mathematical structure I could exploit.
+                </p>
+                
+                <p>
+                    <strong>Constraints are features.</strong> Using "slow" Lua forced me to think about efficiency in a way that Python might not have. The discomfort was productive.
+                </p>
+                
+                <p>
+                    <strong>Duplicates will get you.</strong> Any time you're generating candidates from multiple sources (different chunk sizes, different ranges), think about whether the same result can appear twice.
+                </p>
+                
+                <p>
+                    <strong>Math is your friend.</strong> Once I understood <em>why</em> <code>n × (10^k + 1)</code> produces repeating numbers, extending it to arbitrary repetitions was straightforward. It's not magic, it's just place value arithmetic.
+                </p>
+                
+                <p>
+                    On to Day 3.
+                </p>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <span id="copyright"></span>
+        <script src="../assets/footer-date.js"></script>
+        <script src="../assets/dark-mode-toggle.js"></script>
+        <!-- Prism.js for syntax highlighting -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    </footer>
+
+    </body></html>
+
