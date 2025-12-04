@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script>
+        (function() {
+          var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        })();
+        </script>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
+        <link rel="icon" type="image/png" sizes="320x320" href="../favicon-320x320.png">
+        <link rel="icon" type="image/png" sizes="1024x1024" href="../favicon-1024x1024.png">
+        <meta name="description" content="advent of code 2025 day 3: the art of micro-optimization. squeezing every last millisecond out of python and beating my friend by 0.1ms." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://www.nielsjaspers.com/blog/advent-of-code-2025-day-3.html" />
+        <meta name="robots" content="index, follow" />
+        
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "AoC 2025 Day 3: The Art of Micro-Optimization (and Beating Your Friend by 0.1ms)",
+            "description": "Day 3 of Advent of Code 2025 was less about algorithmic breakthroughs and more about squeezing every last millisecond out of Python.",
+            "author": {
+                "@type": "Person",
+                "name": "Niels Jaspers",
+                "url": "https://www.nielsjaspers.com"
+            },
+            "publisher": {
+                "@type": "Person",
+                "name": "Niels Jaspers",
+                "url": "https://www.nielsjaspers.com"
+            },
+            "datePublished": "2025-12-03",
+            "dateModified": "2025-12-03",
+            "url": "https://www.nielsjaspers.com/blog/advent-of-code-2025-day-3.html",
+            "mainEntityOfPage": "https://www.nielsjaspers.com/blog/advent-of-code-2025-day-3.html",
+            "keywords": ["Advent of Code", "Programming", "Python", "Optimization", "Performance"],
+            "articleSection": "Programming",
+            "inLanguage": "en"
+        }
+        </script>
+        
+        <!-- Open Graph and Twitter Card tags -->
+        <meta property="og:title" content="AoC 2025 Day 3: The Art of Micro-Optimization | Niels Jaspers Blog" />
+        <meta property="og:description" content="Day 3 of Advent of Code 2025 was less about algorithmic breakthroughs and more about squeezing every last millisecond out of Python." />
+        <meta property="og:image" content="https://www.nielsjaspers.com/favicon-1024x1024.png" />
+        <meta property="og:url" content="https://www.nielsjaspers.com/blog/advent-of-code-2025-day-3.html" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Niels Jaspers" />
+        <meta property="article:published_time" content="2025-12-03" />
+        <meta property="article:author" content="Niels Jaspers" />
+        
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="AoC 2025 Day 3: The Art of Micro-Optimization" />
+        <meta name="twitter:description" content="Day 3 of Advent of Code 2025 was less about algorithmic breakthroughs and more about squeezing every last millisecond out of Python." />
+        <meta name="twitter:image" content="https://www.nielsjaspers.com/favicon-1024x1024.png" />
+        <meta name="twitter:site" content="@_nielsjaspers" />
+        <title>aoc 2025 day 3: the art of micro-optimization | niels jaspers blog</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../assets/style.css" />
+        <link rel="stylesheet" href="../assets/blog.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="../index.html">home</a>
+                <a href="../projects.html">projects</a>
+                <a href="../blog.html">blog</a>
+                <a href="../contact.html">contact</a>
+            </nav>
+            <button
+                class="theme-toggle-btn"
+                id="theme-toggle-btn"
+                aria-label="Toggle dark mode"
+            >
+                <svg
+                    id="theme-toggle-icon"
+                    viewBox="0 0 24 24"
+                    width="22"
+                    height="22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+                        fill="currentColor"
+                    />
+                </svg>
+            </button>
+        </header>
+        <main>
+            <div class="blog-content">
+                <h1>AoC 2025 Day 3: Lobby</h1>
+                <div style="margin-bottom: 18px" class="blog-cover-crop">
+                    <img src="assets/gradient-background-1920x1080-sh4YmKKZ.webp" alt="multicolored illustration"
+                        loading="lazy" style="
+                                 max-width: 100%;
+                                 border-radius: 12px;
+                                 box-shadow: 0 2px 8px 0 rgba(60, 64, 91, 0.07);
+                                 margin-bottom: 8px;
+                             " />
+                </div>
+                <p
+                    style="
+                        color: #b0b3c7;
+                        font-size: 16px;
+                        margin-top: -12px;
+                        margin-bottom: 24px;
+                    "
+                >
+                    niels jaspers • december 3, 2025
+                </p>
+                <p>
+                    This is part three of an ongoing series of posts about my experiences solving the <a href="https://adventofcode.com/2025">Advent of Code 2025</a> puzzles.
+                    This year, I'm doing a showdown with my good friend <a href="https://www.github.com/levi-ivel">Levi</a>. Since AoC is twelve days long this year, we'll be solving the puzzles in twelve different languages.
+                </p>
+                
+                <p>
+                    Day 3 of Advent of Code 2025 was less about algorithmic breakthroughs and more about squeezing every last millisecond out of Python. Levi had a 1.4ms solution on part 1. I was determined to beat it.
+                </p>
+                
+                <h2>The Problem</h2>
+                
+                <p>
+                    We're given lines of digits (like <code>987654321111111</code>) and need to form the largest possible number by selecting digits, but we can't rearrange them. They must stay in their original order.
+                </p>
+                
+                <p>
+                    <strong>Part 1:</strong> Select exactly 2 digits to form a two-digit number. Find the maximum.
+                </p>
+                
+                <p>
+                    <strong>Part 2:</strong> Select exactly 12 digits to form a twelve-digit number. Find the maximum.
+                </p>
+                
+                <h2>Part 1: Finding Two Digits</h2>
+                
+                <p>
+                    The naive approach would be to check every pair of positions, but that's O(n²). Instead, we can do it in a single pass.
+                </p>
+                
+                <p>
+                    The insight: we want the largest possible first digit, and then the largest possible second digit that comes <em>after</em> it. As we scan left to right, we track:
+                </p>
+                <ul>
+                    <li><code>num1</code>: the best first digit we've seen</li>
+                    <li><code>num2</code>: the best second digit that comes after our current <code>num1</code></li>
+                </ul>
+                
+                <p>
+                    When we find a new larger first digit, we reset <code>num2</code> because any previous second digit candidates are now invalid.
+                </p>
+                
+                <p>
+                    The solution I eventually came up with was:
+                </p>
+                
+                <pre><code class="language-python">def sortDigits(line: str) -> int:
+    num1 = line[0]
+    num2 = '0'
+
+    for digit in line[1:-1]:
+        if num1 == '9' and num2 == '9':
+            return 99
+        if num1 < digit:
+            num1 = digit
+            num2 = '0'
+        elif num1 == digit or num2 < digit:
+            num2 = digit
+
+    digit = line[-1]
+    if num1 != '9' or num2 != '9':
+        if num2 < digit:
+            num2 = digit
+
+    return (ord(num1) - 48) * 10 + (ord(num2) - 48)</code></pre>
+                
+                <p>
+                    But getting here took a journey through failed optimizations and counterintuitive discoveries about Python.
+                </p>
+                
+                <h2>Slow Start</h2>
+                
+                <h3>Starting Point: ~3.2ms</h3>
+                
+                <p>
+                    My first working solution used a list comprehension to convert the string to integers, then processed the list:
+                </p>
+                
+                <pre><code class="language-python">digits = [int(char) for char in line]
+for i, digit in enumerate(digits):
+    # ... logic</code></pre>
+                
+                <p>
+                    It worked, but Levi's solution ran in 1.4ms. Challenge accepted.
+                </p>
+                
+                <h3>Failed Optimization #1: Working with Strings Directly</h3>
+                
+                <p>
+                    I was suggested to skip the list entirely and use <code>ord(line[i]) - 48</code> to convert characters to integers on the fly. Surely avoiding list allocation would be faster?
+                </p>
+                
+                <p>
+                    <strong>Result: ~4-5ms.</strong> Slower than before.
+                </p>
+                
+                <p>
+                    Turns out Python's list comprehensions are highly optimized C code. The overhead of repeated <code>ord()</code> calls and indexing was worse than just building the list once.
+                </p>
+                
+                <h3>Failed Optimization #2: Inlining the Function</h3>
+                
+                <p>
+                    Maybe function call overhead was the issue? I inlined everything into the main loop.
+                </p>
+                
+                <p>
+                    <strong>Result: ~3-4ms.</strong> Also slower...?
+                </p>
+                
+                <p>
+                    Apparently, in Python, function-local variable lookups are actually faster than global lookups because of how the bytecode works. Huh, interesting.
+                </p>
+                
+                <h3>What Actually Worked</h3>
+                
+                <p>
+                    <strong>Optimization 1: Character Comparison</strong>
+                </p>
+                
+                <p>
+                    My speedup mostly came from realizing that in Python, characters compare lexicographically: <code>'0' < '1' < '2' < ... < '9'</code>. So instead of converting to integers, I could compare characters directly and only convert at the very end:
+                </p>
+                
+                <pre><code class="language-python">num1 = line[0]      # Keep as character
+num2 = '0'          # Keep as character
+
+if num1 < digit:    # Character comparison works!
+    num1 = digit
+    num2 = '0'
+
+# Only convert at the end
+return (ord(num1) - 48) * 10 + (ord(num2) - 48)</code></pre>
+                
+                <p>
+                    This eliminated ~100 <code>int()</code> calls per line. <code>int()</code> is expensive.
+                </p>
+                
+                <p>
+                    <strong>Result: ~1.45ms.</strong> Now we're getting somewhere.
+                </p>
+                
+                <p>
+                    <strong>Optimization 2: String Slice Iteration</strong>
+                </p>
+                
+                <p>
+                    The final trick was changing how I iterated:
+                </p>
+                
+                <pre><code class="language-python"># Before: range + indexing
+for i in range(1, n - 1):
+    digit = line[i]
+    
+# After: direct slice iteration
+for digit in line[1:-1]:</code></pre>
+                
+                <p>
+                    <code>line[1:-1]</code> creates a new substring. Iterating directly over it avoids:
+                </p>
+                <ul>
+                    <li>Creating a <code>range</code> object</li>
+                    <li>Incrementing an integer counter each iteration</li>
+                    <li>Looking up <code>line[i]</code> each iteration</li>
+                </ul>
+                
+                <p>
+                    <strong>Result: ~1.3ms.</strong> Beat Levi's 1.4ms.
+                </p>
+                
+                <h3>The Winning Micro-Optimizations</h3>
+                
+                <p>
+                    The final solution also includes:
+                </p>
+                
+                <p>
+                    <strong>Early exit when we hit 99:</strong>
+                </p>
+                
+                <pre><code class="language-python">if num1 == '9' and num2 == '9':
+    return 99</code></pre>
+                
+                <p>
+                    Can't do better than 99, so stop searching.
+                </p>
+                
+                <p>
+                    <strong>Handle last digit separately:</strong>
+                </p>
+                
+                <p>
+                    The last digit can only ever be a candidate for <code>num2</code>, never <code>num1</code> (there's nothing after it). By processing it outside the main loop, we avoid checking <code>i != n - 1</code> on every single iteration:
+                </p>
+                
+                <pre><code class="language-python">for digit in line[1:-1]:    # Process all except last
+    # ... main logic
+
+digit = line[-1]            # Handle last digit separately
+if num2 < digit:
+    num2 = digit</code></pre>
+                
+                <p>
+                    <strong>Combined conditions:</strong>
+                </p>
+                
+                <p>
+                    When updating <code>num2</code>, there are two cases that both result in <code>num2 = digit</code>:
+                </p>
+                <ul>
+                    <li>When <code>num1 == digit</code>: same digit twice is valid (like 77)</li>
+                    <li>When <code>num2 < digit</code>: we found a better second digit</li>
+                </ul>
+                
+                <p>
+                    Instead of two separate <code>elif</code> branches, we combine them:
+                </p>
+                
+                <pre><code class="language-python">elif num1 == digit or num2 < digit:
+    num2 = digit</code></pre>
+                
+                <p>
+                    One branch instead of two.
+                </p>
+                
+                <h2>Part 2: Selecting 12 Digits</h2>
+                
+                <p>
+                    Part 2 is a different beast. Now we need to pick 12 digits from a 100-digit string to form the largest possible 12-digit number. With 200 lines of input, efficiency matters.
+                </p>
+                
+                <p>
+                    Instead of trying every possible combination of 12 digits (which would be insane. C(100, 12) is astronomical! (Further down, I'll explain why. For now, just trust me.)), we use a greedy approach: pick the best digit at each step, left to right.
+                </p>
+                
+                <h3>The Greedy Insight</h3>
+                
+                <p>
+                    To maximize a number, you want the leftmost digit to be as big as possible. Then the second digit. Then the third. So we just greedily pick the max each time.
+                </p>
+                
+                <p>
+                    But we can't just pick from anywhere:
+                </p>
+                <ul>
+                    <li>If we pick too far right, we won't have enough digits left to fill k slots.</li>
+                    <li>If we pick too early, we might miss a bigger digit that could've fit.</li>
+                </ul>
+                
+                <h3>The Algorithm</h3>
+                
+                <ol>
+                    <li>For each of the <code>k</code> digits we need to pick, figure out the valid search window. The window is <code>[start, end]</code> where:
+                        <ul>
+                            <li><code>start</code> = position right after our previous pick (or 0 for the first pick)</li>
+                            <li><code>end</code> = <code>n - (k - i)</code>, where <code>i</code> is how many digits we've already picked, and <code>n</code> is the total number of digits.</li>
+                        </ul>
+                        Why this formula? We still need <code>(k - i)</code> digits after this pick. So the latest we can pick from is position <code>n - (k - i)</code>, leaving exactly enough room for the remaining digits.
+                    </li>
+                    <li>Find the maximum digit in that window and lock it in. Move our start position past where we picked.</li>
+                    <li>Repeat until we have <code>k</code> digits.</li>
+                </ol>
+                
+                <h3>Worked Example</h3>
+                
+                <p>
+                    Here's an example from the test data: <code>"234234234234278"</code> with <code>k=12</code> (length <code>n=15</code>).
+                </p>
+                
+                <p>
+                    The string has 15 digits, but we only want 12. So we're dropping 3 digits. Which 3 do we drop to get the biggest number? Let's walk through it.
+                </p>
+                
+                <pre><code class="language-text">position:  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14
+digit:     2  3  4  2  3  4  2  3  4  2  3  4  2  7  8</code></pre>
+                
+                <p>
+                    <strong>i=0:</strong> Picking digit 1 of 12. We still need 12 digits after this.
+                    That means we can't pick past position <code>15 - 12 = 3</code> (or we'd run out of room).
+                    Search window <code>[0, 3]</code>: '2', '3', '4', '2'
+                    Best choice: '4' at position 2
+                    Result so far: "4"
+                </p>
+                
+                <p>
+                    <strong>i=1:</strong> Picking digit 2 of 12. We still need 11 more.
+                    Start after position 2, so start = 3. Can't pick past position <code>15 - 11 = 4</code>.
+                    Search window <code>[3, 4]</code>: '2', '3'
+                    Best choice: '3' at position 4
+                    Result so far: "43"
+                </p>
+                
+                <p>
+                    <strong>i=2:</strong> Picking digit 3 of 12. We still need 10 more.
+                    start = 5, can't pick past <code>15 - 10 = 5</code>.
+                    Search window <code>[5, 5]</code>: just '4'
+                    No choice here, take '4'.
+                    Result so far: "434"
+                </p>
+                
+                <p>
+                    From here on, the window is always size 1 (<code>start == end</code>), so we just take each remaining digit in order: '2', '3', '4', '2', '3', '4', '2', '7', '8'.
+                </p>
+                
+                <p>
+                    <strong>Final result: "434234234278"</strong>
+                </p>
+                
+                <p>
+                    Notice: we skipped the '2' at position 0, '3' at position 1, and '2' at position 3. Those were the "worst" digits we could afford to drop while maximizing the result.
+                </p>
+                
+                <h3>One More Optimization</h3>
+                
+                <p>
+                    If we find a '9' in the window, we can stop searching immediately. Can't do better than 9, so why keep looking?
+                </p>
+                
+                <pre><code class="language-python">for j in range(start, end + 1):
+    if line[j] > max_char:
+        max_char = line[j]
+        max_pos = j
+        if max_char == '9':
+            break</code></pre>
+                
+                <h3>Time Complexity</h3>
+                
+                <p>
+                    This picks <code>k</code> digits in O(n × k) worst case, instead of checking all <code>C(n, k)</code> combinations. For <code>n=100</code> and <code>k=12</code>, that's 1,200 operations vs... a lot. Way faster.
+                </p>
+                
+                <p>
+                    For those who are curious, <code>C(n, k)</code> is the binomial coefficient, which is calculated as <code>n! / (k! × (n - k)!)</code>.
+                </p>
+                
+                <p>
+                    In this case, <code>C(100, 12) = 1,731,030,945,644,000,000</code>.
+                </p>
+                
+                <p>
+                    That's a lot of operations.
+                </p>
+                
+                <h2>Lessons Learned</h2>
+                
+                <p>
+                    <strong>Python's performance intuition is often wrong.</strong> Inlining functions made things slower. List comprehensions beat manual loops. Always benchmark.
+                </p>
+                
+                <p>
+                    <strong>Character comparison is free.</strong> <code>'5' < '7'</code> works in Python, and it's faster than <code>int('5') < int('7')</code>. Only convert when you actually need the numeric value.
+                </p>
+                
+                <p>
+                    <strong>Iterate over slices, not indices.</strong> <code>for x in line[1:-1]</code> is faster than <code>for i in range(1, n-1)</code> because you avoid range object creation and repeated indexing.
+                </p>
+                
+                <p>
+                    <strong>The 99 early exit matters.</strong> When you know the answer can't get better, stop computing.
+                </p>
+                
+                <p>
+                    <strong>Greedy works when order is constrained.</strong> When you can't rearrange, picking the best available option at each step often gives the optimal result.
+                </p>
+                
+                <p>
+                    From 3.2ms to 1.3ms. A 2.5x speedup from micro-optimizations alone. And yes, I did beat Levi's 1.4ms. By 0.1ms, but it counts.
+                </p>
+                
+                <p>
+                    On to Day 4.
+                </p>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <span id="copyright"></span>
+        <script src="../assets/footer-date.js"></script>
+        <script src="../assets/dark-mode-toggle.js"></script>
+        <!-- Prism.js for syntax highlighting -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    </footer>
+
+    </body></html>
+
