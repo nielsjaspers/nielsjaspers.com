@@ -1,11 +1,11 @@
+/* footer copyright line · updates elements whose id starts with "copyright" */
 document.addEventListener("DOMContentLoaded", function () {
-  const copyrightSpans = document.querySelectorAll(
-    'footer.site-footer [id^="copyright"]'
-  );
-  if (copyrightSpans.length > 0) {
+    const targets = document.querySelectorAll(
+        'footer.site-footer [id^="copyright"]'
+    );
+    if (targets.length === 0) return;
     const year = new Date().getFullYear();
-    copyrightSpans.forEach(function (el) {
-      el.textContent = `niels jaspers \u00a9 ${year}`;
+    targets.forEach(function (el) {
+        el.innerHTML = "niels jaspers \u00a9 " + year;
     });
-  }
 });

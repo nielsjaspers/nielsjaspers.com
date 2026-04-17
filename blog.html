@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <title>blog | niels jaspers – programming, education, tech, and more</title>
     <script>
         (function () {
             var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -11,7 +10,7 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="description"
-        content="thoughts on programming, education, tech, and creativity. exploring the intersection of ai, software engineering, and personal growth through honest writing and experiences." />
+        content="thoughts on programming, education, tech, and creativity. exploring the intersection of ai, software engineering, and personal growth through honest writing and experience." />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="320x320" href="favicon-320x320.png">
@@ -20,22 +19,21 @@
     <link rel="canonical" href="https://www.nielsjaspers.com/blog.html" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph and Twitter Card tags -->
-    <meta property="og:title" content="Blog | Niels Jaspers – Programming, Education, Tech, and More" />
+    <meta property="og:title" content="Blog · Niels Jaspers" />
     <meta property="og:description"
         content="Thoughts on programming, education, tech, and creativity. Exploring the intersection of AI, software engineering, and personal growth through honest writing and experiences." />
     <meta property="og:image" content="https://www.nielsjaspers.com/favicon-1024x1024.png" />
     <meta property="og:url" content="https://www.nielsjaspers.com/blog.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Niels Jaspers" />
-
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Blog | Niels Jaspers – Programming, Education, Tech, and More" />
+    <meta name="twitter:title" content="Blog · Niels Jaspers" />
     <meta name="twitter:description"
-        content="Thoughts on programming, education, tech, and creativity. Exploring the intersection of AI, software engineering, and personal growth through honest writing and experiences." />
+        content="Thoughts on programming, education, tech, and creativity." />
     <meta name="twitter:image" content="https://www.nielsjaspers.com/favicon-1024x1024.png" />
     <meta name="twitter:site" content="@_nielsjaspers" />
-    <title>blog | niels jaspers – programming, education, tech, and more</title>
+    <title>blog · niels jaspers</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
@@ -44,181 +42,144 @@
 </head>
 
 <body>
-    <header>
-        <nav>
+    <header class="fade-in fade-in-1">
+        <div class="masthead">
+            <a class="masthead__brand" href="index.html">niels jaspers <em>· journal</em></a>
+            <div class="masthead__controls">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 14.5a7 7 0 01-9.5-9.5 7.5 7.5 0 109.5 9.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="meta-bar">
+            <span class="meta-bar__item">essays &amp; dispatches · <strong>vol. mmxxvi</strong></span>
+            <span class="meta-bar__item">published when they are ready</span>
+        </div>
+
+        <nav class="primary fade-in fade-in-2" aria-label="primary">
             <a href="index.html">home</a>
             <a href="projects.html">projects</a>
-            <a href="blog.html">blog</a>
+            <a href="blog.html" aria-current="page">blog</a>
             <a href="contact.html">contact</a>
         </nav>
-        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
-            <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="22" height="22" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <!-- Moon icon by default (light mode) -->
-                <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" fill="currentColor" />
-            </svg>
-        </button>
     </header>
-    <main>
-        <h1>blog</h1>
-        <p>
-            welcome to my blog page! here i'll share my insights, thoughts,
-            articles, and hot takes about the things i find interesting.
-        </p>
 
-        <section class="blog-categories">
-            <h3>browse by category</h3>
-            <div class="category-grid">
-                <a href="./blog/advent-of-code/index.html">advent of code</a>
-                <a href="./blog/ml-journey/index.html">machine learning</a>
-                <a href="./blog/personal/index.html">personal</a>
-                <a href="./blog/opinions/index.html">opinions</a>
-            </div>
+    <main>
+        <section class="hero fade-in fade-in-3">
+            <span class="label">essays, dispatches, hot takes</span>
+            <h1 class="hero__title">the <em>blog.</em></h1>
+            <p class="hero__lede">insights, thoughts, articles, and hot takes about the things i find interesting. programming, education, ai, and whatever else won't leave my head until i write it down.</p>
         </section>
 
-        <!-- Start blog preview : advent of code 2025 - day 5 -->
-        <div class="blog-preview">
-            <div class="blog-preview-header">
-                <h2 class="blog-preview-title">
-                    advent of code 2025 - day 5: cafeteria
-                </h2>
-                <span class="blog-preview-date">05-12-2025</span>
-            </div>
-            <p class="blog-preview-summary">
-                day 5 was supposed to be simple: count ids in ranges. beating a 0.4ms target meant ditching clever data
-                structures for primitive arrays, cache-friendly loops, and a JVM warmup trick.
-            </p>
-            <a href="./blog/advent-of-code-2025-day-5.html" class="blog-preview-link">read more →</a>
-        </div>
-        <!-- End blog preview : advent of code 2025 - day 5 -->
+        <section class="categories fade-in fade-in-4" aria-label="browse by category">
+            <span class="categories__label">sections</span>
+            <a href="./blog/advent-of-code/index.html">advent of code</a>
+            <a href="./blog/ml-journey/index.html">machine learning</a>
+            <a href="./blog/personal/index.html">personal</a>
+            <a href="./blog/opinions/index.html">opinions</a>
+        </section>
 
-        <!-- Start blog preview : advent of code 2025 - day 3 -->
-        <div class="blog-preview">
-            <div class="blog-preview-header">
-                <h2 class="blog-preview-title">
-                    advent of code 2025 - day 3: lobby
-                </h2>
-                <span class="blog-preview-date">03-12-2025</span>
+        <section aria-label="all entries" class="fade-in fade-in-5">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-md); border-bottom: 2px double var(--rule); padding-bottom: var(--space-xs);">
+                <span class="label">all entries</span>
+                <span class="label" style="color: var(--ink-3);">seven · and counting</span>
             </div>
-            <p class="blog-preview-summary">
-                day 3 of advent of code 2025 was less about algorithmic breakthroughs and more about squeezing every last
-                millisecond out of python. levi had a 1.4ms solution on part 1. i was determined to beat it.
-            </p>
-            <a href="./blog/advent-of-code-2025-day-3.html" class="blog-preview-link">read more →</a>
-        </div>
-        <!-- End blog preview : advent of code 2025 - day 3 -->
 
-        <!-- Start blog preview : advent of code 2025 - day 2 -->
-        <div class="blog-preview">
-            <div class="blog-preview-header">
-                <h2 class="blog-preview-title">
-                    advent of code 2025 - day 2: gift shop
-                </h2>
-                <span class="blog-preview-date">02-12-2025</span>
-            </div>
-            <p class="blog-preview-summary">
-                day 2 of advent of code 2025 had me learning lua from scratch while discovering that sometimes the best
-                optimization isn't faster code. sometimes it's just realizing you're solving the wrong problem entirely.
-            </p>
-            <a href="./blog/advent-of-code-2025-day-2.html" class="blog-preview-link">read more →</a>
-        </div>
-        <!-- End blog preview : advent of code 2025 - day 2 -->
+            <article class="journal-entry">
+                <time class="journal-entry__date" datetime="2025-12-05">05 dec 2025</time>
+                <div class="journal-entry__body">
+                    <h2 class="journal-entry__title">
+                        <a href="./blog/advent-of-code-2025-day-5.html">advent of code 2025 · day 5: cafeteria</a>
+                    </h2>
+                    <p class="journal-entry__summary">day 5 was supposed to be simple: count ids in ranges. beating a 0.4ms target meant ditching clever data structures for primitive arrays, cache-friendly loops, and a JVM warmup trick.</p>
+                    <a class="journal-entry__more" href="./blog/advent-of-code-2025-day-5.html">read on &rarr;</a>
+                </div>
+            </article>
 
-        <!-- Start blog preview : advent of code 2025 - day 1 -->
-        <div class="blog-preview">
-            <div class="blog-preview-header">
-                <h2 class="blog-preview-title">
-                    advent of code 2025 - day 1: secret entrance
-                </h2>
-                <span class="blog-preview-date">01-12-2025</span>
-            </div>
-            <p class="blog-preview-summary">
-                day 1 kicked off this year's advent of code showdown in php with a deceptively simple puzzle that taught me a painful
-                lesson about testing, debugging, and how bugs can cancel each other out.
-            </p>
-            <a href="./blog/advent-of-code-2025-day-1.html" class="blog-preview-link">read more →</a>
-        </div>
-        <!-- End blog preview : advent of code 2025 - day 1 -->
+            <article class="journal-entry">
+                <time class="journal-entry__date" datetime="2025-12-03">03 dec 2025</time>
+                <div class="journal-entry__body">
+                    <h2 class="journal-entry__title">
+                        <a href="./blog/advent-of-code-2025-day-3.html">advent of code 2025 · day 3: lobby</a>
+                    </h2>
+                    <p class="journal-entry__summary">day 3 was less about algorithmic breakthroughs and more about squeezing every last millisecond out of python. levi had a 1.4ms solution on part 1. i was determined to beat it.</p>
+                    <a class="journal-entry__more" href="./blog/advent-of-code-2025-day-3.html">read on &rarr;</a>
+                </div>
+            </article>
 
-        <!-- Start blog preview : a rant about education, building and motivation -->
-        <div class="blog-preview">
-            <div class="blog-preview-header">
-                <h2 class="blog-preview-title">
-                    a rant about education, building and motivation
-                </h2>
-                <span class="blog-preview-date">11-06-2025</span>
-            </div>
-            <p class="blog-preview-summary">
-                my computer science program in the netherlands is a major
-                regret. it's superficial, often requiring ai for projects
-                instead of teaching me to code. though i'm financially
-                trapped, i'm pushing through by self-learning and building
-                things, because creating is the only genuine and motivating
-                part of my programming journey.
-            </p>
-            <a href="./blog/ranting-about-education.html" class="blog-preview-link">read more →</a>
-        </div>
-        <!-- End blog preview : a rant about education, building and motivation -->
+            <article class="journal-entry">
+                <time class="journal-entry__date" datetime="2025-12-02">02 dec 2025</time>
+                <div class="journal-entry__body">
+                    <h2 class="journal-entry__title">
+                        <a href="./blog/advent-of-code-2025-day-2.html">advent of code 2025 · day 2: gift shop</a>
+                    </h2>
+                    <p class="journal-entry__summary">day 2 had me learning lua from scratch while discovering that sometimes the best optimisation isn't faster code. sometimes it's just realising you're solving the wrong problem entirely.</p>
+                    <a class="journal-entry__more" href="./blog/advent-of-code-2025-day-2.html">read on &rarr;</a>
+                </div>
+            </article>
 
-        <!-- Start blog preview : ai is ruining the art of programming -->
-        <div class="blog-preview">
-            <div class="blog-preview-header">
-                <h2 class="blog-preview-title">
-                    ai is ruining the art of programming
-                </h2>
-                <span class="blog-preview-date">28-05-2025</span>
-            </div>
-            <p class="blog-preview-summary">
-                a thought on the current ai hype, especially in programming.
-                while tools are making coding more accessible, i'm looking
-                at the potential downsides of "vibe coding" and how relying
-                too much on ai might affect the critical thinking and unique
-                problem-solving i see as the art of programming.
-            </p>
-            <a href="./blog/ai-is-ruining-the-art-of-programming.html" class="blog-preview-link">read more →</a>
-        </div>
-        <!-- End blog preview : ai is ruining the art of programming -->
+            <article class="journal-entry">
+                <time class="journal-entry__date" datetime="2025-12-01">01 dec 2025</time>
+                <div class="journal-entry__body">
+                    <h2 class="journal-entry__title">
+                        <a href="./blog/advent-of-code-2025-day-1.html">advent of code 2025 · day 1: secret entrance</a>
+                    </h2>
+                    <p class="journal-entry__summary">day 1 kicked off this year's advent of code showdown in php with a deceptively simple puzzle that taught me a painful lesson about testing, debugging, and how bugs can cancel each other out.</p>
+                    <a class="journal-entry__more" href="./blog/advent-of-code-2025-day-1.html">read on &rarr;</a>
+                </div>
+            </article>
 
-        <!-- Start blog preview : what i wish i knew... -->
-        <div class="blog-preview">
-            <div class="blog-preview-header">
-                <h2 class="blog-preview-title">
-                    what i wish i knew before i became a computer science
-                    student.
-                </h2>
-                <span class="blog-preview-date">06-01-2025</span>
-            </div>
-            <p class="blog-preview-summary">
-                reflecting on my ongoing computer science studies, i
-                realized that while the curriculum covered fundamentals, it
-                often lacked practical application, and many peers relied on
-                ai tools instead of truly learning. i now prioritize
-                building real projects and independent learning, finding it
-                a more rewarding way to develop problem-solving skills and
-                advising new students to do the same.
-            </p>
-            <a href="./blog/what-i-wish-i-knew.html" class="blog-preview-link">read more →</a>
-        </div>
-        <!-- End blog preview : what i wish i knew... -->
+            <article class="journal-entry">
+                <time class="journal-entry__date" datetime="2025-06-11">11 jun 2025</time>
+                <div class="journal-entry__body">
+                    <h2 class="journal-entry__title">
+                        <a href="./blog/ranting-about-education.html">a rant about education, building and motivation</a>
+                    </h2>
+                    <p class="journal-entry__summary">my computer science program in the netherlands is a major regret. it's superficial, often requiring ai for projects instead of teaching me to code. though i'm financially trapped, i'm pushing through by self-learning and building things, because creating is the only genuine and motivating part of my programming journey.</p>
+                    <a class="journal-entry__more" href="./blog/ranting-about-education.html">read on &rarr;</a>
+                </div>
+            </article>
 
-        <div class="newsletter-cta-card">
-            <p>
-                sorry! my newsletter signup is broken right now. i'll fix it soon.<br>
-                if you want updates, check back here later, or hit me up anywhere else: <a
-                    href="contact.html">contact</a>.
-            </p>
-            <a class="newsletter-cta-btn" style="pointer-events: none; opacity: 0.5; cursor: not-allowed;"
-                aria-disabled="true" tabindex="-1">
-                subscribe (unavailable)
-            </a>
+            <article class="journal-entry">
+                <time class="journal-entry__date" datetime="2025-05-28">28 may 2025</time>
+                <div class="journal-entry__body">
+                    <h2 class="journal-entry__title">
+                        <a href="./blog/ai-is-ruining-the-art-of-programming.html">ai is ruining the art of programming</a>
+                    </h2>
+                    <p class="journal-entry__summary">a thought on the current ai hype, especially in programming. while tools are making coding more accessible, i'm looking at the potential downsides of "vibe coding" and how relying too much on ai might affect the critical thinking and unique problem-solving i see as the art of programming.</p>
+                    <a class="journal-entry__more" href="./blog/ai-is-ruining-the-art-of-programming.html">read on &rarr;</a>
+                </div>
+            </article>
+
+            <article class="journal-entry">
+                <time class="journal-entry__date" datetime="2025-01-06">06 jan 2025</time>
+                <div class="journal-entry__body">
+                    <h2 class="journal-entry__title">
+                        <a href="./blog/what-i-wish-i-knew.html">what i wish i knew before i became a computer science student</a>
+                    </h2>
+                    <p class="journal-entry__summary">reflecting on my ongoing computer science studies, i realized that while the curriculum covered fundamentals, it often lacked practical application, and many peers relied on ai tools instead of truly learning. i now prioritise building real projects and independent learning, finding it a more rewarding way to develop problem-solving skills.</p>
+                    <a class="journal-entry__more" href="./blog/what-i-wish-i-knew.html">read on &rarr;</a>
+                </div>
+            </article>
+        </section>
+
+        <div class="colophon">
+            <div class="colophon__label">correspondence</div>
+            <p>the newsletter sign-up is broken right now. i'll fix it soon. for updates, check back, or reach me anywhere else in the <a href="contact.html">contact</a> section.</p>
+            <a class="btn" aria-disabled="true" tabindex="-1">subscribe · unavailable</a>
         </div>
     </main>
+
     <footer class="site-footer">
-        <span id="copyright-text"></span>
+        <span id="copyright"></span>
+        <span><em>creating &gt; consuming</em></span>
     </footer>
+
     <script src="assets/footer-date.js"></script>
     <script src="assets/dark-mode-toggle.js"></script>
-
 </body>
 
 </html>
