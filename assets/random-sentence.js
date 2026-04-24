@@ -60,7 +60,8 @@ const funnySentences = [
     "the page you're looking for is currently in beta somewhere else",
     "this page has been temporarily removed for dramatic effect",
     "the page is busy reinventing itself",
-    "this page has escaped containment"
+    "this page has escaped containment",
+    "this page is rumoured to have a lot of secrets"
 ];
 
 const oneInOneHundred = [
@@ -98,6 +99,8 @@ const oneInTenThousand = [
     "the hidden door opens inward"
 ];
 
+const oneInHundredThousand = ["was this worth it?"];
+
 function randomInt(maxExclusive) {
     if (window.crypto && window.crypto.getRandomValues) {
         const array = new Uint32Array(1);
@@ -113,27 +116,146 @@ function pickRandom(array) {
 }
 
 function getRandomSentence() {
-    const roll = randomInt(10000) + 1;
+    const roll = randomInt(100000) + 1;
 
     if (roll === 1) {
-        return pickRandom(oneInTenThousand);
+        return { sentence: pickRandom(oneInHundredThousand), tier: 'legendary' };
     }
 
     if (roll <= 10) {
-        return pickRandom(oneInOneThousand);
+        return { sentence: pickRandom(oneInTenThousand), tier: 'ultra-rare' };
     }
 
     if (roll <= 100) {
-        return pickRandom(oneInOneHundred);
+        return { sentence: pickRandom(oneInOneThousand), tier: 'very-rare' };
     }
 
-    return pickRandom(funnySentences);
+    if (roll <= 1000) {
+        return { sentence: pickRandom(oneInOneHundred), tier: 'rare' };
+    }
+
+    return { sentence: pickRandom(funnySentences), tier: 'common' };
+}
+
+function getSeenSentences() {
+    const stored = localStorage.getItem('seenSentences');
+    const parsed = stored ? JSON.parse(stored) : {};
+    return {
+        common: parsed.common || [],
+        rare: parsed.rare || [],
+        'very-rare': parsed['very-rare'] || [],
+        'ultra-rare': parsed['ultra-rare'] || [],
+        legendary: parsed.legendary || []
+    };
+}
+
+function saveSeenSentence(sentence, tier) {
+    const seen = getSeenSentences();
+    if (!seen[tier].includes(sentence)) {
+        seen[tier].push(sentence);
+        localStorage.setItem('seenSentences', JSON.stringify(seen));
+    }
+}
+
+function getTotalSentences() {
+    return funnySentences.length + oneInOneHundred.length + oneInOneThousand.length + oneInTenThousand.length + oneInHundredThousand.length;
+}
+
+function getSeenCount() {
+    const seen = getSeenSentences();
+    return seen.common.length + seen.rare.length + seen['very-rare'].length + seen['ultra-rare'].length + seen.legendary.length;
+}
+
+function createDropdown() {
+    const seen = getSeenSentences();
+    const lostLinks = document.querySelector('.lost__links');
+    if (!lostLinks) return;
+
+    const container = document.createElement('div');
+    container.style.marginTop = 'var(--space-lg)';
+    container.style.textAlign = 'center';
+
+    const toggleBtn = document.createElement('button');
+    toggleBtn.className = 'btn btn--ghost';
+    toggleBtn.style.fontSize = 'var(--step--1)';
+    toggleBtn.style.padding = '0.5em 1em';
+    const seenCount = getSeenCount();
+    const total = getTotalSentences();
+    toggleBtn.textContent = `collection (${seenCount}/${total})`;
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.setAttribute('aria-controls', 'sentence-collection');
+
+    const dropdown = document.createElement('div');
+    dropdown.id = 'sentence-collection';
+    dropdown.style.display = 'none';
+    dropdown.style.marginTop = 'var(--space-md)';
+    dropdown.style.textAlign = 'left';
+    dropdown.style.maxWidth = '48ch';
+    dropdown.style.marginLeft = 'auto';
+    dropdown.style.marginRight = 'auto';
+    dropdown.style.padding = 'var(--space-md)';
+    dropdown.style.background = 'var(--paper-raised)';
+    dropdown.style.border = '1px solid var(--rule)';
+    dropdown.style.borderRadius = 'var(--radius)';
+
+    const allSentences = [
+        ...seen.common.map(s => ({ sentence: s, tier: 'common' })),
+        ...seen.rare.map(s => ({ sentence: s, tier: 'rare' })),
+        ...seen['very-rare'].map(s => ({ sentence: s, tier: 'very-rare' })),
+        ...seen['ultra-rare'].map(s => ({ sentence: s, tier: 'ultra-rare' })),
+        ...seen.legendary.map(s => ({ sentence: s, tier: 'legendary' }))
+    ];
+
+    if (allSentences.length === 0) {
+        dropdown.innerHTML = '<p style="color: var(--ink-3); font-size: var(--step--1); margin: 0;">no sentences collected yet</p>';
+    } else {
+        allSentences.forEach(({ sentence, tier }) => {
+            const item = document.createElement('div');
+            item.style.padding = 'var(--space-2xs) 0';
+            item.style.fontSize = 'var(--step--1)';
+            if (tier === 'common') {
+                item.style.color = 'var(--ink-2)';
+            } else if (tier === 'legendary') {
+                item.style.color = '#e5bd2a';
+            } else {
+                item.style.color = 'var(--accent)';
+            }
+            item.style.fontStyle = tier !== 'common' ? 'italic' : 'normal';
+            item.textContent = sentence;
+            dropdown.appendChild(item);
+        });
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', !isExpanded);
+        dropdown.style.display = isExpanded ? 'none' : 'block';
+    });
+
+    container.appendChild(toggleBtn);
+    container.appendChild(dropdown);
+    lostLinks.parentNode.insertBefore(container, lostLinks.nextSibling);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     const kickerElement = document.querySelector(".lost__kicker");
 
     if (kickerElement) {
-        kickerElement.textContent = getRandomSentence();
+        const { sentence, tier } = getRandomSentence();
+        kickerElement.textContent = sentence;
+        
+        if (tier === 'rare') {
+            kickerElement.style.color = 'var(--accent)';
+        } else if (tier === 'very-rare') {
+            kickerElement.style.color = '#3555ca';
+        } else if (tier === 'ultra-rare') {
+            kickerElement.style.color = '#ca359f';
+        } else if (tier === 'legendary') {
+            kickerElement.style.color = '#e5bd2a';
+        }
+
+        saveSeenSentence(sentence, tier);
     }
+    
+    createDropdown();
 });
