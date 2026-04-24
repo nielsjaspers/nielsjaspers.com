@@ -28,7 +28,7 @@
 <body>
     <header class="fade-in fade-in-1">
         <div class="masthead">
-            <a class="masthead__brand" href="index.html">niels jaspers <em>· journal</em></a>
+            <a class="masthead__brand" href="index.html">niels jaspers</a>
             <div class="masthead__controls">
                 <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
                     <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
@@ -37,18 +37,6 @@
                 </button>
             </div>
         </div>
-
-        <div class="meta-bar">
-            <span class="meta-bar__item">erratum · <strong>vol. mmxxvi</strong></span>
-            <span class="meta-bar__item">filed under: missing entries</span>
-        </div>
-
-        <nav class="primary fade-in fade-in-2" aria-label="primary">
-            <a href="index.html">home</a>
-            <a href="projects.html">projects</a>
-            <a href="blog.html">blog</a>
-            <a href="contact.html">contact</a>
-        </nav>
     </header>
 
     <main>
@@ -58,7 +46,7 @@
             <p class="label">page not found</p>
 
             <p class="lost__kicker" style="font-family: var(--font-display); font-feature-settings: var(--fr-reading), 'ss01' on; font-style: italic; font-size: var(--step-1); color: var(--ink-1); text-wrap: balance;">
-                this entry appears to have slipped between the shelves.
+                <!-- add funny line here -->
             </p>
 
             <p style="color: var(--ink-2); max-width: 48ch; margin: 0 auto; text-wrap: pretty;">
@@ -69,20 +57,17 @@
 
             <div class="lost__links">
                 <a class="btn" href="index.html">return home</a>
-                <a class="btn btn--ghost" href="blog.html">read the journal</a>
-                <a class="btn btn--ghost" href="projects.html">browse projects</a>
-                <a class="btn btn--ghost" href="contact.html">get in touch</a>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <span id="copyright"></span>
-        <span><em>creating &gt; consuming</em></span>
     </footer>
 
     <script src="assets/footer-date.js"></script>
     <script src="assets/dark-mode-toggle.js"></script>
+    <script src="assets/random-sentence.js"></script>
 </body>
 
 </html>
