@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const toggleBtn = document.getElementById("theme-toggle-btn");
     const icon = document.getElementById("theme-toggle-icon");
     if (!toggleBtn || !icon) return;
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
     const MOON =
         '<path d="M20 14.5a7 7 0 01-9.5-9.5 7.5 7.5 0 109.5 9.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>';
@@ -23,14 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-    function getPreferredTheme() {
-        return (
-            localStorage.getItem("theme") ||
-            (window.matchMedia("(prefers-color-scheme: dark)").matches
-                ? "dark"
-                : "light")
-        );
+    function getSavedTheme() {
+        const savedTheme = localStorage.getItem("theme");
+        return savedTheme === "dark" || savedTheme === "light"
+            ? savedTheme
+            : null;
     }
+
+    function getPreferredTheme() {
+        return getSavedTheme() || (systemTheme.matches ? "dark" : "light");
+    }
+
+    systemTheme.addEventListener("change", function (event) {
+        if (getSavedTheme() === null) {
+            setTheme(event.matches ? "dark" : "light");
+        }
+    });
 
     toggleBtn.addEventListener("click", function () {
         const current =

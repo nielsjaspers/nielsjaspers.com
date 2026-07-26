@@ -1,69 +1,47 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <script>
         (function () {
-            var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
+            var theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", theme);
         })();
     </script>
-    <meta charset="UTF-8" />
-    <meta name="description" content="page not found. this entry appears to have slipped between the shelves." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="320x320" href="favicon-320x320.png">
-    <link rel="icon" type="image/png" sizes="1024x1024" href="favicon-1024x1024.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, follow" />
-    <title>404 · page not found · niels jaspers</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <title>page not found · niels jaspers</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
-    <header class="fade-in fade-in-1">
-        <div class="masthead">
-            <a class="masthead__brand" href="index.html">niels jaspers</a>
-            <div class="masthead__controls">
-                <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
-                    <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 14.5a7 7 0 01-9.5-9.5 7.5 7.5 0 109.5 9.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
+    <header class="site-header fade-in">
+        <a class="site-brand" href="index.html">niels jaspers</a>
+        <nav class="site-nav" aria-label="primary navigation">
+            <a href="index.html">home</a>
+            <a href="projects.html">projects</a>
+            <a href="notes.html">notes</a>
+            <a href="contact.html">contact</a>
+        </nav>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="switch to dark mode">
+            <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path d="M20 14.5a7 7 0 01-9.5-9.5 7.5 7.5 0 109.5 9.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+        </button>
     </header>
 
-    <main>
-        <section class="lost fade-in fade-in-3">
-            <div class="lost__number" aria-hidden="true">404</div>
-
-            <p class="lost__kicker" style="font-family: var(--font-display); font-feature-settings: var(--fr-reading), 'ss01' on; font-style: italic; font-size: var(--step-1); color: var(--ink-1); text-wrap: balance;"> </p>
-
-            <p style="color: var(--ink-2); max-width: 48ch; margin: 0 auto; text-wrap: pretty;">
-                perhaps the link was mistyped, the page was retired, or it simply never existed. either way, there is nothing here but empty paper. you might have better luck <a href="index.html">returning home</a>.
-            </p>
-
-            <div class="asterism asterism--stars" aria-hidden="true"></div>
-
-            <div class="lost__links">
-                <a class="btn" href="index.html">return home</a>
-            </div>
-        </section>
+    <main class="lost">
+        <h1>404</h1>
+        <p class="lost__kicker">this page is missing.</p>
+        <p class="lost__links"><a class="btn" href="index.html">return home</a></p>
     </main>
 
     <footer class="site-footer">
         <span id="copyright"></span>
     </footer>
-
     <script src="assets/footer-date.js"></script>
     <script src="assets/dark-mode-toggle.js"></script>
     <script src="assets/random-sentence.js"></script>
 </body>
-
 </html>

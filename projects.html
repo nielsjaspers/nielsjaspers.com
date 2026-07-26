@@ -1,211 +1,99 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <script>
         (function () {
-            var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            document.documentElement.setAttribute('data-theme', theme);
+            var theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", theme);
         })();
     </script>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Selected software, machine learning, speech technology, and interface projects by Niels Jaspers.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.nielsjaspers.com/projects.html">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="320x320" href="favicon-320x320.png">
-    <link rel="icon" type="image/png" sizes="1024x1024" href="favicon-1024x1024.png">
-    <meta name="description"
-        content="open-source projects by niels jaspers. file-sharing tools, cli applications, and web utilities built with go, typescript, and more. creating > consuming." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="canonical" href="https://www.nielsjaspers.com/projects.html" />
-    <meta name="robots" content="index, follow" />
     <title>projects · niels jaspers</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
-    <header class="fade-in fade-in-1">
-        <div class="masthead">
-            <a class="masthead__brand" href="index.html">niels jaspers</a>
-            <div class="masthead__controls">
-                <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode">
-                    <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 14.5a7 7 0 01-9.5-9.5 7.5 7.5 0 109.5 9.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <div class="meta-bar">
-            <span class="meta-bar__item"></span>
-            <span class="meta-bar__item">the things i've built</span>
-        </div>
-
-        <nav class="primary fade-in fade-in-2" aria-label="primary">
+    <header class="site-header fade-in">
+        <a class="site-brand" href="index.html">niels jaspers</a>
+        <nav class="site-nav" aria-label="primary navigation">
             <a href="index.html">home</a>
             <a href="projects.html" aria-current="page">projects</a>
-            <a href="blog.html">blog</a>
+            <a href="notes.html">notes</a>
             <a href="contact.html">contact</a>
         </nav>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="switch to dark mode">
+            <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path d="M20 14.5a7 7 0 01-9.5-9.5 7.5 7.5 0 109.5 9.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+        </button>
     </header>
 
-    <main>
-        <section class="hero fade-in fade-in-3">
-            <span class="label">a catalog of made things</span>
-            <h1 class="hero__title">projects.</h1>
-            <p class="hero__lede">a small and growing list of things i've built, mostly because i needed them and the existing options didn't fit.</p>
+    <main class="projects-page fade-in fade-in-2">
+        <section class="page-intro">
+            <h1>my <span class="accent-text">projects</span></h1>
+            <p>a selection of things i’ve made. some started as school or research projects, while others exist because i wanted something that did not exist yet.</p>
         </section>
 
-        <section class="catalog fade-in fade-in-4" aria-label="project catalog">
+        <article class="featured-project" id="pitch-err">
+            <h2 class="project-name">pitch-err</h2>
+            <div class="featured-project__body">
+                <p class="project-description">a wearable system that detects filler words while someone is speaking and responds with a small vibration. audio is recorded by a raspberry pi pico, processed locally on a raspberry pi, and turned into haptic feedback in real time.</p>
+                <p class="project-description">the project includes the hardware, firmware, dataset preparation, model training, evaluation, and live inference software.</p>
+                <div class="project-actions">
+                    <a href="https://github.com/nielsjaspers/pitch-err" target="_blank" rel="noopener">source ↗</a>
+                </div>
+            </div>
+        </article>
 
-            <!-- 01 · freeflow -->
-            <article class="catalog__entry">
-                <div class="catalog__number">01</div>
-                <div class="catalog__body">
-                    <h2 class="catalog__title">freeflow</h2>
-                    <p class="catalog__desc">a simple space for unfiltered writing. supports timers for timed sessions. no styling, no fancy features, just undistracted writing. no sign-in, so everything stays on device.</p>
-                    <div class="catalog__meta">
-                        <a href="https://github.com/nielsjaspers/freeflow" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                            </svg>
-                            source
-                        </a>
-                        <a href="https://freeflow.nielsjaspers.com" target="_blank" rel="noopener">
-                            visit
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill="currentColor" fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
-                                <path fill="currentColor" fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-                            </svg>
-                        </a>
+        <ul class="project-list">
+            <li class="project-row" id="dashboard">
+                <h2>dashboard</h2>
+                <div class="project-row__body">
+                    <p class="project-description">a private dashboard i built around the information and tools i use every day. it collects my calendar, email, github pull requests, notes, and codex tasks in one place.</p>
+                    <p class="project-description">it also creates a daily brief and can suggest work to hand off to codex. every suggestion has to be reviewed before anything starts, and factual claims link back to their source.</p>
+                    <div class="project-actions">
+                        <a href="https://github.com/nielsjaspers/dashboard" target="_blank" rel="noopener">source ↗</a>
                     </div>
                 </div>
-            </article>
+            </li>
 
-            <!-- 02 · manipic -->
-            <article class="catalog__entry">
-                <div class="catalog__number">02</div>
-                <div class="catalog__body">
-                    <h2 class="catalog__title">manipic</h2>
-                    <p class="catalog__desc">a set of image manipulation utilities, inspired by quickpic. built because i needed a tool for specific tasks. nothing fancy, just enough for my needs.</p>
-                    <div class="catalog__meta">
-                        <a href="https://github.com/nielsjaspers/manipic" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                            </svg>
-                            source
-                        </a>
-                        <a href="https://manipic.nielsjaspers.com" target="_blank" rel="noopener">
-                            visit
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill="currentColor" fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
-                                <path fill="currentColor" fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-                            </svg>
-                        </a>
+            <li class="project-row" id="index8">
+                <h2>index8</h2>
+                <div class="project-row__body">
+                    <p class="project-description">a bookmarking tool for saving links and text and finding them again by meaning rather than exact words.</p>
+                    <p class="project-description">index8 grew into a full application with a web interface, backend, encrypted storage, semantic search, an http api, a command-line client, and a raycast extension.</p>
+                    <div class="project-actions">
+                        <a href="https://index8.nielsjaspers.com" target="_blank" rel="noopener">visit ↗</a>
                     </div>
                 </div>
-            </article>
+            </li>
 
-            <!-- 03 · at-transfer -->
-            <article class="catalog__entry">
-                <div class="catalog__number">03</div>
-                <div class="catalog__body">
-                    <h2 class="catalog__title">at-transfer</h2>
-                    <p class="catalog__desc">a simple peer-to-peer file transfer tool built on top of the AT Protocol. log in with your bluesky app password and send files to other users. mobile and enterprise networks restrict p2p, so it's mostly useful on a local network, but it was a fun experiment in combining the AT Protocol with p2p technology.</p>
-                    <div class="catalog__meta">
-                        <a href="https://github.com/nielsjaspers/at-transfer" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                            </svg>
-                            source
-                        </a>
-                        <a href="https://at-transfer.nielsjaspers.com" target="_blank" rel="noopener">
-                            visit
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill="currentColor" fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
-                                <path fill="currentColor" fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-                            </svg>
-                        </a>
+            <li class="project-row" id="synapse">
+                <h2>synapse</h2>
+                <div class="project-row__body">
+                    <p class="project-description">a very early project i’m working on with my friend <a href="https://levikingma.com" target="_blank" rel="noopener">levi kingma</a>. synapse puts conversations on an infinite canvas, where messages, files, and ai responses can branch, reconnect, and refer to one another.</p>
+                    <p class="project-description">we work on it on and off, and we are still figuring out what it should become.</p>
+                    <div class="project-actions">
+                        <a href="https://synapse.piixl.io" target="_blank" rel="noopener">visit ↗</a>
                     </div>
                 </div>
-            </article>
+            </li>
+        </ul>
 
-            <!-- 04 · cli-sky -->
-            <article class="catalog__entry">
-                <div class="catalog__number">04</div>
-                <div class="catalog__body">
-                    <h2 class="catalog__title">cli-sky <em style="font-family: var(--font-display); font-feature-settings: var(--fr-caption); font-size: 0.55em; font-style: normal; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); font-weight: 400; vertical-align: middle; margin-left: 0.5em;">· archived</em></h2>
-                    <p class="catalog__desc">a command-line tool in go to interact with bluesky. since archived. it was a fun project to test the AT Protocol inside a terminal tool: logging in, renewing sessions, and posting, all with simple commands.</p>
-                    <div class="catalog__meta">
-                        <a href="https://github.com/nielsjaspers/cli-sky" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                            </svg>
-                            source
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- 05 · cls -->
-            <article class="catalog__entry">
-                <div class="catalog__number">05</div>
-                <div class="catalog__body">
-                    <h2 class="catalog__title">cls <em style="font-family: var(--font-display); font-feature-settings: var(--fr-reading), 'ss01' on; font-size: 0.6em; font-weight: 400; color: var(--ink-3); letter-spacing: -0.01em; margin-left: 0.3em;">(command line share)</em></h2>
-                    <p class="catalog__desc">my first attempt at a command line tool. a fast, secure file sharing cli written in go, using TLS for quick and private file transfers on a local network.</p>
-                    <div class="catalog__meta">
-                        <a href="https://github.com/nielsjaspers/cls" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                            </svg>
-                            source
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- 06 · gradient background generator -->
-            <article class="catalog__entry">
-                <div class="catalog__number">06</div>
-                <div class="catalog__body">
-                    <h2 class="catalog__title">gradient background generator</h2>
-                    <p class="catalog__desc">i needed some gradient backgrounds, so i made a tool for it. html, css, typescript, runs fully on-device. nothing more to say about it, it just generates custom gradients.</p>
-                    <div class="catalog__meta">
-                        <a href="https://github.com/nielsjaspers/gradient-bg-generator" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                            </svg>
-                            source
-                        </a>
-                        <a href="https://gradient.nielsjaspers.com" target="_blank" rel="noopener">
-                            visit
-                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path fill="currentColor" fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
-                                <path fill="currentColor" fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
+        <section class="projects-more">
+            <p>want to see more? <a href="https://github.com/nielsjaspers" target="_blank" rel="noopener">check out my github ↗</a></p>
         </section>
-
-        <div class="asterism" aria-hidden="true"></div>
-
-        <p style="font-family: var(--font-display); font-feature-settings: var(--fr-reading), 'ss01' on; font-style: italic; font-size: var(--step-1); color: var(--ink-2); text-align: center; max-width: 42ch; margin: var(--space-xl) auto;">more coming, eventually. the best ones are usually the ones that haven't been announced yet.</p>
     </main>
 
     <footer class="site-footer">
         <span id="copyright"></span>
-        <span><em>creating &gt; consuming</em></span>
     </footer>
-
     <script src="assets/footer-date.js"></script>
     <script src="assets/dark-mode-toggle.js"></script>
 </body>
-
 </html>

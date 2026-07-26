@@ -172,13 +172,10 @@ function createDropdown() {
     if (!lostLinks) return;
 
     const container = document.createElement('div');
-    container.style.marginTop = 'var(--space-lg)';
-    container.style.textAlign = 'center';
+    container.className = 'lost__collection';
 
     const toggleBtn = document.createElement('button');
-    toggleBtn.className = 'btn btn--ghost';
-    toggleBtn.style.fontSize = 'var(--step--1)';
-    toggleBtn.style.padding = '0.5em 1em';
+    toggleBtn.className = 'lost__collection-toggle';
     const seenCount = getSeenCount();
     const total = getTotalSentences();
     toggleBtn.textContent = `collection (${seenCount}/${total})`;
@@ -187,16 +184,8 @@ function createDropdown() {
 
     const dropdown = document.createElement('div');
     dropdown.id = 'sentence-collection';
+    dropdown.className = 'lost__collection-panel';
     dropdown.style.display = 'none';
-    dropdown.style.marginTop = 'var(--space-md)';
-    dropdown.style.textAlign = 'left';
-    dropdown.style.maxWidth = '48ch';
-    dropdown.style.marginLeft = 'auto';
-    dropdown.style.marginRight = 'auto';
-    dropdown.style.padding = 'var(--space-md)';
-    dropdown.style.background = 'var(--paper-raised)';
-    dropdown.style.border = '1px solid var(--rule)';
-    dropdown.style.borderRadius = 'var(--radius)';
 
     const allSentences = [
         ...seen.common.map(s => ({ sentence: s, tier: 'common' })),
@@ -211,8 +200,7 @@ function createDropdown() {
     } else {
         allSentences.forEach(({ sentence, tier }) => {
             const item = document.createElement('div');
-            item.style.padding = 'var(--space-2xs) 0';
-            item.style.fontSize = 'var(--step--1)';
+            item.className = 'lost__collection-item';
             if (tier === 'common') {
                 item.style.color = 'var(--ink-2)';
             } else if (tier === 'legendary') {
