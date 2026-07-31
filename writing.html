@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Short writing by Niels Jaspers about software, learning, things made, and things worth remembering.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.nielsjaspers.com/writing.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+    <title>writing · niels jaspers</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header class="site-header fade-in">
+        <a class="site-brand" href="index.html">niels jaspers</a>
+        <nav class="site-nav" aria-label="primary navigation">
+            <a href="index.html">home</a>
+            <a href="projects.html">projects</a>
+            <a href="writing.html" aria-current="page">writing</a>
+            <a href="contact.html">contact</a>
+        </nav>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="switch to dark mode">
+            <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path d="M20 14.5a7 7 0 01-9.5-9.5 7.5 7.5 0 109.5 9.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </header>
+
+    <main class="writing-page fade-in fade-in-2">
+        <section class="page-intro">
+            <h1>my <span class="accent-text">writing</span></h1>
+            <p>short writing about things i like, things i’ve learned, and things i’ve made.</p>
+        </section>
+        <div class="writing-empty">
+            <p class="writing-empty__status">nothing here yet.</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <span id="copyright"></span>
+    </footer>
+    <script src="assets/footer-date.js"></script>
+    <script src="assets/dark-mode-toggle.js"></script>
+</body>
+</html>
