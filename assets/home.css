@@ -1,0 +1,127 @@
+.home-page {
+    position: relative;
+    isolation: isolate;
+    min-height: clamp(43rem, calc(100vh - 12rem), 58rem);
+    overflow: clip;
+}
+
+.home-intro {
+    position: relative;
+    z-index: 2;
+    grid-template-columns: minmax(17rem, 0.85fr) minmax(21rem, 1.15fr);
+    gap: clamp(4rem, 12vw, 11rem);
+    align-items: center;
+    min-height: inherit;
+    padding-top: clamp(6rem, 12vw, 10rem);
+}
+
+.home-intro h1 {
+    position: relative;
+    isolation: isolate;
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 7ch;
+    margin-left: clamp(1rem, 3vw, 3rem);
+}
+
+.home-intro__copy {
+    position: relative;
+    isolation: isolate;
+    grid-column: 2;
+    grid-row: 1;
+    transform: translateX(clamp(-3rem, -3vw, -1rem));
+}
+
+.home-art {
+    position: absolute;
+    z-index: 0;
+    inset: -8rem -12rem;
+    opacity: 0.58;
+    pointer-events: none;
+    transform: scaleX(-1) scale(1.04);
+    -webkit-mask-image:
+        radial-gradient(ellipse 58% 55% at 78% 38%, #000 4%, rgba(0, 0, 0, 0.83) 34%, rgba(0, 0, 0, 0.18) 67%, transparent 86%),
+        radial-gradient(ellipse 48% 42% at 18% 84%, rgba(0, 0, 0, 0.66), transparent 82%);
+    mask-image:
+        radial-gradient(ellipse 58% 55% at 78% 38%, #000 4%, rgba(0, 0, 0, 0.83) 34%, rgba(0, 0, 0, 0.18) 67%, transparent 86%),
+        radial-gradient(ellipse 48% 42% at 18% 84%, rgba(0, 0, 0, 0.66), transparent 82%);
+}
+
+.home-art__shader {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    opacity: 0;
+    transition: opacity 260ms ease;
+}
+
+.home-art__shader.is-rendered {
+    opacity: 1;
+}
+
+.home-copy-grain {
+    position: absolute;
+    z-index: -1;
+    inset: -5rem -6rem -5rem -8rem;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, var(--paper) 0 38%, color-mix(in srgb, var(--paper) 82%, transparent) 55%, transparent 76%);
+    filter: blur(0.2px);
+    opacity: 0.98;
+    -webkit-mask-image: radial-gradient(ellipse 76% 70% at 50% 48%, #000 24%, rgba(0, 0, 0, 0.9) 48%, rgba(0, 0, 0, 0.28) 67%, transparent 82%);
+    mask-image: radial-gradient(ellipse 76% 70% at 50% 48%, #000 24%, rgba(0, 0, 0, 0.9) 48%, rgba(0, 0, 0, 0.28) 67%, transparent 82%);
+}
+
+.home-title-grain {
+    position: absolute;
+    z-index: -1;
+    inset: -1.6rem -2.5rem -2.1rem;
+    pointer-events: none;
+    background: var(--paper);
+    opacity: 0.72;
+    -webkit-mask-image: radial-gradient(ellipse 80% 72% at 48% 52%, #000 0 38%, rgba(0, 0, 0, 0.78) 53%, rgba(0, 0, 0, 0.2) 71%, transparent 90%);
+    mask-image: radial-gradient(ellipse 80% 72% at 48% 52%, #000 0 38%, rgba(0, 0, 0, 0.78) 53%, rgba(0, 0, 0, 0.2) 71%, transparent 90%);
+}
+
+.home-copy-grain canvas,
+.home-title-grain canvas {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 760px) {
+    .home-page {
+        min-height: auto;
+        overflow: visible;
+    }
+
+    .home-intro {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 2.75rem;
+        min-height: auto;
+        padding: 4.5rem 0 7rem;
+    }
+
+    .home-intro h1,
+    .home-intro__copy {
+        grid-column: 1;
+        grid-row: auto;
+        align-self: start;
+        margin-top: 0;
+    }
+
+    .home-intro h1 {
+        max-width: none;
+        margin-left: 0;
+    }
+
+    .home-intro__copy {
+        transform: none;
+    }
+
+    .home-art,
+    .home-copy-grain,
+    .home-title-grain {
+        display: none;
+    }
+}

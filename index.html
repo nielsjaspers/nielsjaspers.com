@@ -22,6 +22,7 @@
     <meta name="twitter:card" content="summary">
     <title>niels jaspers</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/home.css">
 </head>
 <body>
     <header class="site-header fade-in">
@@ -40,9 +41,17 @@
     </header>
 
     <main class="home-page">
+        <!-- Photograph: https://images.pexels.com/photos/38602511/pexels-photo-38602511.jpeg -->
+        <div class="home-art" aria-hidden="true">
+            <div class="home-art__shader" id="home-halftone"></div>
+        </div>
         <section class="home-intro fade-in fade-in-2">
-            <h1>hi, i’m <span class="accent-text">niels.</span></h1>
+            <h1>
+                <span class="home-title-grain" id="home-title-grain" aria-hidden="true"></span>
+                hi, i’m <span class="accent-text">niels.</span>
+            </h1>
             <div class="home-intro__copy">
+                <div class="home-copy-grain" id="home-copy-grain" aria-hidden="true"></div>
                 <p>i study computer science and speech technology, and i spend a lot of time making things with software.</p>
                 <p>lately, i’ve been thinking about personal software and voice interfaces. i’m interested in what a genuinely useful personal assistant might look like, how ai can help people learn, and how much easier it has become to turn an idea into something that works. i don’t have answers to most of those questions, so i turn some of my ideas into software and see how they work in practice.</p>
             </div>
@@ -54,5 +63,6 @@
     </footer>
     <script src="assets/footer-date.js"></script>
     <script src="assets/dark-mode-toggle.js"></script>
+    <script src="assets/home-halftone.bundle.js" type="module"></script>
 </body>
 </html>
