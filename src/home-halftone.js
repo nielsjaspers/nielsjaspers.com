@@ -22,7 +22,7 @@ if (shadersEnabled && artContainer && grainContainer && titleGrainContainer) {
 
     const noiseTexture = getShaderNoiseTexture();
     const settings = {
-        art: { size: 0.8, gridNoise: 0.46, scale: 0.96, offsetX: -0.02, offsetY: 0 },
+        art: { size: 0.88, gridNoise: 1.00, scale: 1, offsetX: -0.02, offsetY: 0 },
         grain: { shape: GrainGradientShapes.ripple, softness: 0.88, intensity: 0.38, noise: 0.7, rotation: -4 },
     };
 
@@ -53,8 +53,9 @@ if (shadersEnabled && artContainer && grainContainer && titleGrainContainer) {
         u_colorBack: cssColor("--paper"),
         u_colorC: cssColor("--ink-faint"),
         u_colorM: cssColor("--accent"),
-        u_colorY: cssColor("--rule"),
+        u_colorY: cssColor("--halftone-yellow"),
         u_colorK: cssColor("--ink"),
+        u_gainY: -0.25,
     });
 
     const grainPalette = () => ({
@@ -76,13 +77,13 @@ if (shadersEnabled && artContainer && grainContainer && titleGrainContainer) {
                     u_image: image,
                     u_noiseTexture: noiseTexture,
                     ...artPalette(),
-                    u_type: HalftoneCmykTypes.ink,
+                    u_type: HalftoneCmykTypes.sharp,
                     u_size: settings.art.size,
                     u_contrast: 0.9,
                     u_softness: 0,
-                    u_grainSize: 0.01,
-                    u_grainMixer: 0.035,
-                    u_grainOverlay: 0.08,
+                    u_grainSize: 0,
+                    u_grainMixer: 0,
+                    u_grainOverlay: 0,
                     u_gridNoise: settings.art.gridNoise,
                     u_floodC: 0.12,
                     u_floodM: 0,
@@ -90,7 +91,6 @@ if (shadersEnabled && artContainer && grainContainer && titleGrainContainer) {
                     u_floodK: 0,
                     u_gainC: 0.62,
                     u_gainM: 0.56,
-                    u_gainY: -0.7,
                     u_gainK: -0.08,
                     u_fit: ShaderFitOptions.cover,
                     u_scale: settings.art.scale,

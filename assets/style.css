@@ -14,6 +14,7 @@
     --ink-faint: #8b847c;
     --rule: #cfc3ae;
     --rule-soft: #ded3c0;
+    --halftone-yellow: #ffdfa3;
     --accent: #b8412b;
     --accent-dark: #8f311f;
     --page: 74rem;
@@ -30,6 +31,7 @@
     --ink-faint: #81796e;
     --rule: #3b342b;
     --rule-soft: #29231d;
+    --halftone-yellow: #ffdaad;
     --accent: #e8875a;
     --accent-dark: #f1a47f;
 }
