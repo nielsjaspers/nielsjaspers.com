@@ -8,6 +8,7 @@ import {
     ShaderFitOptions,
     ShaderMount,
 } from "@paper-design/shaders";
+import botanicalImageUrl from "../assets/home-botanical.webp";
 
 const artContainer = document.getElementById("home-halftone");
 const grainContainer = document.getElementById("home-copy-grain");
@@ -17,7 +18,7 @@ const shadersEnabled = !window.matchMedia("(max-width: 760px)").matches;
 if (shadersEnabled && artContainer && grainContainer && titleGrainContainer) {
     const image = new Image();
     image.decoding = "async";
-    image.src = "assets/home-botanical.webp";
+    image.src = botanicalImageUrl;
 
     const noiseTexture = getShaderNoiseTexture();
     const settings = {
