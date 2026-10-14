@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="On making more things with AI, juggling too many projects, and finding less time to learn.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.nielsjaspers.com/writing/so-much-to-do.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
+    <meta name="author" content="Niels Jaspers">
+    <meta property="og:title" content="So much to do...">
+    <meta property="og:description" content="On making more things with AI, juggling too many projects, and finding less time to learn.">
+    <meta property="og:url" content="https://www.nielsjaspers.com/writing/so-much-to-do.html">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-10-14">
+    <title>So much to do... · niels jaspers</title>
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+    <header class="site-header fade-in">
+        <a class="site-brand" href="../index.html">niels jaspers</a>
+        <nav class="site-nav" aria-label="primary navigation">
+            <a href="../index.html">home</a>
+            <a href="../projects.html">projects</a>
+            <a href="../writing.html" aria-current="page">writing</a>
+            <a href="../contact.html">contact</a>
+        </nav>
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="switch to dark mode">
+            <svg id="theme-toggle-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path d="M20 14.5a7 7 0 01-9.5-9.5 7.5 7.5 0 109.5 9.5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+        </button>
+    </header>
+
+    <main class="post-page fade-in fade-in-2">
+        <article class="post">
+            <header class="post-header">
+                <a class="post-back" href="../writing.html">All writing</a>
+                <h1>So much to do...</h1>
+                <time datetime="2026-10-14">14 October 2026</time>
+            </header>
+            <div class="post-body">
+                <p>I have a lot of ideas for things I want to make. That was already the case before AI. The difference is that I can now act on far more of them.</p>
+
+                <p>For a long time, an idea for an app came with a fairly obvious question. Was it worth the work? Even something small could take weeks of figuring things out before I had anything useful. I might need to learn a new framework, understand a platform, or spend multiple evenings getting one annoying thing to work. Reasons like these would be enough to leave a lot of ideas alone. They would just not be worth any time.</p>
+
+                <p>Now with the fast improvements of AI these couple of months, any passing thought during a walk can turn into a working project from a single slopped voice-to-text prompt before I even get to my computer.</p>
+
+                <p>I like that. I like making things, and being able to try something while I'm still excited about it is a lot of fun. But lately, I also feel like I'm doing more and more while having less time for the things I wanted to do. Especially learning new cool things deeply.</p>
+
+                <h2>Move fast...</h2>
+
+                <p>With how quickly AI is improving, more and more problems that can be solved with software are becoming easier to tackle. We can get more ambitious with our prompts. Things that would have seemed like far too much work before now feel reasonable to try.</p>
+
+                <p>The amount of software people are building with AI right now is ridiculous. People are <a href="https://github.com/pingdotgg/ts-rust">porting entire compilers</a> and <a href="https://github.com/storytold/photocraft">rebuilding applications like Photoshop as open-source software</a>.</p>
+
+                <p>For a lot of what I want to make, getting something working already feels almost trivial. And most of the time, it's cheap enough to just try.</p>
+
+                <p>For example, I'm regularly downloading episodes of a podcast I listen to. These episodes are stored in my iCloud Drive, so they do not take up so much space on my phone. I normally listen to them through the Files app on my iPhone, but this wasn't the experience I wanted. I wanted proper playback and playlists, and the ability to download and remove the ‘local downloads’ of the individual downloads.</p>
+
+                <p>Now, normally creating a custom piece of software for this would absolutely not be worth it. There are probably thousands of apps that do something similar to this, but probably none of them would have the exact features that I wanted. And if they did, it would’ve probably cost me money to use the software, or giving up my personal data.</p>
+
+                <p>There's a real appeal to personal software like that. It doesn't need to become a business or solve a problem for thousands of people. I have an annoyance, I know roughly how I'd like it solved, and I can make something for myself.</p>
+
+                <p>Before, I probably would have had to care a lot more about that annoyance to justify the work. With AI, trying to solve it feels reasonable, almost trivial even.</p>
+
+                <p>The same applies to experiments. I can get from an idea to something I can test much faster. If it turns out to be boring, or less useful than I expected, I can discard it and just try something else.</p>
+
+                <p>That makes room for ideas I would otherwise never attempt. Small, personal, slightly unnecessary things, but also larger, more ambitious projects. Things that don't have to justify themselves beyond “I wanted this, so I made it.”</p>
+
+                <p>It's easy to see why I keep doing it.</p>
+
+                <p>All of this, of course, also bring some issues with it, since software will become essentially disposable because it's so cheap to produce. Why should we keep paying for software if every piece of software is essentially just a prompt away? But that's not the point of this post.</p>
+
+                <h2>...Break things</h2>
+
+                <p>Making something gives a result. I can see it, try it, show it to someone. Even a rough prototype can give that satisfaction.</p>
+
+                <p>Learning is harder to measure that way. I can spend an evening trying to understand something and still be confused when I stop. I might need to revisit it tomorrow, practice it, or realize that I misunderstood part of it. There isn't always much to show for the effort yet.</p>
+
+                <p>So when I have a choice between sitting down to learn and starting a new idea, the new idea is tempting. Some of that is enthusiasm. Some of it is avoidance. Building another small app can be easier than staying with a subject I find difficult.</p>
+
+                <p>AI makes that choice easier still. I can ask it to handle parts I don't understand and keep going. The project gets further along. My understanding doesn't necessarily follow.</p>
+
+                <p>For the podcast app, that may be perfectly fine. I wanted a better way to listen to my files. I don't need to turn every practical problem into a course. But I also want to learn about machine learning. If I start an ML project for that reason, I have to spend time understanding what I'm doing. I can have AI write the code and explain it to me, but I still have to work through the explanation. Having it available doesn't mean I've learned it.</p>
+
+                <p>I don't think the satisfaction of building is fake. But I can spend a lot of time on something worthwhile and still keep putting off something else I care about.</p>
+
+                <p>In a way, personal software slop feels like a gambling machine. Sometimes a prompt makes something extremely cool that works in one try. Other times, it breaks everything. But then the fix is only one more prompt away. Trust me bro.</p>
+
+                <h2>...So little time.</h2>
+
+                <p>Recently, I had an idea for an ML project and started working on it. Then I had an idea for a personalized messaging app, so I worked on both. Then came a customizable dashboard. Then a plugin. And a small game. Sure, why not!</p>
+
+                <p>I wanted to make all of them. Each one was interesting when I started it, and each one seemed possible, as was.</p>
+
+                <p>Eventually, I stopped active development on all of them. Either because I lost interest or got to a point where developing them further wouldn't gain much anymore.</p>
+
+                <p>Because of the constant context switching between all of these ideas, it burned me out. Even though I wanted to learn more deeply with the ML project, the amount of context across projects I was juggling at once killed the interest in sitting down and learning something deeply.</p>
+
+                <p>AI lets me have work happening in parallel, but that doesn't mean attention scales with the work that is done in the background. I have to return to each project, follow what's happening, and decide what I want to do with it. If I want to understand it properly, I need to spend more time there. That limits how much else I can do.</p>
+
+                <p>Meanwhile, another idea comes along.</p>
+
+                <p>That's the part I personally keep getting caught in. Starting something has become easy enough that I don't need much of a reason. Staying with it takes more. The initial excitement wears off, the remaining work gets less interesting, and there's something new I could try.</p>
+
+                <p>I end up with more things started and more things waiting for me. Learning becomes another item on that list, even though it was one of the reasons I started.</p>
+
+                <p>Don't get me wrong, I still want to make personal software. I still want to experiment with ideas that might go nowhere. Even though it's slop, some of these things actually solve problems in my day-to-day life. However small these problems are sometimes.</p>
+
+                <p>But I also want to spend time on a subject without immediately turning it into another thing to build. To stay with something difficult long enough to understand it.</p>
+
+                <p>That is just something I unfortunately don't have an answer to yet.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <span id="copyright"></span>
+    </footer>
+    <script src="../assets/footer-date.js"></script>
+    <script src="../assets/dark-mode-toggle.js"></script>
+</body>
+</html>

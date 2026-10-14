@@ -378,20 +378,36 @@ main {
     max-width: 38rem;
 }
 
-.writing-empty {
+.writing-row {
     display: grid;
     grid-template-columns: minmax(15rem, 0.8fr) minmax(20rem, 1.2fr);
     gap: clamp(3rem, 9vw, 9rem);
     color: var(--ink-soft);
 }
 
-.writing-empty p {
+.writing-row p {
     max-width: 34rem;
     font-size: clamp(1.15rem, 1.8vw, 1.35rem);
 }
 
-.writing-empty__status {
-    color: var(--ink-faint);
+.writing-row time {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--ink-soft);
+    font-size: 1rem;
+}
+
+.writing-row h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+    color: var(--ink);
+}
+
+.writing-row h2 a {
+    text-decoration: none;
 }
 
 .projects-page {
@@ -431,9 +447,55 @@ main {
     min-height: 34rem;
 }
 
-.writing-page .writing-empty {
-    display: block;
+.writing-list {
+    list-style: none;
     padding: clamp(3rem, 6vw, 5rem) 0;
+    border-top: 1px solid var(--rule);
+}
+
+.post {
+    max-width: var(--measure);
+    margin-inline: auto;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.post-header {
+    margin-bottom: 3rem;
+}
+
+.post-back,
+.post-header time {
+    color: var(--ink-soft);
+    font-size: 1rem;
+}
+
+.post-header h1 {
+    margin: 2rem 0 1rem;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 400;
+    letter-spacing: -0.055em;
+    line-height: 1.05;
+    text-wrap: balance;
+}
+
+.post-body {
+    font-size: clamp(1.2rem, 2vw, 1.35rem);
+    line-height: 1.65;
+}
+
+.post-body p + p {
+    margin-top: 1.35rem;
+}
+
+.post-body h2 {
+    margin: 3.5rem 0 1.5rem;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+    text-wrap: balance;
 }
 
 .contact-page {
@@ -629,7 +691,7 @@ main {
     .page-intro,
     .featured-project,
     .project-row,
-    .writing-empty {
+    .writing-row {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
