@@ -76,8 +76,6 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 }
 
 .aside {
-    position: sticky;
-    top: 0;
     height: 100vh;
     height: 100dvh;
     display: flex;
@@ -172,7 +170,7 @@ dt { color: var(--faint); }
 
 /* Short desktop windows (such as 1366 x 768 with browser bars) tighten the
    sidebar so it fits without scrolling on its own. */
-@media (width > 900px) and (height < 47rem) {
+@media (width > 56.25em) and (height < 47rem) {
     .aside { padding-block: 2rem 1.75rem; }
     .aside__nav { margin-bottom: 2rem; }
     .contact { padding-top: 1.5rem; }
@@ -181,7 +179,7 @@ dt { color: var(--faint); }
 
 /* Desktop: the page itself never scrolls. Only the content pane scrolls,
    so the sidebar stays still and the pane gets its own native bounce. */
-@media (width > 900px) {
+@media (width > 56.25em) {
     html {
         overflow-y: hidden;
         overscroll-behavior-y: none;
@@ -337,8 +335,6 @@ details[open] .detail { animation: open 260ms ease both; }
 }
 
 .post-gutter {
-    position: sticky;
-    top: 2rem;
     align-self: start;
     display: grid;
     gap: 2rem;
@@ -347,7 +343,7 @@ details[open] .detail { animation: open 260ms ease both; }
 
 /* Desktop: the bar and gutter stay still and the article pane scrolls. The pane
    runs to the right edge of the window, so its scrollbar sits at the edge. */
-@media (width > 900px) {
+@media (width > 56.25em) {
     .reader {
         display: grid;
         grid-template-rows: auto minmax(0, 1fr);
@@ -368,7 +364,6 @@ details[open] .detail { animation: open 260ms ease both; }
     }
 
     .post-gutter {
-        position: static;
         align-self: stretch;
         align-content: start;
         padding: 3.8rem 0 3rem;
@@ -459,7 +454,7 @@ details[open] .detail { animation: open 260ms ease both; }
 }
 .post-body a { text-decoration-color: var(--accent); }
 
-@media (max-width: 1240px) {
+@media (max-width: 77.5em) {
     .detail { margin-left: 0; }
 }
 
@@ -492,11 +487,10 @@ details[open] .detail { animation: open 260ms ease both; }
 
 /* ---------- small screens ---------- */
 
-@media (max-width: 900px) {
+@media (max-width: 56.25em) {
     .ledger { grid-template-columns: 1fr; }
 
     .aside {
-        position: static;
         height: auto;
         padding: 1.75rem 1rem 2.5rem;
         border-right: 0;
@@ -519,7 +513,7 @@ details[open] .detail { animation: open 260ms ease both; }
 
     .post-bar { padding: 1.5rem 1rem; }
     .post-wrap { grid-template-columns: 1fr; gap: 2rem; padding: 1rem 1rem 5rem; }
-    .post-gutter { position: static; padding-top: 0; }
+    .post-gutter { padding-top: 0; }
     .post-gutter dl { grid-template-columns: auto auto; justify-content: start; gap: 2rem; }
     .post-gutter nav, .post-gutter .read { display: none; }
     .progress-top { display: block; }
