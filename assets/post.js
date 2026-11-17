@@ -32,6 +32,8 @@
         headings.forEach(function (h, i) {
             if (h && h.getBoundingClientRect().top - v.top < v.height * 0.35) current = i;
         });
+        // on a tall screen the last heading never reaches the threshold.
+        if (x === 1 && headings.length) current = headings.length - 1;
         links.forEach(function (a, i) {
             if (i === current) a.setAttribute("aria-current", "true");
             else a.removeAttribute("aria-current");

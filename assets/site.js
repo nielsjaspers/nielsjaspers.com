@@ -43,13 +43,13 @@
 
     // on desktop only the content pane scrolls, so a scroll key pressed while
     // focus is elsewhere (nothing, or the theme button) would do nothing.
-    // hand focus to the pane first. space still activates a focused control.
+    // hand focus to the pane first. space still activates a focused button.
     var pane = document.querySelector(".sheet, .post-pane");
     var scrollKeys = ["PageDown", "PageUp", "Home", "End", "ArrowDown", "ArrowUp", " "];
     document.addEventListener("keydown", function (e) {
         var active = document.activeElement;
         if (!pane || pane.contains(active) || scrollKeys.indexOf(e.key) < 0) return;
-        if (e.key === " " && active !== document.body) return;
+        if (e.key === " " && active.tagName === "BUTTON") return;
         if (getComputedStyle(pane).overflowY !== "auto") return;
         pane.focus({ preventScroll: true });
     });

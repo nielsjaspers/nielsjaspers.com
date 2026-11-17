@@ -287,6 +287,7 @@ details[open] .detail { animation: open 260ms ease both; }
 
 .detail__foot {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 1rem;
     align-items: baseline;
@@ -325,14 +326,7 @@ details[open] .detail { animation: open 260ms ease both; }
     text-decoration: none;
 }
 
-.post-wrap {
-    display: grid;
-    grid-template-columns: 13rem minmax(0, 40rem);
-    gap: 5rem;
-    max-width: 76rem;
-    margin: 0 auto;
-    padding: 3rem 3rem 8rem;
-}
+.post-wrap { display: grid; }
 
 .post-gutter {
     align-self: start;
@@ -356,10 +350,7 @@ details[open] .detail { animation: open 260ms ease both; }
 
     .post-wrap {
         grid-template-columns: 13rem minmax(0, 1fr);
-        gap: 0;
         min-height: 0;
-        max-width: none;
-        margin: 0;
         padding: 0 0 0 max(3rem, calc((100% - 76rem) / 2 + 3rem));
     }
 
