@@ -106,7 +106,8 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
 .aside__nav {
     display: flex;
-    gap: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0 1.25rem;
     margin-bottom: 3rem;
     font-size: 1.05rem;
 }
@@ -145,7 +146,7 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
 .contact div {
     display: grid;
-    grid-template-columns: 5.5rem 1fr;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
     align-items: baseline;
 }
 
@@ -158,7 +159,7 @@ dt, .colophon, .sec, .c-year, .gutter-label, .back, .post-gutter dd, .detail__fo
 
 dt { color: var(--faint); }
 
-.contact a { font-size: 1.05rem; }
+.contact a { font-size: 1.05rem; overflow-wrap: anywhere; }
 
 .colophon {
     margin-top: 1.75rem;
@@ -168,6 +169,15 @@ dt { color: var(--faint); }
 /* ---------- the index ---------- */
 
 .sheet { padding: 3rem 3rem 6rem 4rem; }
+
+/* Short desktop windows (such as 1366 x 768 with browser bars) tighten the
+   sidebar so it fits without scrolling on its own. */
+@media (width > 900px) and (height < 47rem) {
+    .aside { padding-block: 2rem 1.75rem; }
+    .aside__nav { margin-bottom: 2rem; }
+    .contact { padding-top: 1.5rem; }
+    .colophon { display: none; }
+}
 
 /* Desktop: the page itself never scrolls. Only the content pane scrolls,
    so the sidebar stays still and the pane gets its own native bounce. */
