@@ -148,7 +148,7 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
     align-items: baseline;
 }
 
-dt, .colophon, .sec, .c-year, .gutter-label, .back, .post-gutter dd, .detail__foot span {
+dt, .colophon, .sec, .c-year, .gutter-label, .back, .post-gutter dd {
     font-family: var(--mono);
     font-size: 0.75rem;
     letter-spacing: 0.02em;
@@ -285,16 +285,7 @@ details[open] .detail { animation: open 260ms ease both; }
 
 @keyframes open { from { opacity: 0; transform: translateY(-4px); } }
 
-.detail__foot {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
-    align-items: baseline;
-    padding-top: 0.5rem;
-}
-
-.detail__foot span { color: var(--faint); }
+.detail__foot { padding-top: 0.5rem; }
 
 .detail__foot a, .more-link a, .back {
     display: inline-flex;
