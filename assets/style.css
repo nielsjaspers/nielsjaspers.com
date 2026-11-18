@@ -416,15 +416,6 @@ details[open] .detail { animation: open 260ms ease both; }
 .toc a:hover { color: var(--accent); }
 .toc a[aria-current] { color: var(--accent); border-left-color: var(--accent); }
 
-/* phones fold the gutter away, so progress moves to the top edge */
-.progress-top {
-    display: none;
-    position: fixed;
-    inset: 0 0 auto;
-    z-index: 2;
-    height: 2px;
-}
-
 .post h1 {
     margin-bottom: 2.5rem;
     font-size: clamp(2.75rem, 6vw, 4.25rem);
@@ -507,7 +498,6 @@ details[open] .detail { animation: open 260ms ease both; }
     .post-gutter { padding-top: 0; }
     .post-gutter dl { grid-template-columns: auto auto; justify-content: start; gap: 2rem; }
     .post-gutter nav, .post-gutter .read { display: none; }
-    .progress-top { display: block; }
     .post-body { font-size: 1.15rem; }
 }
 
