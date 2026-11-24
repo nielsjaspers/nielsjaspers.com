@@ -60,6 +60,22 @@
                 <!--<a href="projects.html">all projects <svg class="i" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>-->
             </div>
             <ol class="rows">
+                <li id="fy-asr">
+                    <details>
+                        <summary>
+                            <span class="c-year">2026</span>
+                            <span class="c-name">fy-asr</span>
+                            <span class="c-sum">speech recognition for frisian that cuts the error rate on spontaneous conversation from about 60% to 19%.</span>
+                            <span class="c-icon"><svg class="i" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M8 3v10M3 8h10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                        </summary>
+                        <div class="detail">
+                            <p>a whisper model fine-tuned for west frisian (frysk), focused on long recordings of spontaneous speech. it turns audio or video into text or .srt subtitles.</p>
+                            <p>on held-out doctor-patient conversations, it has a word error rate of 19.3%. the other frisian models i evaluated it against score between 58 and 62%.</p>
+                            <p>the repo contains the code for data preparation, training, evaluation, and the transcription pipeline. everything runs locally on apple silicon.</p>
+                            <p class="detail__foot"><a href="https://github.com/nielsjaspers/fy-asr" target="_blank" rel="noopener">source <svg class="i" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>&emsp;<a href="https://huggingface.co/nielsjaspers/whisper-large-v3-turbo-fy" target="_blank" rel="noopener">model <svg class="i" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+                        </div>
+                    </details>
+                </li>
                 <li id="pitch-err">
                     <details>
                         <summary>
