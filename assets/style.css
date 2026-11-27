@@ -13,15 +13,17 @@
     color-scheme: light;
 }
 
-[data-theme="dark"] {
-    --bg: #121312;
-    --bg-hover: #1a1b1a;
-    --ink: #e9e6dd;
-    --soft: #aaa69b;
-    --faint: #8d897f;
-    --rule: #2a2b29;
-    --accent: #95a6ff;
-    color-scheme: dark;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #121312;
+        --bg-hover: #1a1b1a;
+        --ink: #e9e6dd;
+        --soft: #aaa69b;
+        --faint: #8d897f;
+        --rule: #2a2b29;
+        --accent: #95a6ff;
+        color-scheme: dark;
+    }
 }
 
 html { -webkit-text-size-adjust: 100%; }
@@ -48,24 +50,6 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
 .i { flex: none; }
 
-.theme-toggle {
-    display: grid;
-    place-items: center;
-    width: 2rem;
-    height: 2rem;
-    margin: -0.4rem -0.4rem 0 0;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    background: none;
-    color: var(--faint);
-    cursor: pointer;
-}
-.theme-toggle:hover { color: var(--accent); }
-.icon-sun { display: none; }
-[data-theme="dark"] .icon-sun { display: block; }
-[data-theme="dark"] .icon-moon { display: none; }
-
 /* ---------- layout ---------- */
 
 .ledger {
@@ -85,14 +69,8 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
     overflow-y: auto;
 }
 
-.aside__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    margin-bottom: 1.5rem;
-}
-
 .name {
+    margin-bottom: 1.5rem;
     font-size: 2.6rem;
     font-weight: 400;
     font-style: italic;
@@ -304,7 +282,6 @@ details[open] .detail { animation: open 260ms ease both; }
 
 .post-bar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     max-width: 76rem;
     margin: 0 auto;
@@ -469,9 +446,8 @@ details[open] .detail { animation: open 260ms ease both; }
         border-right: 0;
     }
 
-    .aside__top { margin-bottom: 1.25rem; }
     .aside__nav { margin-bottom: 2rem; }
-    .name { font-size: 2.2rem; }
+    .name { margin-bottom: 1.25rem; font-size: 2.2rem; }
     .lead { font-size: 1.3rem; }
     .colophon { display: none; }
 
